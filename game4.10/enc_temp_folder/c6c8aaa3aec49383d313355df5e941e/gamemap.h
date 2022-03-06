@@ -18,7 +18,6 @@ namespace game_framework {
 		CMovingBitmap firstMap;	
 		int x, y;
 		int mapArray[29][47]; // 地圖邊界陣列
-		int map1Origin[29][47];
 		int mapLevel; // 當前是第幾關
 	};
 }
