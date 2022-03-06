@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-03-03T14:13:53.520Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="rgaCAWX2JjLwQUKV4B0c" version="16.6.5" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-03-06T15:11:17.758Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="e2Pvl3qevDis-QogCF1F" version="16.6.6" type="github" pages="2">
   <diagram name="Page-1" id="58cdce13-f638-feb5-8d6f-7d28b1aa9fa0">
-    <mxGraphModel dx="1073" dy="728" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="942" dy="672" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -124,7 +124,7 @@
     </mxGraphModel>
   </diagram>
   <diagram id="L0PzsGuGTGsVRcPgpUXo" name="Page-2">
-    <mxGraphModel dx="511" dy="347" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="538" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="kgHkqOe57O5c9QWE5NV3-0" />
         <mxCell id="kgHkqOe57O5c9QWE5NV3-1" parent="kgHkqOe57O5c9QWE5NV3-0" />
@@ -267,23 +267,41 @@
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="pLhw1WrPGHpHT17fWSdM-0" value="Classname" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" vertex="1" parent="kgHkqOe57O5c9QWE5NV3-1">
-          <mxGeometry x="60" y="790" width="160" height="138" as="geometry" />
+        <mxCell id="pLhw1WrPGHpHT17fWSdM-0" value="Classname" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="kgHkqOe57O5c9QWE5NV3-1" vertex="1">
+          <mxGeometry x="60" y="790" width="160" height="294" as="geometry" />
         </mxCell>
-        <mxCell id="pLhw1WrPGHpHT17fWSdM-1" value="- 地圖邊界陣列:2維 int 陣列 " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+        <mxCell id="pLhw1WrPGHpHT17fWSdM-1" value="- 地圖邊界陣列:2維 int 陣列 " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="pLhw1WrPGHpHT17fWSdM-2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
-          <mxGeometry y="52" width="160" height="8" as="geometry" />
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-0" value="- 每一關的陣列:2維 int 陣列&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+          <mxGeometry y="52" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="pLhw1WrPGHpHT17fWSdM-3" value="+ 判斷該格是0:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
-          <mxGeometry y="60" width="160" height="26" as="geometry" />
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-1" value="- 當前是第幾關:int " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+          <mxGeometry y="78" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="pLhw1WrPGHpHT17fWSdM-6" value="+ 判斷該格是1:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
-          <mxGeometry y="86" width="160" height="26" as="geometry" />
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-2" value="- 每一關的bitmap" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+          <mxGeometry y="104" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="pLhw1WrPGHpHT17fWSdM-5" value="+ 陣列值改變void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
-          <mxGeometry y="112" width="160" height="26" as="geometry" />
+        <mxCell id="pLhw1WrPGHpHT17fWSdM-2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
+          <mxGeometry y="130" width="160" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="pLhw1WrPGHpHT17fWSdM-3" value="+ 判斷該格是0:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
+          <mxGeometry y="138" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="pLhw1WrPGHpHT17fWSdM-6" value="+ 判斷該格是1:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
+          <mxGeometry y="164" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="pLhw1WrPGHpHT17fWSdM-5" value="+ 陣列值改變void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
+          <mxGeometry y="190" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-5" value="+ 讀取關卡資料:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+          <mxGeometry y="216" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-6" value="+ 上一關:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+          <mxGeometry y="242" width="160" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-7" value="+ 下一關:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+          <mxGeometry y="268" width="160" height="26" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
