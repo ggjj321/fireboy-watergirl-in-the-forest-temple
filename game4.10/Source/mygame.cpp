@@ -216,7 +216,8 @@ void CGameStateRun::OnBeginState()
 		ball[i].SetIsAlive(true);
 	}
 	eraser.Initialize();
-	background.SetTopLeft(BACKGROUND_X,0);				// 設定背景的起始座標
+	
+	// background.SetTopLeft(BACKGROUND_X,0);				// 設定背景的起始座標
 	help.SetTopLeft(0, SIZE_Y - help.Height());			// 設定說明圖的起始座標
 	hits_left.SetInteger(HITS_LEFT);					// 指定剩下的撞擊數
 	hits_left.SetTopLeft(HITS_LEFT_X,HITS_LEFT_Y);		// 指定剩下撞擊數的座標
@@ -284,7 +285,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	for (i = 0; i < NUMBALLS; i++)	
 		ball[i].LoadBitmap();								// 載入第i個球的圖形
 	eraser.LoadBitmap();
-	background.LoadBitmap(IDB_FINALMAP);					// 載入背景的圖形
+	map.LoadBitMap();
+	// background.LoadBitmap(IDB_FINALMAP);					// 載入背景的圖形
 	//
 	// 完成部分Loading動作，提高進度
 	//
@@ -295,7 +297,8 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 	//
 	help.LoadBitmap(IDB_HELP,RGB(255,255,255));				// 載入說明的圖形
 	corner.LoadBitmap(IDB_CORNER);							// 載入角落圖形
-	corner.ShowBitmap(background);							// 將corner貼到background
+	
+	// corner.ShowBitmap(background);							// 將corner貼到background
 	bball.LoadBitmap();										// 載入圖形
 	hits_left.LoadBitmap();									
 	CAudio::Instance()->Load(AUDIO_DING,  "sounds\\ding.wav");	// 載入編號0的聲音ding.wav
@@ -373,9 +376,10 @@ void CGameStateRun::OnShow()
 	//
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
-	background.ShowBitmap();			// 貼上背景圖
+	//background.ShowBitmap();			// 貼上背景圖
 	help.ShowBitmap();					// 貼上說明圖
 	hits_left.ShowBitmap();
+	map.OnShow();
 	for (int i=0; i < NUMBALLS; i++)
 		ball[i].OnShow();				// 貼上第i號球
 	bball.OnShow();						// 貼上彈跳的球

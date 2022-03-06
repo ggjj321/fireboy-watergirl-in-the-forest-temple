@@ -41,6 +41,7 @@
 #include "CEraser.h"
 #include "CBall.h"
 #include "CBouncingBall.h"
+#include "gamemap.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -101,6 +102,7 @@ namespace game_framework {
 		CEraser			eraser;		// 拍子
 		CInteger		hits_left;	// 剩下的撞擊數
 		CBouncingBall   bball;		// 反覆彈跳的球
+		CGameMap		map;
 	};
 
 	/////////////////////////////////////////////////////////////////////////////
