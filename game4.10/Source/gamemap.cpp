@@ -73,6 +73,17 @@ bool CGameMap::isFull(int x, int y) noexcept {
     if (mapArray[gy][gx] == 1)return TRUE;
     else return FALSE;
 }
+void CGameMap::ChangeArray(int x, int y) {
+
+}
+void CGameMap::LastLevel() {
+    if (mapLevel - 1 > 0) mapLevel -= 1;
+    ReadMapData();
+}
+void CGameMap::NextLevel() {
+    mapLevel += 1;
+    ReadMapData();
+}
 }
 
 

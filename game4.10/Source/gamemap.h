@@ -7,13 +7,12 @@ namespace game_framework {
 		void LoadBitMap();
 		void OnShow();
 		void OnMove();
-		void ReadMapData()noexcept; // 讀取關卡資料
 		bool isEmpty(int x, int y)noexcept; // 判斷該格是0
 		bool isFull(int x, int y)noexcept; // 判斷該格是1
-		/*
-		void changeArray(int x, int y); // 陣列值改變
-        void init();
-		*/
+		void ChangeArray(int x, int y); // 陣列值改變
+		void ReadMapData()noexcept; // 讀取關卡資料
+		void LastLevel();
+		void NextLevel();
 	private:
 		CMovingBitmap firstMap;	
 		int x, y;
