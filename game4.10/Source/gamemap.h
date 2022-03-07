@@ -1,12 +1,22 @@
+#include <string>
+
 namespace game_framework {
-	class Map {
+	class CGameMap {
 	public:
-		bool isEmpty(int x, int y); // 判斷該格是0
-		bool isFull(int x, int y); // 判斷該格是1
-		void changeArray(int x, int y); // 陣列值改變
-        void init();
+		CGameMap();
+		void LoadBitMap();
+		void OnShow();
+		void OnMove();
+		bool isEmpty(int x, int y)noexcept; // 判斷該格是0
+		bool isFull(int x, int y)noexcept; // 判斷該格是1
+		void ChangeArray(int x, int y); // 陣列值改變
+		void ReadMapData()noexcept; // 讀取關卡資料
+		void LastLevel();
+		void NextLevel();
 	private:
-		// 地圖邊界陣列
-		int mapArray[29][47];
+		CMovingBitmap firstMap;	
+		int x, y;
+		int mapArray[29][47]; // 地圖邊界陣列
+		int mapLevel; // 當前是第幾關
 	};
 }
