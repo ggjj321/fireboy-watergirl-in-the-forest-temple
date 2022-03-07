@@ -6,11 +6,25 @@
 #include "gamelib.h"
 #include "gamemap.h"
 namespace game_framework {
-CGameMap::CGameMap() {
+CGameMap::CGameMap(){
     x = 0;
     y = 0;
     mapLevel = 1;
-    map1Origin[29][47] = { {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},// 0
+    ReadMapData();
+}
+void CGameMap::OnMove(){
+
+}
+void CGameMap::LoadBitMap() {
+    firstMap.LoadBitmap(IDB_FINALMAP);
+}
+void CGameMap::OnShow() {
+    firstMap.SetTopLeft(x, y);
+    firstMap.ShowBitmap();
+}
+void CGameMap::ReadMapData() noexcept {
+    if (mapLevel == 1) {
+        int map1Origin[29][47] = { {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1},// 0
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},// 1
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},// 2
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1},// 3
@@ -39,26 +53,25 @@ CGameMap::CGameMap() {
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},// 26
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1},// 27
                     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1} };//28
-    ReadMapData();
-}
-void CGameMap::OnMove() {
 
-}
-void CGameMap::LoadBitMap() {
-    firstMap.LoadBitmap(IDB_FINALMAP);
-}
-void CGameMap::OnShow() {
-    firstMap.SetTopLeft(x, y);
-    firstMap.ShowBitmap();
-}
-void CGameMap::ReadMapData() {
-    if (mapLevel == 1) {
         for (int y = 0; y < 29; y++) {
             for (int x = 0; x < 47; x++) {
-                mapArray[x][y] = map1Origin[x][y];
+                mapArray[y][x] = map1Origin[y][x];
             }
         }
     }
+}
+bool CGameMap::isEmpty(int x, int y) noexcept {
+    const int gx = (int)(x / 13.61); // 640 / 47
+    const int gy = (int)(y / 16.55); // 480 / 29
+    if (mapArray[gy][gx] == 0)return TRUE;
+    else return FALSE;
+}
+bool CGameMap::isFull(int x, int y) noexcept {
+    const int gx = (int)(x / 13.61); // 640 / 47
+    const int gy = (int)(y / 16.55); // 480 / 29
+    if (mapArray[gy][gx] == 1)return TRUE;
+    else return FALSE;
 }
 }
 

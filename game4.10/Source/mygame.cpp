@@ -247,7 +247,12 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//
 	// 移動擦子
 	//
-	eraser.OnMove();
+	bool left = map.isEmpty((int)(eraser.GetX1() - 13.61), eraser.GetY1());
+	bool right = map.isEmpty((int)(eraser.GetX2() + 13.61), eraser.GetY2());
+	bool up = map.isEmpty(eraser.GetX1(), (int)(eraser.GetY1() + 16.55));
+	bool down = map.isEmpty(eraser.GetX2(), (int)(eraser.GetY2() - 16.55));
+	eraser.OnMove(left, right, up, down);
+	
 	//
 	// 判斷擦子是否碰到球
 	//
@@ -311,10 +316,10 @@ void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
 
 void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 {
-	const char KEY_LEFT  = 0x25; // keyboard左箭頭
-	const char KEY_UP    = 0x26; // keyboard上箭頭
+	const char KEY_LEFT = 0x25; // keyboard左箭頭
+	const char KEY_UP = 0x26; // keyboard上箭頭
 	const char KEY_RIGHT = 0x27; // keyboard右箭頭
-	const char KEY_DOWN  = 0x28; // keyboard下箭頭
+	const char KEY_DOWN = 0x28; // keyboard下箭頭
 	if (nChar == KEY_LEFT)
 		eraser.SetMovingLeft(true);
 	if (nChar == KEY_RIGHT)

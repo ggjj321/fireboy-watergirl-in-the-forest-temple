@@ -5,6 +5,7 @@
 #include "audio.h"
 #include "gamelib.h"
 #include "CEraser.h"
+#include "gamemap.h"
 
 namespace game_framework {
 	/////////////////////////////////////////////////////////////////////////////
@@ -53,17 +54,17 @@ namespace game_framework {
 		animation.AddBitmap(IDB_ERASER2, RGB(255, 255, 255));
 	}
 
-	void CEraser::OnMove()
+	void CEraser::OnMove(bool left, bool right, bool up, bool down)
 	{
 		const int STEP_SIZE = 2;
 		animation.OnMove();
-		if (isMovingLeft)
+		if (isMovingLeft && left)
 			x -= STEP_SIZE;
-		if (isMovingRight)
+		if (isMovingRight && right)
 			x += STEP_SIZE;
-		if (isMovingUp)
+		if (isMovingUp && up)
 			y -= STEP_SIZE;
-		if (isMovingDown)
+		if (isMovingDown && down)
 			y += STEP_SIZE;
 	}
 
