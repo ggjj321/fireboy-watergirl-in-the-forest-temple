@@ -117,9 +117,6 @@
     <ClCompile Include="Source\StdAfx.cpp">
       <Filter>MFC</Filter>
     </ClCompile>
-    <ClCompile Include="Source\mygame.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
     <ClCompile Include="Source\CEraser.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
@@ -130,6 +127,15 @@
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\gamemap.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CGameStateOver.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CGameStateInit.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\CGameStateRun.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -158,9 +164,6 @@
     <ClInclude Include="Source\StdAfx.h">
       <Filter>MFC</Filter>
     </ClInclude>
-    <ClInclude Include="Source\mygame.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
     <ClInclude Include="Source\CEraser.h">
       <Filter>MyGame</Filter>
     </ClInclude>
@@ -171,6 +174,15 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\gamemap.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CGameStateOver.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CGameStateInit.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\CGameStateRun.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>

@@ -35,9 +35,10 @@
 #include <direct.h>
 #include <string.h>
 #include "gamelib.h"
-#include "mygame.h"
 #include "gameView.h"
-
+#include "CGameStateOver.h"
+#include "CGameStateInit.h"
+#include "CGameStateRun.h"
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #undef THIS_FILE
