@@ -235,10 +235,7 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	//
 	// 移動背景圖的座標
 	//
-	//if (background.Top() > SIZE_Y)
-	//	background.SetTopLeft(60 ,-background.Height());
-	//background.SetTopLeft(background.Left(),background.Top()+1);
-	//
+
 	// 移動球
 	//
 	int i;
@@ -251,29 +248,14 @@ void CGameStateRun::OnMove()							// 移動遊戲元素
 	bool right = map.isEmpty((int)(eraser.GetX2() + 13.61), eraser.GetY2());
 	bool up = map.isEmpty(eraser.GetX1(), (int)(eraser.GetY1() + 16.55));
 	bool down = map.isEmpty(eraser.GetX2(), (int)(eraser.GetY2() - 16.55));
-	eraser.OnMove(left, right, up, down);
 	
 	//
 	// 判斷擦子是否碰到球
 	//
-	for (i=0; i < NUMBALLS; i++)
-		if (ball[i].IsAlive() && ball[i].HitEraser(&eraser)) {
-			ball[i].SetIsAlive(false);
-			CAudio::Instance()->Play(AUDIO_DING);
-			hits_left.Add(-1);
-			//
-			// 若剩餘碰撞次數為0，則跳到Game Over狀態
-			//
-			if (hits_left.GetInteger() <= 0) {
-				CAudio::Instance()->Stop(AUDIO_LAKE);	// 停止 WAVE
-				CAudio::Instance()->Stop(AUDIO_NTUT);	// 停止 MIDI
-				GotoGameState(GAME_STATE_OVER);
-			}
-		}
+	
 	//
 	// 移動彈跳的球
 	//
-	bball.OnMove();
 }
 
 void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -348,27 +330,27 @@ void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 
 void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 {
-	eraser.SetMovingLeft(true);
+
 }
 
 void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 {
-	eraser.SetMovingLeft(false);
+
 }
 
 void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 {
-	// 沒事。如果需要處理滑鼠移動的話，寫code在這裡
+
 }
 
 void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
 {
-	eraser.SetMovingRight(true);
+
 }
 
 void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// 處理滑鼠的動作
 {
-	eraser.SetMovingRight(false);
+
 }
 
 void CGameStateRun::OnShow()
@@ -381,20 +363,6 @@ void CGameStateRun::OnShow()
 	//
 	//  貼上背景圖、撞擊數、球、擦子、彈跳的球
 	//
-	//background.ShowBitmap();			// 貼上背景圖
-	help.ShowBitmap();					// 貼上說明圖
-	hits_left.ShowBitmap();
-	map.OnShow();
-	for (int i=0; i < NUMBALLS; i++)
-		ball[i].OnShow();				// 貼上第i號球
-	bball.OnShow();						// 貼上彈跳的球
-	eraser.OnShow();					// 貼上擦子
-	//
-	//  貼上左上及右下角落的圖
-	//
-	corner.SetTopLeft(0,0);
-	corner.ShowBitmap();
-	corner.SetTopLeft(SIZE_X-corner.Width(), SIZE_Y-corner.Height());
-	corner.ShowBitmap();
+	map.OnShow(); // 顯示地圖
 }
 }
