@@ -1,6 +1,8 @@
 namespace game_framework {
-	class people {
+	class People {
 	public:
+		People();
+		/*
 		void init(); // 初始化狀態
 		void move(); // 處理移動
 		void eatDiamond(); // 累積吃到的寶石
@@ -16,8 +18,8 @@ namespace game_framework {
 		bool isBlow(); // 判斷是否被風吹
 		bool isFloorMove(); // 判斷腳下地板或障礙物是否受移動
 		void bitMapShow(); // bitmap 顯示
+		*/
 	private:
-		int x, y; // 座標
 		int diamondNum; // 吃到的寶石數
 		int horizontalSpeed; // 左右移速度
 		int verticalSpeed; // 受重力掉落速度

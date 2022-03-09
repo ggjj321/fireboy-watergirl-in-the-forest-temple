@@ -112,6 +112,8 @@ IDB_GAMESTARTVIEW       BITMAP                  "D:\\fireboy-watergirl-in-the-fo
 
 IDB_FINALMAP            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\final_map.bmp"
 
+IDB_SISTER              BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
