@@ -22,6 +22,13 @@ namespace game_framework {
 
 	void CGameStateRun::OnMove()							// 移動遊戲元素
 	{
+		/*
+		bool left = map.isEmpty((int)(eraser.GetX1() - 13.61), eraser.GetY1());
+		bool right = map.isEmpty((int)(eraser.GetX2() + 13.61), eraser.GetY2());
+		bool up = map.isEmpty(eraser.GetX1(), (int)(eraser.GetY1() + 16.55));
+		bool down = map.isEmpty(eraser.GetX2(), (int)(eraser.GetY2() - 16.55));
+		*/
+		sister.OnMove();
 	}
 
 	void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定
@@ -49,15 +56,14 @@ namespace game_framework {
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
 		const char KEY_DOWN = 0x28; // keyboard下箭頭
-		/*
 		if (nChar == KEY_LEFT)
-
+			sister.SetMovingLeft(true);
 		if (nChar == KEY_RIGHT)
-
+			sister.SetMovingRight(true);
 		if (nChar == KEY_UP)
-
+			sister.SetMovingUp(true);
 		if (nChar == KEY_DOWN)
-		*/
+			sister.SetMovingDown(true);
 	}
 
 	void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -66,15 +72,14 @@ namespace game_framework {
 		const char KEY_UP = 0x26; // keyboard上箭頭
 		const char KEY_RIGHT = 0x27; // keyboard右箭頭
 		const char KEY_DOWN = 0x28; // keyboard下箭頭
-		/*
 		if (nChar == KEY_LEFT)
-
+			sister.SetMovingLeft(false);
 		if (nChar == KEY_RIGHT)
-
+			sister.SetMovingRight(false);
 		if (nChar == KEY_UP)
-
+			sister.SetMovingUp(false);
 		if (nChar == KEY_DOWN)
-		*/
+			sister.SetMovingDown(false);
 	}
 
 	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
