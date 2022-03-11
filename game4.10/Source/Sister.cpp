@@ -13,7 +13,7 @@ Sister::Sister()
 }
 void Sister::init() {
 	x = 33;
-	y = 320;
+	y = 430;
 	isMovingLeft = false;			// 是否正在往左移動
 	isMovingRight = false;			// 是否正在往右移動
 	isJumpimg = false;
