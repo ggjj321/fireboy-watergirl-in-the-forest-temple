@@ -9,24 +9,22 @@
 namespace game_framework {
 Sister::Sister()
 {
+	init();
+}
+void Sister::init() {
 	x = 33;
 	y = 320;
-	isMovingDown = false;			// 是否正在往下移動
 	isMovingLeft = false;			// 是否正在往左移動
 	isMovingRight = false;			// 是否正在往右移動
-	isMovingUp = false;			    // 是否正在往上移動
+	isJumpimg = false;
 }
-void Sister::OnMove() 
+void Sister::OnMove(bool leftBound, bool rightBound)
 {
 	const int STEP_SIZE = 2;
-	if (isMovingLeft)
+	if (isMovingLeft && leftBound)
 		x -= STEP_SIZE;
-	if (isMovingRight)
+	if (isMovingRight && rightBound)
 		x += STEP_SIZE;
-	if (isMovingUp)
-		y -= STEP_SIZE;
-	if (isMovingDown)
-		y += STEP_SIZE;
 }
 void Sister::LoadBitmap()
 {
@@ -36,10 +34,6 @@ void Sister::OnShow()
 {
 	peoplePic.SetTopLeft(x, y);
 	peoplePic.ShowBitmap();
-}
-void Sister::SetMovingDown(bool flag)
-{
-	isMovingDown = flag;
 }
 
 void Sister::SetMovingLeft(bool flag)
@@ -51,9 +45,10 @@ void Sister::SetMovingRight(bool flag)
 {
 	isMovingRight = flag;
 }
-
-void Sister::SetMovingUp(bool flag)
-{
-	isMovingUp = flag;
+int Sister::GetX() {
+	return x;
+}
+int Sister::GetY() {
+	return y;
 }
 }

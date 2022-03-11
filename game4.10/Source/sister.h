@@ -3,20 +3,21 @@ namespace game_framework {
 	{
 	public:
 		Sister();
+		void init();
 		void LoadBitmap();
-		void OnMove();
+		void OnMove(bool leftBound, bool rightBound);
 		void OnShow();
-		void SetMovingDown(bool flag);	// 設定是否正在往下移動
 		void SetMovingLeft(bool flag);	// 設定是否正在往左移動
 		void SetMovingRight(bool flag); // 設定是否正在往右移動
-		void SetMovingUp(bool flag);	// 設定是否正在往上移動
+		int GetX();
+		int GetY();
+		// void SetJumpimg(bool flag);	// 設定是否正跳躍
 
 	private:
 		int x, y; // 座標
 		CMovingBitmap peoplePic;
-		bool isMovingDown;			// 是否正在往下移動
 		bool isMovingLeft;			// 是否正在往左移動
 		bool isMovingRight;			// 是否正在往右移動
-		bool isMovingUp;			// 是否正在往上移動
+		bool isJumpimg;			// 是否正在往上移動
 	};
 }
