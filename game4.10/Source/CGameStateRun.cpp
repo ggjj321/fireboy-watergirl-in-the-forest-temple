@@ -20,11 +20,12 @@ namespace game_framework {
 	{
 	}
 
-	void CGameStateRun::OnMove()							// 移動遊戲元素
+	void CGameStateRun::OnMove()						// 移動遊戲元素
 	{
-		bool leftBound = map.isEmpty(sister.GetX() - 1, sister.GetY());   // 判斷左邊陣列是否為0
-		bool rightBound = map.isEmpty(sister.GetX() + 10, sister.GetY()); // 判斷右邊陣列是否為0
-		sister.OnMove(leftBound, rightBound);
+		const bool leftBound = map.isEmpty(sister.GetX() - 1, sister.GetY());   // 判斷左邊陣列是否為0
+		const bool rightBound = map.isEmpty(sister.GetX() + 10, sister.GetY()); // 判斷右邊陣列是否為0
+		const bool downBound = map.isEmpty(sister.GetX(), sister.GetY() + 17 * 4);  // 判斷下方陣列是否為0
+		sister.OnMove(leftBound, rightBound, downBound);
 	}
 
 	void CGameStateRun::OnInit()  								// 遊戲的初值及圖形設定

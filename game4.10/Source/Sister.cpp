@@ -13,18 +13,21 @@ Sister::Sister()
 }
 void Sister::init() {
 	x = 33;
-	y = 430;
+	y = 17 * 2;
 	isMovingLeft = false;			// 是否正在往左移動
 	isMovingRight = false;			// 是否正在往右移動
 	isJumpimg = false;
 }
-void Sister::OnMove(bool leftBound, bool rightBound)
+void Sister::OnMove(bool leftBound, bool rightBound, bool downBound)
 {
-	const int STEP_SIZE = 2;
+	const int XSTEP_SIZE = 3;
+	const int YSTEP_SIZE = 4;
+	if (downBound) y += YSTEP_SIZE; // 如果腳下為空，根據重力往下掉
+
 	if (isMovingLeft && leftBound)
-		x -= STEP_SIZE;
+		x -= XSTEP_SIZE;
 	if (isMovingRight && rightBound)
-		x += STEP_SIZE;
+		x += XSTEP_SIZE;
 }
 void Sister::LoadBitmap()
 {

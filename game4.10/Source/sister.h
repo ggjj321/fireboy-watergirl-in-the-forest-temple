@@ -5,7 +5,7 @@ namespace game_framework {
 		Sister();
 		void init();
 		void LoadBitmap();
-		void OnMove(bool leftBound, bool rightBound);
+		void OnMove(bool leftBound, bool rightBound, bool downBound);
 		void OnShow();
 		void SetMovingLeft(bool flag);	// 設定是否正在往左移動
 		void SetMovingRight(bool flag); // 設定是否正在往右移動
