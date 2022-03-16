@@ -57,8 +57,13 @@ namespace game_framework {
 			sister.SetMovingLeft(true);
 		if (nChar == KEY_RIGHT)
 			sister.SetMovingRight(true);
-		// if (nChar == KEY_UP)
-			// sister.SetJumpimg(true);
+		if (nChar == KEY_UP) {
+			if (sister.isSetJumping == false) {
+				sister.SetJumpimg(true);
+				sister.jumpinVelocity = 13; // 設定跳躍初速
+				sister.isSetJumping = true; // 已經跳躍過
+			}
+		}
 	}
 
 	void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -71,6 +76,10 @@ namespace game_framework {
 			sister.SetMovingLeft(false);
 		if (nChar == KEY_RIGHT)
 			sister.SetMovingRight(false);
+		if (nChar == KEY_UP) {
+			sister.SetJumpimg(false);
+			sister.isSetJumping = false;
+		}
 	}
 
 	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // 處理滑鼠的動作
