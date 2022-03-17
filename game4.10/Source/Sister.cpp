@@ -20,7 +20,7 @@ void Sister::init() {
 }
 void Sister::OnMove(bool leftBound, bool rightBound)
 {
-	const int STEP_SIZE = 2;
+	const int STEP_SIZE = 4;
 	if (isMovingLeft && leftBound)
 		x -= STEP_SIZE;
 	if (isMovingRight && rightBound)
@@ -28,8 +28,9 @@ void Sister::OnMove(bool leftBound, bool rightBound)
 }
 void Sister::LoadBitmap()
 {
-	peoplePic.LoadBitmap(IDB_SISTER);
+	peoplePic.LoadBitmap(IDB_BITMAP7, RGB(255, 255, 255));
 }
+
 void Sister::OnShow()
 {
 	peoplePic.SetTopLeft(x, y);
@@ -50,5 +51,24 @@ int Sister::GetX() {
 }
 int Sister::GetY() {
 	return y;
+}
+bool Sister::GetIsMovingLeft() {
+	return isMovingLeft;
+}
+bool Sister::GetIsMovingRight() {
+	return isMovingRight;
+}
+void Sister::AddingBitmap()
+{
+	peopleAni.AddBitmap(IDB_BITMAP8, RGB(255, 255, 255)); //sister_running
+	peopleAni.AddBitmap(IDB_BITMAP9, RGB(255, 255, 255)); //sister_running2
+}
+void Sister::OnMoveAni()
+{
+	peopleAni.SetTopLeft(x, y);
+	peopleAni.SetDelayCount(10);
+	peopleAni.OnShow();
+	peopleAni.OnMove();
+		
 }
 }

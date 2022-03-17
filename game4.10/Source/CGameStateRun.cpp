@@ -35,6 +35,7 @@ namespace game_framework {
 		//
 		map.LoadBitMap();
 		sister.LoadBitmap();
+		sister.AddingBitmap();
 		//
 		// 完成部分Loading動作，提高進度
 		//
@@ -100,6 +101,14 @@ namespace game_framework {
 	void CGameStateRun::OnShow()
 	{
 		map.OnShow(); // 顯示地圖
-		sister.OnShow();
+		if (sister.GetIsMovingRight() == false)
+		{
+			sister.OnShow();
+		}
+		else
+		{
+			sister.OnMoveAni();
+		}
+		
 	}
 }
