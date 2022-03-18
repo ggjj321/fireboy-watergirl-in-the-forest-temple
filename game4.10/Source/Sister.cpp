@@ -13,7 +13,7 @@ Sister::Sister()
 }
 void Sister::init() {
 	x = 33;
-	y = 430;
+	y = 420;
 	isMovingLeft = false;			// 是否正在往左移動
 	isMovingRight = false;			// 是否正在往右移動
 	isJumpimg = false;
@@ -28,7 +28,7 @@ void Sister::OnMove(bool leftBound, bool rightBound)
 }
 void Sister::LoadBitmap()
 {
-	peoplePic.LoadBitmap(IDB_SISTER, RGB(255, 255, 255));
+	peoplePic.LoadBitmap(IDB_BITMAP8, RGB(255, 255, 255));
 }
 
 void Sister::OnShow()
@@ -60,15 +60,23 @@ bool Sister::GetIsMovingRight() {
 }
 void Sister::AddingBitmap()
 {
-	peopleAni.AddBitmap(IDB_BITMAP8, RGB(255, 255, 255)); //sister_running
-	peopleAni.AddBitmap(IDB_BITMAP9, RGB(255, 255, 255)); //sister_running2
+	peopleAniR.AddBitmap(IDB_BITMAP9, RGB(255, 255, 255)); //sister_running
+	peopleAniR.AddBitmap(IDB_BITMAP10, RGB(255, 255, 255)); //sister_running2
+	peopleAniL.AddBitmap(IDB_BITMAP11, RGB(255, 255, 255));
+	peopleAniL.AddBitmap(IDB_BITMAP12, RGB(255, 255, 255));
 }
-void Sister::OnMoveAni()
+void Sister::OnMoveAniRight()
 {
-	peopleAni.SetTopLeft(x, y);
-	peopleAni.SetDelayCount(10);
-	peopleAni.OnShow();
-	peopleAni.OnMove();
-		
+	peopleAniR.SetTopLeft(x, y);
+	peopleAniR.SetDelayCount(3);
+	peopleAniR.OnShow();
+	peopleAniR.OnMove();
+}
+void Sister::OnMoveAniLeft()
+{
+	peopleAniL.SetTopLeft(x, y);
+	peopleAniL.SetDelayCount(3);
+	peopleAniL.OnShow();
+	peopleAniL.OnMove();
 }
 }

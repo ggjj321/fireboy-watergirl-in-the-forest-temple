@@ -105,9 +105,12 @@ namespace game_framework {
 		{
 			sister.OnShow();
 		}
-		else
+		else if(sister.GetIsMovingRight() == true)
 		{
-			sister.OnMoveAni();
+			sister.OnMoveAniRight();
+		}
+		else if (sister.GetIsMovingLeft() == true) {
+			sister.OnMoveAniLeft();
 		}
 		
 	}

@@ -323,9 +323,16 @@
     </ResourceCompile>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="C:\Users\kevin\Desktop\BMP\brother_running.bmp" />
+    <Image Include="C:\Users\kevin\Desktop\BMP\brother_running2.bmp" />
+    <Image Include="C:\Users\kevin\Desktop\sister (1).bmp" />
+    <Image Include="C:\Users\kevin\Desktop\sister_running.bmp" />
+    <Image Include="C:\Users\kevin\Desktop\sister_running2.bmp" />
+    <Image Include="C:\Users\kevin\Downloads\sister (2).bmp" />
     <Image Include="res\bitmap10.bmp" />
     <Image Include="res\bitmap3.bmp" />
     <Image Include="res\bitmap6.bmp" />
+    <Image Include="res\bitmap8.bmp" />
     <Image Include="RES\final_map.bmp" />
     <Image Include="RES\gamestart.bmp" />
     <Image Include="RES\giraffe.bmp" />

@@ -184,7 +184,6 @@ int CAnimation::Left()
 	GAME_ASSERT(bmp.size() != 0,"CAnimation: Bitmaps must be loaded first.");
 	return x;
 }
-
 void CAnimation::OnMove()
 {
 	GAME_ASSERT(bmp.size() != 0,"CAnimation: Bitmaps must be loaded first.");
