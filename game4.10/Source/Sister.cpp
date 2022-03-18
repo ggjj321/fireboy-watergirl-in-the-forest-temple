@@ -28,7 +28,7 @@ void Sister::OnMove(bool leftBound, bool rightBound)
 }
 void Sister::LoadBitmap()
 {
-	peoplePic.LoadBitmap(IDB_BITMAP7, RGB(255, 255, 255));
+	peoplePic.LoadBitmap(IDB_SISTER, RGB(255, 255, 255));
 }
 
 void Sister::OnShow()

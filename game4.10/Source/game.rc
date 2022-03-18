@@ -114,7 +114,7 @@ IDB_FINALMAP            BITMAP                  "D:\\fireboy-watergirl-in-the-fo
 
 IDB_SISTER              BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister.bmp"
 
-IDB_BITMAP7             BITMAP                  "D:\\user\\Desktop\\OOP_picture\\BMP\\sister (1).bmp"
+// IDB_BITMAP7             BITMAP                  "D:\\user\\Desktop\\OOP_picture\\BMP\\sister (1).bmp"
 
 IDB_BITMAP8             BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister_running.bmp"
 

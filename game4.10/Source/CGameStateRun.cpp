@@ -101,7 +101,7 @@ namespace game_framework {
 	void CGameStateRun::OnShow()
 	{
 		map.OnShow(); // 顯示地圖
-		if (sister.GetIsMovingRight() == false)
+		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
 		{
 			sister.OnShow();
 		}
