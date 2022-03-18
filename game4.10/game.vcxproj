@@ -333,6 +333,7 @@
     <Image Include="res\bitmap3.bmp" />
     <Image Include="res\bitmap6.bmp" />
     <Image Include="res\bitmap8.bmp" />
+    <Image Include="RES\brother_running2.bmp" />
     <Image Include="RES\final_map.bmp" />
     <Image Include="RES\gamestart.bmp" />
     <Image Include="RES\giraffe.bmp" />

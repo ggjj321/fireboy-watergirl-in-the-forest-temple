@@ -234,5 +234,8 @@
     <Image Include="C:\Users\kevin\Downloads\sister (2).bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
+    <Image Include="RES\brother_running2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
