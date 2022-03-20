@@ -9,7 +9,7 @@ namespace game_framework {
 People::People() {}
 void People::OnMove(bool leftBound, bool rightBound, bool downBound)
 {
-	const int XSTEP_SIZE = 3;
+	const int XSTEP_SIZE = 6;
 	const int YSTEP_SIZE = 4;
 
 

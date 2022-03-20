@@ -12,9 +12,9 @@ Sister::Sister() {
 }
 void Sister::init() {
 	x = 33;
-	y = 17 * 2;
-	isMovingLeft = false;			// �O�_���b��������
-	isMovingRight = false;			// �O�_���b���k����
+	y = 340;
+	isMovingLeft = false;			
+	isMovingRight = false;			
 	isJumpimg = false;
 	isSetJumping = false;
 }
@@ -32,14 +32,14 @@ void Sister::AddingBitmap()
 void Sister::OnMoveAniRight()
 {
 	peopleAniR.SetTopLeft(x, y);
-	peopleAniR.SetDelayCount(3);
+	peopleAniR.SetDelayCount(2);
 	peopleAniR.OnShow();
 	peopleAniR.OnMove();
 }
 void Sister::OnMoveAniLeft()
 {
 	peopleAniL.SetTopLeft(x, y);
-	peopleAniL.SetDelayCount(3);
+	peopleAniL.SetDelayCount(2);
 	peopleAniL.OnShow();
 	peopleAniL.OnMove();
 }
