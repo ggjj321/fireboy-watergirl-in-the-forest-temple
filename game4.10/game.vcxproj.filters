@@ -129,10 +129,10 @@
     <ClCompile Include="Source\CGameStateRun.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\Sister.cpp">
+    <ClCompile Include="Source\people.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\people.cpp">
+    <ClCompile Include="Source\sister.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
