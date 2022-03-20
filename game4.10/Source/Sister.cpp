@@ -60,10 +60,10 @@ bool Sister::GetIsMovingRight() {
 }
 void Sister::AddingBitmap()
 {
-	peopleAniR.AddBitmap(IDB_BITMAP9, RGB(255, 255, 255)); //sister_running
-	peopleAniR.AddBitmap(IDB_BITMAP10, RGB(255, 255, 255)); //sister_running2
-	peopleAniL.AddBitmap(IDB_BITMAP11, RGB(255, 255, 255));
-	peopleAniL.AddBitmap(IDB_BITMAP12, RGB(255, 255, 255));
+	peopleAniR.AddBitmap(IDB_BITMAP9, RGB(255, 255, 255));  //right sister_running
+	peopleAniR.AddBitmap(IDB_BITMAP10, RGB(255, 255, 255)); //right sister_running2
+	peopleAniL.AddBitmap(IDB_BITMAP11, RGB(255, 255, 255)); //left sister_running
+	peopleAniL.AddBitmap(IDB_BITMAP12, RGB(255, 255, 255)); //left sister_running2
 }
 void Sister::OnMoveAniRight()
 {
