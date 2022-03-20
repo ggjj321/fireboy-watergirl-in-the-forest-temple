@@ -204,5 +204,38 @@
     <Image Include="RES\sister.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
+    <Image Include="RES\sister_running.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\sister_running2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap10.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap8.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\BMP\brother_running.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\BMP\brother_running2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\sister (1).bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\sister_running.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\sister_running2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Downloads\sister (2).bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\brother_running2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

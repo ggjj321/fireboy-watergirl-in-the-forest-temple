@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -20,39 +20,40 @@ namespace game_framework {
 	{
 	}
 
-	void CGameStateRun::OnMove()						// ²¾°Ê¹CÀ¸¤¸¯À
+	void CGameStateRun::OnMove()						// ï¿½ï¿½ï¿½Ê¹Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	{
-		const bool leftBound = map.isEmpty(sister.GetX() - 1, sister.GetY());   // §PÂ_¥ªÃä°}¦C¬O§_¬°0
-		const bool rightBound = map.isEmpty(sister.GetX() + 10, sister.GetY()); // §PÂ_¥kÃä°}¦C¬O§_¬°0
-		const bool downBound = map.isEmpty(sister.GetX(), sister.GetY() + 17 * 4);  // §PÂ_¤U¤è°}¦C¬O§_¬°0
+		const bool leftBound = map.isEmpty(sister.GetX() - 1, sister.GetY());   // ï¿½Pï¿½_ï¿½ï¿½ï¿½ï¿½}ï¿½Cï¿½Oï¿½_ï¿½ï¿½0
+		const bool rightBound = map.isEmpty(sister.GetX() + 10, sister.GetY()); // ï¿½Pï¿½_ï¿½kï¿½ï¿½}ï¿½Cï¿½Oï¿½_ï¿½ï¿½0
+		const bool downBound = map.isEmpty(sister.GetX(), sister.GetY() + 17 * 4);  // ï¿½Pï¿½_ï¿½Uï¿½ï¿½}ï¿½Cï¿½Oï¿½_ï¿½ï¿½0
 		sister.OnMove(leftBound, rightBound, downBound);
 	}
 
-	void CGameStateRun::OnInit()  								// ¹CÀ¸ªºªì­È¤Î¹Ï§Î³]©w
+	void CGameStateRun::OnInit()  								// ï¿½Cï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¤Î¹Ï§Î³]ï¿½w
 	{
-		ShowInitProgress(33);	// ±µ­Ó«e¤@­Óª¬ºAªº¶i«×¡A¦¹³B¶i«×µø¬°33%
+		ShowInitProgress(33);	// ï¿½ï¿½ï¿½Ó«eï¿½@ï¿½Óªï¿½ï¿½Aï¿½ï¿½ï¿½iï¿½×¡Aï¿½ï¿½ï¿½Bï¿½iï¿½×µï¿½ï¿½ï¿½33%
 		//
-		// ¶}©l¸ü¤J¸ê®Æ
+		// ï¿½}ï¿½lï¿½ï¿½ï¿½Jï¿½ï¿½ï¿½
 		//
 		map.LoadBitMap();
 		sister.LoadBitmap();
+		sister.AddingBitmap();
 		//
-		// §¹¦¨³¡¤ÀLoading°Ê§@¡A´£°ª¶i«×
+		// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Loadingï¿½Ê§@ï¿½Aï¿½ï¿½ï¿½ï¿½ï¿½iï¿½ï¿½
 		//
 		ShowInitProgress(50);
-		Sleep(300); // ©ñºC¡A¥H«K¬Ý²M·¡¶i«×¡A¹ê»Ú¹CÀ¸½Ð§R°£¦¹Sleep							
+		Sleep(300); // ï¿½ï¿½Cï¿½Aï¿½Hï¿½Kï¿½Ý²Mï¿½ï¿½ï¿½iï¿½×¡Aï¿½ï¿½Ú¹Cï¿½ï¿½ï¿½Ð§Rï¿½ï¿½ï¿½ï¿½Sleep							
 
 		//
-		// ¦¹OnInit°Ê§@·|±µ¨ìCGameStaterOver::OnInit()¡A©Ò¥H¶i«×ÁÙ¨S¨ì100%
+		// ï¿½ï¿½OnInitï¿½Ê§@ï¿½|ï¿½ï¿½ï¿½ï¿½CGameStaterOver::OnInit()ï¿½Aï¿½Ò¥Hï¿½iï¿½ï¿½ï¿½Ù¨Sï¿½ï¿½100%
 		//
 	}
 
 	void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
-		const char KEY_LEFT = 0x25; // keyboard¥ª½bÀY
-		const char KEY_UP = 0x26; // keyboard¤W½bÀY
-		const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
-		const char KEY_DOWN = 0x28; // keyboard¤U½bÀY
+		const char KEY_LEFT = 0x25; // keyboardï¿½ï¿½ï¿½bï¿½Y
+		const char KEY_UP = 0x26; // keyboardï¿½Wï¿½bï¿½Y
+		const char KEY_RIGHT = 0x27; // keyboardï¿½kï¿½bï¿½Y
+		const char KEY_DOWN = 0x28; // keyboardï¿½Uï¿½bï¿½Y
 		if (nChar == KEY_LEFT)
 			sister.SetMovingLeft(true);
 		if (nChar == KEY_RIGHT)
@@ -60,18 +61,18 @@ namespace game_framework {
 		if (nChar == KEY_UP) {
 			if (sister.isSetJumping == false) {
 				sister.SetJumpimg(true);
-				sister.jumpinVelocity = 13; // ³]©w¸õÅDªì³t
-				sister.isSetJumping = true; // ¤w¸g¸õÅD¹L
+				sister.jumpinVelocity = 13; // ï¿½]ï¿½wï¿½ï¿½ï¿½Dï¿½ï¿½t
+				sister.isSetJumping = true; // ï¿½wï¿½gï¿½ï¿½ï¿½Dï¿½L
 			}
 		}
 	}
 
 	void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
-		const char KEY_LEFT = 0x25; // keyboard¥ª½bÀY
-		const char KEY_UP = 0x26; // keyboard¤W½bÀY
-		const char KEY_RIGHT = 0x27; // keyboard¥k½bÀY
-		const char KEY_DOWN = 0x28; // keyboard¤U½bÀY
+		const char KEY_LEFT = 0x25; // keyboardï¿½ï¿½ï¿½bï¿½Y
+		const char KEY_UP = 0x26; // keyboardï¿½Wï¿½bï¿½Y
+		const char KEY_RIGHT = 0x27; // keyboardï¿½kï¿½bï¿½Y
+		const char KEY_DOWN = 0x28; // keyboardï¿½Uï¿½bï¿½Y
 		if (nChar == KEY_LEFT)
 			sister.SetMovingLeft(false);
 		if (nChar == KEY_RIGHT)
@@ -82,44 +83,45 @@ namespace game_framework {
 		}
 	}
 
-	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§@
+	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  // ï¿½Bï¿½zï¿½Æ¹ï¿½ï¿½ï¿½ï¿½Ê§@
 	{
 
 	}
 
-	void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// ³B²z·Æ¹«ªº°Ê§@
+	void CGameStateRun::OnLButtonUp(UINT nFlags, CPoint point)	// ï¿½Bï¿½zï¿½Æ¹ï¿½ï¿½ï¿½ï¿½Ê§@
 	{
 
 	}
 
-	void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// ³B²z·Æ¹«ªº°Ê§@
+	void CGameStateRun::OnMouseMove(UINT nFlags, CPoint point)	// ï¿½Bï¿½zï¿½Æ¹ï¿½ï¿½ï¿½ï¿½Ê§@
 	{
 
 	}
 
-	void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // ³B²z·Æ¹«ªº°Ê§@
+	void CGameStateRun::OnRButtonDown(UINT nFlags, CPoint point)  // ï¿½Bï¿½zï¿½Æ¹ï¿½ï¿½ï¿½ï¿½Ê§@
 	{
 
 	}
 
-	void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// ³B²z·Æ¹«ªº°Ê§@
+	void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	// ï¿½Bï¿½zï¿½Æ¹ï¿½ï¿½ï¿½ï¿½Ê§@
 	{
 
 	}
 
 	void CGameStateRun::OnShow()
 	{
-		map.OnShow(); // Åã¥Ü¦a¹Ï
+		map.OnShow(); // ï¿½ï¿½Ü¦aï¿½ï¿½
 		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
 		{
 			sister.OnShow();
 		}
-		else if (sister.GetIsMovingRight() == true)
+		else if(sister.GetIsMovingRight() == true)
 		{
 			sister.OnMoveAniRight();
 		}
 		else if (sister.GetIsMovingLeft() == true) {
 			sister.OnMoveAniLeft();
 		}
+		
 	}
 }

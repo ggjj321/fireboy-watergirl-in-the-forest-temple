@@ -1,4 +1,4 @@
-#include "stdafx.h"
+ï»¿#include "stdafx.h"
 #include "Resource.h"
 #include <mmsystem.h>
 #include <ddraw.h>
@@ -13,14 +13,14 @@ Sister::Sister() {
 void Sister::init() {
 	x = 33;
 	y = 17 * 2;
-	isMovingLeft = false;			// ¬O§_¥¿¦b©¹¥ª²¾°Ê
-	isMovingRight = false;			// ¬O§_¥¿¦b©¹¥k²¾°Ê
+	isMovingLeft = false;			// ï¿½Oï¿½_ï¿½ï¿½ï¿½bï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	isMovingRight = false;			// ï¿½Oï¿½_ï¿½ï¿½ï¿½bï¿½ï¿½ï¿½kï¿½ï¿½ï¿½ï¿½
 	isJumpimg = false;
 	isSetJumping = false;
 }
 void Sister::LoadBitmap()
 {
-	peoplePic.LoadBitmap(IDB_SISTER);
+	peoplePic.LoadBitmap(IDB_BITMAP8, RGB(255, 255, 255));
 }
 void Sister::AddingBitmap()
 {

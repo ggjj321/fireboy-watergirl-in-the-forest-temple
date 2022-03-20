@@ -106,13 +106,21 @@ IDB_LOADING             BITMAP                  "..\\res\\loading.bmp"
 
 IDB_PORING              BITMAP                  "..\\res\\bitmap3.bmp"
 
-IDB_BITMAP3             BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\bitmap3.bmp"
+IDB_BITMAP3             BITMAP                  "..\\res\\bitmap3.bmp"
 
-IDB_GAMESTARTVIEW       BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\gamestart.bmp"
+IDB_GAMESTARTVIEW       BITMAP                  "..\\res\\gamestart.bmp"
 
-IDB_FINALMAP            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\final_map.bmp"
+IDB_FINALMAP            BITMAP                  "..\\res\\final_map.bmp"
 
-IDB_SISTER              BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister.bmp"
+IDB_BITMAP8             BITMAP                  "..\\res\\brother_running2.bmp"
+
+IDB_BITMAP9             BITMAP                  "..\\res\\sister_right_running.bmp"
+
+IDB_BITMAP10            BITMAP                  "..\\res\\sister_right_running2.bmp"
+
+IDB_BITMAP11            BITMAP                  "..\\res\\sister_left_running.bmp"
+
+IDB_BITMAP12            BITMAP                  "..\\res\\sister_left_running2.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
