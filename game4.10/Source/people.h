@@ -2,8 +2,6 @@ namespace game_framework {
 	class People {
 	public:
 		People();
-		void init();
-		void LoadBitmap();
 		void OnMove(bool leftBound, bool rightBound, bool downBound);
 		void OnShow();
 		void SetMovingLeft(bool flag);	  // 設定是否正在往左移動
@@ -13,9 +11,12 @@ namespace game_framework {
 		int GetY();
 		int jumpinVelocity;
 		bool isSetJumping;
-	private:
+		bool GetIsMovingLeft();
+		bool GetIsMovingRight();
+	protected:
 		int x, y; // 座標
 		CMovingBitmap peoplePic;
+		CAnimation peopleAniR, peopleAniL;
 		bool isMovingLeft;			// 是否正在往左移動
 		bool isMovingRight;			// 是否正在往右移動
 		bool isJumpimg;			    // 是否正在往上移動  	

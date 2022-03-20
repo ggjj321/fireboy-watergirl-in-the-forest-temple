@@ -7,14 +7,6 @@
 #include "people.h"
 namespace game_framework {
 People::People() {}
-void People::init() {
-	x = 33;
-	y = 17 * 2;
-	isMovingLeft = false;			// 是否正在往左移動
-	isMovingRight = false;			// 是否正在往右移動
-	isJumpimg = false;
-	isSetJumping = false;
-}
 void People::OnMove(bool leftBound, bool rightBound, bool downBound)
 {
 	const int XSTEP_SIZE = 3;
@@ -34,10 +26,6 @@ void People::OnMove(bool leftBound, bool rightBound, bool downBound)
 	if (isMovingRight && rightBound)
 		x += XSTEP_SIZE;
 
-}
-void People::LoadBitmap()
-{
-	peoplePic.LoadBitmap(IDB_SISTER);
 }
 void People::OnShow()
 {
@@ -62,5 +50,11 @@ int People::GetX() {
 }
 int People::GetY() {
 	return y;
+}
+bool People::GetIsMovingLeft() {
+	return isMovingLeft;
+}
+bool People::GetIsMovingRight() {
+	return isMovingRight;
 }
 }

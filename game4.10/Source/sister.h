@@ -3,8 +3,11 @@ namespace game_framework {
 	class Sister : public People {
 	public:
 		Sister();
-		
-	private:	  	
+		void init();
+		void LoadBitmap();  	
+		void OnMoveAniRight();
+		void OnMoveAniLeft();
+		void AddingBitmap();
 	};
 
 }
