@@ -2,7 +2,7 @@ namespace game_framework {
 	class People {
 	public:
 		People();
-		void OnMove(bool leftBound, bool rightBound, bool downBound);
+		void OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound);
 		void OnShow();
 		void SetMovingLeft(bool flag);	  // 設定是否正在往左移動
 		void SetMovingRight(bool flag);   // 設定是否正在往右移動

@@ -24,8 +24,9 @@ namespace game_framework {
 	{
 		const bool leftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);   
 		const bool rightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17); 
-		const bool downBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 17 * 3);  
-		sister.OnMove(leftBound, rightBound, downBound);
+		const bool downBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 60);
+		const bool upBound = map.isEmpty(sister.GetX(), sister.GetY());
+		sister.OnMove(leftBound, rightBound, downBound, upBound);
 	}
 
 	void CGameStateRun::OnInit()  								
@@ -50,11 +51,7 @@ namespace game_framework {
 		if (nChar == KEY_RIGHT)
 			sister.SetMovingRight(true);
 		if (nChar == KEY_UP) {
-			if (sister.isSetJumping == false) {
-				sister.SetJumpimg(true);
-				sister.jumpinVelocity = 13; 
-				sister.isSetJumping = true; 
-			}
+			sister.SetJumpimg(true);
 		}
 	}
 
@@ -68,10 +65,6 @@ namespace game_framework {
 			sister.SetMovingLeft(false);
 		if (nChar == KEY_RIGHT)
 			sister.SetMovingRight(false);
-		if (nChar == KEY_UP) {
-			sister.SetJumpimg(false);
-			sister.isSetJumping = false;
-		}
 	}
 
 	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  

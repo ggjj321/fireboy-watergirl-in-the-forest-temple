@@ -13,6 +13,7 @@ Sister::Sister() {
 void Sister::init() {
 	x = 33;
 	y = 340;
+	jumpinVelocity = 0;
 	isMovingLeft = false;			
 	isMovingRight = false;			
 	isJumpimg = false;

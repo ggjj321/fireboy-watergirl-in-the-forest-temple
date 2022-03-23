@@ -7,18 +7,28 @@
 #include "people.h"
 namespace game_framework {
 People::People() {}
-void People::OnMove(bool leftBound, bool rightBound, bool downBound)
+void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound)
 {
 	const int XSTEP_SIZE = 6;
 	const int YSTEP_SIZE = 4;
 
 
-	if (downBound) y += YSTEP_SIZE; // 如果腳下為空，根據重力往下掉
+	if (downBound && (isJumpimg == false)) y += YSTEP_SIZE; // 如果腳下為空，根據重力往下掉
 
 	if (isJumpimg) {
-		y -= jumpinVelocity;
-		jumpinVelocity -= 1;
-		if (jumpinVelocity == 0) isJumpimg = false;
+		if (upBound == false) {
+			isJumpimg = false;
+		}
+		else {
+			if (jumpinVelocity == 0 && (downBound == false)) { // 在地上跳起
+				jumpinVelocity = 10;
+			}
+			else if (jumpinVelocity > 0 && (downBound == true)) { // 在空中
+				jumpinVelocity -= 1;
+			}
+			else if (jumpinVelocity == 0 && (downBound == true)) isJumpimg = false; // 結束跳躍
+			y -= jumpinVelocity;
+		}
 	}
 
 	if (isMovingLeft && leftBound)
