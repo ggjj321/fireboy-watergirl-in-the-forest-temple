@@ -1,3 +1,5 @@
+#ifndef PEOPLE
+#define PEOPLE
 namespace game_framework {
 	class People {
 	public:
@@ -21,5 +23,5 @@ namespace game_framework {
 		bool isMovingRight;			// 是否正在往右移動
 		bool isJumpimg;			    // 是否正在往上移動  	
 	};
-
 }
+#endif

@@ -22,49 +22,86 @@ namespace game_framework {
 
 	void CGameStateRun::OnMove()						
 	{
-		const bool leftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);   
-		const bool rightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17); 
-		const bool downBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 60);
-		const bool upBound = map.isEmpty(sister.GetX(), sister.GetY());
-		sister.OnMove(leftBound, rightBound, downBound, upBound);
+		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);   
+		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
+		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 60);
+		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
+		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound);
+
+		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
+		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
+		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 60);
+		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
+		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound);
+
 	}
 
 	void CGameStateRun::OnInit()  								
 	{
 		ShowInitProgress(33);	
+
 		map.LoadBitMap();
+
 		sister.LoadBitmap();
 		sister.AddingBitmap();
 		
+		brother.LoadBitmap();
+		brother.AddingBitmap();
+
 		ShowInitProgress(50);
 		Sleep(300); 
 	}
 
 	void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
-		const char KEY_LEFT = 0x25; 
-		const char KEY_UP = 0x26;
-		const char KEY_RIGHT = 0x27; 
-		const char KEY_DOWN = 0x28; 
-		if (nChar == KEY_LEFT)
+		const char SISTER_KEY_LEFT = 0x25; 
+		const char SISTER_KEY_UP = 0x26;
+		const char SISTER_KEY_RIGHT = 0x27;
+		const char SISTER_KEY_DOWN = 0x28;
+
+		const char BROTHER_KEY_LEFT = 0x41;
+		const char BROTHER_KEY_UP = 0x57;
+		const char BROTHER_KEY_RIGHT = 0x44;
+		const char BROTHER_KEY_DOWN = 0x53;
+
+		if (nChar == SISTER_KEY_LEFT)
 			sister.SetMovingLeft(true);
-		if (nChar == KEY_RIGHT)
+		if (nChar == SISTER_KEY_RIGHT)
 			sister.SetMovingRight(true);
-		if (nChar == KEY_UP) {
+		if (nChar == SISTER_KEY_UP) {
 			sister.SetJumpimg(true);
+		}
+
+		if (nChar == BROTHER_KEY_LEFT)
+			brother.SetMovingLeft(true);
+		if (nChar == BROTHER_KEY_RIGHT)
+			brother.SetMovingRight(true);
+		if (nChar == BROTHER_KEY_UP) {
+			brother.SetJumpimg(true);
 		}
 	}
 
 	void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
-		const char KEY_LEFT = 0x25;
-		const char KEY_UP = 0x26; 
-		const char KEY_RIGHT = 0x27; 
-		const char KEY_DOWN = 0x28; 
-		if (nChar == KEY_LEFT)
+		const char SISTER_KEY_LEFT = 0x25;
+		const char SISTER_KEY_UP = 0x26;
+		const char SISTER_KEY_RIGHT = 0x27;
+		const char SISTER_KEY_DOWN = 0x28;
+
+		const char BROTHER_KEY_LEFT = 0x41;
+		const char BROTHER_KEY_UP = 0x57;
+		const char BROTHER_KEY_RIGHT = 0x44;
+		const char BROTHER_KEY_DOWN = 0x53;
+
+		if (nChar == SISTER_KEY_LEFT)
 			sister.SetMovingLeft(false);
-		if (nChar == KEY_RIGHT)
+		if (nChar == SISTER_KEY_RIGHT)
 			sister.SetMovingRight(false);
+
+		if (nChar == BROTHER_KEY_LEFT)
+			brother.SetMovingLeft(false);
+		if (nChar == BROTHER_KEY_RIGHT)
+			brother.SetMovingRight(false);
 	}
 
 	void CGameStateRun::OnLButtonDown(UINT nFlags, CPoint point)  
@@ -98,14 +135,16 @@ namespace game_framework {
 		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
 		{
 			sister.OnShow();
+			brother.OnShow();
 		}
 		else if(sister.GetIsMovingRight() == true)
 		{
 			sister.OnMoveAniRight();
+			brother.OnMoveAniRight();
 		}
 		else if (sister.GetIsMovingLeft() == true) {
 			sister.OnMoveAniLeft();
+			brother.OnMoveAniLeft();
 		}
-		
 	}
 }
