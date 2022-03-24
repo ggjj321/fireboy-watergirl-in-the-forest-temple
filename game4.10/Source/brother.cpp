@@ -12,7 +12,7 @@ Brother::Brother() {
 }
 void Brother::init() {
 	x = 33;
-	y = 370;
+	y = 400;
 	jumpinVelocity = 0;
 	isMovingLeft = false;			
 	isMovingRight = false;			
@@ -25,10 +25,10 @@ void Brother::LoadBitmap()
 }
 void Brother::AddingBitmap()
 {
-	peopleAniR.AddBitmap(IDB_BITMAP9, RGB(255, 255, 255));  //right sister_running
-	peopleAniR.AddBitmap(IDB_BITMAP10, RGB(255, 255, 255)); //right sister_running2
-	peopleAniL.AddBitmap(IDB_BITMAP11, RGB(255, 255, 255)); //left sister_running
-	peopleAniL.AddBitmap(IDB_BITMAP12, RGB(255, 255, 255)); //left sister_running2
+	peopleAniR.AddBitmap(IDB_BITMAP15, RGB(255, 255, 255));  //right sister_running
+	peopleAniR.AddBitmap(IDB_BITMAP16, RGB(255, 255, 255)); //right sister_running2
+	peopleAniL.AddBitmap(IDB_BITMAP13, RGB(255, 255, 255)); //left sister_running
+	peopleAniL.AddBitmap(IDB_BITMAP14, RGB(255, 255, 255)); //left sister_running2
 }
 void Brother::OnMoveAniRight()
 {

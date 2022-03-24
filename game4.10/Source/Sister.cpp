@@ -12,7 +12,7 @@ Sister::Sister() {
 }
 void Sister::init() {
 	x = 33;
-	y = 340;
+	y = 345;
 	jumpinVelocity = 0;
 	isMovingLeft = false;			
 	isMovingRight = false;			
@@ -21,14 +21,14 @@ void Sister::init() {
 }
 void Sister::LoadBitmap()
 {
-	peoplePic.LoadBitmap(IDB_BITMAP8, RGB(255, 255, 255));
+	peoplePic.LoadBitmap(IDB_BITMAP19, RGB(255, 255, 255));
 }
 void Sister::AddingBitmap()
 {
-	peopleAniR.AddBitmap(IDB_BITMAP9, RGB(255, 255, 255));  //right sister_running
-	peopleAniR.AddBitmap(IDB_BITMAP10, RGB(255, 255, 255)); //right sister_running2
-	peopleAniL.AddBitmap(IDB_BITMAP11, RGB(255, 255, 255)); //left sister_running
-	peopleAniL.AddBitmap(IDB_BITMAP12, RGB(255, 255, 255)); //left sister_running2
+	peopleAniR.AddBitmap(IDB_BITMAP20, RGB(255, 255, 255));  //right sister_running
+	peopleAniR.AddBitmap(IDB_BITMAP21, RGB(255, 255, 255)); //right sister_running2
+	peopleAniL.AddBitmap(IDB_BITMAP17, RGB(255, 255, 255)); //left sister_running
+	peopleAniL.AddBitmap(IDB_BITMAP18, RGB(255, 255, 255)); //left sister_running2
 }
 void Sister::OnMoveAniRight()
 {
