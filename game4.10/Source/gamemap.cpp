@@ -73,10 +73,22 @@ bool CGameMap::isFull(int x, int y) noexcept {
     if (mapArray[gy][gx] == 1)return TRUE;
     else return FALSE;
 }
-bool CGameMap::isRedWater(int x, int y) noexcept {
+bool CGameMap::isRedWater(int x, int y) noexcept {  // ¬õ¤ô:3
     const int gx = (int)(x / 13.61); // 640 / 47
     const int gy = (int)(y / 16.55); // 480 / 29
     if (mapArray[gy][gx] == 3)return TRUE;
+    else return FALSE;
+}
+bool CGameMap::isBlueWater(int x, int y) noexcept {  // ÂÅ¤ô:4
+    const int gx = (int)(x / 13.61); // 640 / 47
+    const int gy = (int)(y / 16.55); // 480 / 29
+    if (mapArray[gy][gx] == 4)return TRUE;
+    else return FALSE;
+}
+bool CGameMap::isGreenWater(int x, int y) noexcept {  // ºñ¤ô:5
+    const int gx = (int)(x / 13.61); // 640 / 47
+    const int gy = (int)(y / 16.55); // 480 / 29
+    if (mapArray[gy][gx] == 5)return TRUE;
     else return FALSE;
 }
 void CGameMap::ChangeArray(int x, int y) {

@@ -18,6 +18,8 @@ namespace game_framework {
 
 	void CGameStateRun::OnBeginState()
 	{
+		sister.init();
+		brother.init();
 	}
 
 	void CGameStateRun::OnMove()						
@@ -34,6 +36,14 @@ namespace game_framework {
 		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
 		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound);
 
+		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + 40);
+		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + 40);
+
+		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + 40);
+		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + 40);
+
+		if(sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
+		if(brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 	}
 
 	void CGameStateRun::OnInit()  								
@@ -44,9 +54,11 @@ namespace game_framework {
 
 		sister.LoadBitmap();
 		sister.AddingBitmap();
-		
+		sister.init();
+
 		brother.LoadBitmap();
 		brother.AddingBitmap();
+		brother.init();
 
 		ShowInitProgress(50);
 		Sleep(300); 
@@ -132,33 +144,28 @@ namespace game_framework {
 	void CGameStateRun::OnShow()
 	{
 		map.OnShow();
-		if (sister.GetIsAlive() == true && brother.GetIsAlive() == true) {
-			if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
-			{
-				sister.OnShow();
-			}
-			else if (sister.GetIsMovingRight() == true)
-			{
-				sister.OnMoveAniRight();
-			}
-			else if (sister.GetIsMovingLeft() == true) {
-				sister.OnMoveAniLeft();
-			}
-
-			if (brother.GetIsMovingRight() == false && brother.GetIsMovingLeft() == false)
-			{
-				brother.OnShow();
-			}
-			else if (brother.GetIsMovingRight() == true)
-			{
-				brother.OnMoveAniRight();
-			}
-			else if (brother.GetIsMovingLeft() == true) {
-				brother.OnMoveAniLeft();
-			}
+		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
+		{
+			sister.OnShow();
 		}
-		else {
-			GotoGameState(GAME_STATE_OVER);
+		else if (sister.GetIsMovingRight() == true)
+		{
+			sister.OnMoveAniRight();
+		}
+		else if (sister.GetIsMovingLeft() == true) {
+			sister.OnMoveAniLeft();
+		}
+
+		if (brother.GetIsMovingRight() == false && brother.GetIsMovingLeft() == false)
+		{
+			brother.OnShow();
+		}
+		else if (brother.GetIsMovingRight() == true)
+		{
+			brother.OnMoveAniRight();
+		}
+		else if (brother.GetIsMovingLeft() == true) {
+			brother.OnMoveAniLeft();
 		}
 	}
 }

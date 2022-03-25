@@ -15,7 +15,6 @@ void Brother::init() {
 	y = 400;
 	jumpinVelocity = 0;
 	downVelocity = 0;
-	isAlive = true;
 	isMovingLeft = false;			
 	isMovingRight = false;			
 	isJumpimg = false;
