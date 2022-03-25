@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2022-03-06T15:11:17.758Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.102 Safari/537.36" etag="e2Pvl3qevDis-QogCF1F" version="16.6.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2022-03-11T02:05:07.481Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99.0.4844.51 Safari/537.36" etag="PMME2iB_S0frGlLEeAHW" version="16.6.5" type="github" pages="2">
   <diagram name="Page-1" id="58cdce13-f638-feb5-8d6f-7d28b1aa9fa0">
-    <mxGraphModel dx="942" dy="672" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
+    <mxGraphModel dx="580" dy="361" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100" pageHeight="850" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -124,12 +124,12 @@
     </mxGraphModel>
   </diagram>
   <diagram id="L0PzsGuGTGsVRcPgpUXo" name="Page-2">
-    <mxGraphModel dx="538" dy="384" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="782" dy="428" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="kgHkqOe57O5c9QWE5NV3-0" />
         <mxCell id="kgHkqOe57O5c9QWE5NV3-1" parent="kgHkqOe57O5c9QWE5NV3-0" />
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-2" value="人" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="kgHkqOe57O5c9QWE5NV3-1" vertex="1">
-          <mxGeometry x="60" y="60" width="260" height="610" as="geometry" />
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-2" value="姊姊" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="kgHkqOe57O5c9QWE5NV3-1" vertex="1">
+          <mxGeometry x="60" y="60" width="260" height="792" as="geometry" />
         </mxCell>
         <mxCell id="kgHkqOe57O5c9QWE5NV3-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="26" width="260" height="8" as="geometry" />
@@ -137,74 +137,95 @@
         <mxCell id="kgHkqOe57O5c9QWE5NV3-3" value="- 座標:int&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="34" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-22" value="- 吃到的寶石數:int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="a1R-fd5c5vSJXZJ-ZrUu-0" value="- 動畫:CAnmation" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="kgHkqOe57O5c9QWE5NV3-2">
           <mxGeometry y="60" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-25" value="- 左右移速度:int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
-          <mxGeometry y="86" width="260" height="22" as="geometry" />
+        <mxCell id="a1R-fd5c5vSJXZJ-ZrUu-2" value="- 是否正在向左移動" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="kgHkqOe57O5c9QWE5NV3-2">
+          <mxGeometry y="86" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-26" value="- 受重力掉落速度:int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
-          <mxGeometry y="108" width="260" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-10" value="- 存活狀態:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
-          <mxGeometry y="134" width="260" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-12" value="- 是否在移動:bool&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
-          <mxGeometry y="160" width="260" height="26" as="geometry" />
+        <mxCell id="a1R-fd5c5vSJXZJ-ZrUu-4" value="- 是否正在向右移動" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="kgHkqOe57O5c9QWE5NV3-2">
+          <mxGeometry y="112" width="260" height="26" as="geometry" />
         </mxCell>
         <mxCell id="kgHkqOe57O5c9QWE5NV3-13" value="- 是否在跳躍:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="138" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-25" value="- 左右移速度:int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="164" width="260" height="22" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-22" value="- 吃到的寶石數:int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="186" width="260" height="26" as="geometry" />
         </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-26" value="- 受重力掉落速度:int" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="212" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-10" value="- 存活狀態:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="238" width="260" height="26" as="geometry" />
+        </mxCell>
         <mxCell id="kgHkqOe57O5c9QWE5NV3-7" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
-          <mxGeometry y="212" width="260" height="8" as="geometry" />
+          <mxGeometry y="264" width="260" height="8" as="geometry" />
         </mxCell>
         <mxCell id="kgHkqOe57O5c9QWE5NV3-5" value="+ 初始化狀態:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
-          <mxGeometry y="220" width="260" height="26" as="geometry" />
+          <mxGeometry y="272" width="260" height="26" as="geometry" />
         </mxCell>
         <mxCell id="kgHkqOe57O5c9QWE5NV3-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=1.019;entryY=0.445;entryDx=0;entryDy=0;entryPerimeter=0;" parent="kgHkqOe57O5c9QWE5NV3-2" source="kgHkqOe57O5c9QWE5NV3-5" target="kgHkqOe57O5c9QWE5NV3-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-23" value="+ 處理移動:void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
-          <mxGeometry y="246" width="260" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-30" value="+ 累積吃到的寶石:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
-          <mxGeometry y="272" width="260" height="26" as="geometry" />
-        </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-24" value="+ 設定左右移動速度:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-23" value="+ OnMove:void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="298" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-27" value="+ 設定受重力落下速度:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="a1R-fd5c5vSJXZJ-ZrUu-6" value="+ LoadBitmap:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="kgHkqOe57O5c9QWE5NV3-2">
           <mxGeometry y="324" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-31" value="+ 碰到相反水或綠水死掉:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="a1R-fd5c5vSJXZJ-ZrUu-5" value="+ OnShow:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="kgHkqOe57O5c9QWE5NV3-2">
           <mxGeometry y="350" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-32" value="+ 判斷腳下是否為地板:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="a1R-fd5c5vSJXZJ-ZrUu-8" value="+ 設定是否在往右移動:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="kgHkqOe57O5c9QWE5NV3-2">
           <mxGeometry y="376" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-34" value="+ 根據鍵值判斷移動或跳躍:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="a1R-fd5c5vSJXZJ-ZrUu-9" value="+ 設定是否在往左移動:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="kgHkqOe57O5c9QWE5NV3-2">
           <mxGeometry y="402" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-35" value="+ 判斷前進路線是否有障礙物或邊界:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="a1R-fd5c5vSJXZJ-ZrUu-7" value="+ 設定是否在跳躍:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;fontColor=#000000;" vertex="1" parent="kgHkqOe57O5c9QWE5NV3-2">
           <mxGeometry y="428" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-16" value="+ 判斷是否到達門口:bool&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-30" value="+ 累積吃到的寶石:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="454" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-17" value="+ 判斷是否在左下斜坡上:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-24" value="+ 設定左右移動速度:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="480" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-18" value="+ 判斷是否在右下斜坡上:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-27" value="+ 設定受重力落下速度:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="506" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-19" value="+ 判斷是否被風吹:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-31" value="+ 碰到相反水或綠水死掉:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="532" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-20" value="+ 判斷腳下地板或障礙物是否受移動:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-32" value="+ 判斷腳下是否為地板:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="558" width="260" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="kgHkqOe57O5c9QWE5NV3-28" value="+ bitmap 顯示:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-34" value="+ 根據鍵值判斷移動或跳躍:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
           <mxGeometry y="584" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-35" value="+ 判斷前進路線是否有障礙物或邊界:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="610" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-16" value="+ 判斷是否到達門口:bool&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="636" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-17" value="+ 判斷是否在左下斜坡上:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="662" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-18" value="+ 判斷是否在右下斜坡上:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="688" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-19" value="+ 判斷是否被風吹:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="714" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-20" value="+ 判斷腳下地板或障礙物是否受移動:bool" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="740" width="260" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="kgHkqOe57O5c9QWE5NV3-28" value="+ bitmap 顯示:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="kgHkqOe57O5c9QWE5NV3-2" vertex="1">
+          <mxGeometry y="766" width="260" height="26" as="geometry" />
         </mxCell>
         <mxCell id="kgHkqOe57O5c9QWE5NV3-36" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" parent="kgHkqOe57O5c9QWE5NV3-1" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -268,18 +289,18 @@
           </mxGeometry>
         </mxCell>
         <mxCell id="pLhw1WrPGHpHT17fWSdM-0" value="Classname" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=26;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;" parent="kgHkqOe57O5c9QWE5NV3-1" vertex="1">
-          <mxGeometry x="60" y="790" width="160" height="294" as="geometry" />
+          <mxGeometry x="60" y="875" width="160" height="294" as="geometry" />
         </mxCell>
         <mxCell id="pLhw1WrPGHpHT17fWSdM-1" value="- 地圖邊界陣列:2維 int 陣列 " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
           <mxGeometry y="26" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="LzDDlIQn_EugfpAk3l3z-0" value="- 每一關的陣列:2維 int 陣列&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-0" value="- 每一關的陣列:2維 int 陣列&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
           <mxGeometry y="52" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="LzDDlIQn_EugfpAk3l3z-1" value="- 當前是第幾關:int " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-1" value="- 當前是第幾關:int " style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
           <mxGeometry y="78" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="LzDDlIQn_EugfpAk3l3z-2" value="- 每一關的bitmap" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-2" value="- 每一關的bitmap" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
           <mxGeometry y="104" width="160" height="26" as="geometry" />
         </mxCell>
         <mxCell id="pLhw1WrPGHpHT17fWSdM-2" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
@@ -294,13 +315,13 @@
         <mxCell id="pLhw1WrPGHpHT17fWSdM-5" value="+ 陣列值改變void&#xa;" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
           <mxGeometry y="190" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="LzDDlIQn_EugfpAk3l3z-5" value="+ 讀取關卡資料:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-5" value="+ 讀取關卡資料:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
           <mxGeometry y="216" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="LzDDlIQn_EugfpAk3l3z-6" value="+ 上一關:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-6" value="+ 上一關:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
           <mxGeometry y="242" width="160" height="26" as="geometry" />
         </mxCell>
-        <mxCell id="LzDDlIQn_EugfpAk3l3z-7" value="+ 下一關:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" vertex="1" parent="pLhw1WrPGHpHT17fWSdM-0">
+        <mxCell id="LzDDlIQn_EugfpAk3l3z-7" value="+ 下一關:void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="pLhw1WrPGHpHT17fWSdM-0" vertex="1">
           <mxGeometry y="268" width="160" height="26" as="geometry" />
         </mxCell>
       </root>

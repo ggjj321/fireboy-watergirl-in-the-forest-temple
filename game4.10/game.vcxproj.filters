@@ -117,15 +117,6 @@
     <ClCompile Include="Source\StdAfx.cpp">
       <Filter>MFC</Filter>
     </ClCompile>
-    <ClCompile Include="Source\CEraser.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CBall.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
-    <ClCompile Include="Source\CBouncingBall.cpp">
-      <Filter>MyGame</Filter>
-    </ClCompile>
     <ClCompile Include="Source\gamemap.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
@@ -136,6 +127,15 @@
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\CGameStateRun.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\people.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\sister.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\brother.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -164,15 +164,6 @@
     <ClInclude Include="Source\StdAfx.h">
       <Filter>MFC</Filter>
     </ClInclude>
-    <ClInclude Include="Source\CEraser.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CBall.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
-    <ClInclude Include="Source\CBouncingBall.h">
-      <Filter>MyGame</Filter>
-    </ClInclude>
     <ClInclude Include="Source\gamemap.h">
       <Filter>MyGame</Filter>
     </ClInclude>
@@ -183,6 +174,15 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\CGameStateRun.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\people.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\sister.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\brother.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -202,6 +202,63 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\final_map.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap6.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\sister.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\sister_running.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\sister_running2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap10.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap8.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\BMP\brother_running.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\BMP\brother_running2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\sister (1).bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\sister_running.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Desktop\sister_running2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="C:\Users\kevin\Downloads\sister (2).bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\brother_running2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\brother.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\brother_leftrunning1.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\brother_leftrunning2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\brother_running .bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\leftrunning.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\leftrunning2.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>
