@@ -131,29 +131,34 @@ namespace game_framework {
 
 	void CGameStateRun::OnShow()
 	{
-		map.OnShow(); 
-		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
-		{
-			sister.OnShow();
-		}
-		else if(sister.GetIsMovingRight() == true)
-		{
-			sister.OnMoveAniRight();
-		}
-		else if (sister.GetIsMovingLeft() == true) {
-			sister.OnMoveAniLeft();
-		}
+		map.OnShow();
+		if (sister.GetIsAlive() == true && brother.GetIsAlive() == true) {
+			if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
+			{
+				sister.OnShow();
+			}
+			else if (sister.GetIsMovingRight() == true)
+			{
+				sister.OnMoveAniRight();
+			}
+			else if (sister.GetIsMovingLeft() == true) {
+				sister.OnMoveAniLeft();
+			}
 
-		if (brother.GetIsMovingRight() == false && brother.GetIsMovingLeft() == false)
-		{
-			brother.OnShow();
+			if (brother.GetIsMovingRight() == false && brother.GetIsMovingLeft() == false)
+			{
+				brother.OnShow();
+			}
+			else if (brother.GetIsMovingRight() == true)
+			{
+				brother.OnMoveAniRight();
+			}
+			else if (brother.GetIsMovingLeft() == true) {
+				brother.OnMoveAniLeft();
+			}
 		}
-		else if (brother.GetIsMovingRight() == true)
-		{
-			brother.OnMoveAniRight();
-		}
-		else if (brother.GetIsMovingLeft() == true) {
-			brother.OnMoveAniLeft();
+		else {
+			GotoGameState(GAME_STATE_OVER);
 		}
 	}
 }

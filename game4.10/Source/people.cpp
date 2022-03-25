@@ -7,11 +7,14 @@
 #include "people.h"
 namespace game_framework {
 People::People() {}
-void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound)
+void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound, bool rightWater)
 {
 	const int XSTEP_SIZE = 6;
 	const int YSTEP_SIZE = 4;
 
+	if (rightWater == false) {
+		isAlive = false;
+	}
 	
 	if (downBound && (isJumpimg == false)) {
 		y += downVelocity;
@@ -50,7 +53,6 @@ void People::OnShow()
 	peoplePic.SetTopLeft(x, y);
 	peoplePic.ShowBitmap();
 }
-
 void People::SetMovingLeft(bool flag)
 {
 	isMovingLeft = flag;
@@ -68,6 +70,9 @@ int People::GetX() {
 }
 int People::GetY() {
 	return y;
+}
+bool People::GetIsAlive() {
+	return isAlive;
 }
 bool People::GetIsMovingLeft() {
 	return isMovingLeft;

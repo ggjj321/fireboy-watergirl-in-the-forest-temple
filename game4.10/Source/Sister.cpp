@@ -15,6 +15,7 @@ void Sister::init() {
 	y = 345;
 	jumpinVelocity = 0;
 	downVelocity = 0;
+	isAlive = true;
 	isMovingLeft = false;			
 	isMovingRight = false;			
 	isJumpimg = false;

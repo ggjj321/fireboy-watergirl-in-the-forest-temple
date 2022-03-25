@@ -4,7 +4,7 @@ namespace game_framework {
 	class People {
 	public:
 		People();
-		void OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound);
+		void OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound, bool rightWater);
 		void OnShow();
 		void SetMovingLeft(bool flag);	  // 設定是否正在往左移動
 		void SetMovingRight(bool flag);   // 設定是否正在往右移動
@@ -15,6 +15,7 @@ namespace game_framework {
 		bool isSetJumping;
 		bool GetIsMovingLeft();
 		bool GetIsMovingRight();
+		bool GetIsAlive();
 	protected:
 		int x, y; // 座標
 		CMovingBitmap peoplePic;
@@ -22,6 +23,7 @@ namespace game_framework {
 		bool isMovingLeft;			// 是否正在往左移動
 		bool isMovingRight;			// 是否正在往右移動
 		bool isJumpimg;			    // 是否正在往上移動 
+		bool isAlive;				// 是否存活
 		int downVelocity;           // 下落速度
 	};
 }

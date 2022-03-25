@@ -9,6 +9,7 @@ namespace game_framework {
 		void OnMove();
 		bool isEmpty(int x, int y)noexcept; // 判斷該格是0
 		bool isFull(int x, int y)noexcept; // 判斷該格是1
+		bool isRedWater(int x, int y)noexcept; // 判斷該水的值
 		void ChangeArray(int x, int y); // 陣列值改變
 		void ReadMapData()noexcept; // 讀取關卡資料
 		void LastLevel();
