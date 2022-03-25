@@ -24,13 +24,13 @@ namespace game_framework {
 	{
 		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);   
 		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
-		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 60);
+		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
 		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound);
 
 		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
 		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
-		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 60);
+		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
 		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
 		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound);
 
@@ -135,15 +135,24 @@ namespace game_framework {
 		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
 		{
 			sister.OnShow();
-			brother.OnShow();
 		}
 		else if(sister.GetIsMovingRight() == true)
 		{
 			sister.OnMoveAniRight();
-			brother.OnMoveAniRight();
 		}
 		else if (sister.GetIsMovingLeft() == true) {
 			sister.OnMoveAniLeft();
+		}
+
+		if (brother.GetIsMovingRight() == false && brother.GetIsMovingLeft() == false)
+		{
+			brother.OnShow();
+		}
+		else if (brother.GetIsMovingRight() == true)
+		{
+			brother.OnMoveAniRight();
+		}
+		else if (brother.GetIsMovingLeft() == true) {
 			brother.OnMoveAniLeft();
 		}
 	}

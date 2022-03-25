@@ -21,7 +21,8 @@ namespace game_framework {
 		CAnimation peopleAniR, peopleAniL;
 		bool isMovingLeft;			// 是否正在往左移動
 		bool isMovingRight;			// 是否正在往右移動
-		bool isJumpimg;			    // 是否正在往上移動  	
+		bool isJumpimg;			    // 是否正在往上移動 
+		int downVelocity;           // 下落速度
 	};
 }
 #endif
