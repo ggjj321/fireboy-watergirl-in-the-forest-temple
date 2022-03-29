@@ -1,6 +1,7 @@
 #include "gamemap.h"
 #include "sister.h"
 #include "brother.h"
+#include "purple_button.h"
 namespace game_framework {
 	class CGameStateRun : public CGameState {
 	public:
@@ -22,5 +23,6 @@ namespace game_framework {
 		CGameMap		map;    // ¦a¹Ï
 		Sister          sister; // ©j©j
 		Brother         brother;// §Ì§Ì
+		PurpleButton    button; // «ö¶s
 	};
 }

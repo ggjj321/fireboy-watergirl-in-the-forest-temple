@@ -138,6 +138,9 @@
     <ClCompile Include="Source\brother.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\purple_button.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -183,6 +186,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\brother.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\purple_button.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -259,6 +265,12 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\leftrunning2.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap22.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\purple-botton.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>
