@@ -20,6 +20,7 @@ namespace game_framework {
 	{
 		sister.init();
 		brother.init();
+		button.init();
 	}
 
 	void CGameStateRun::OnMove()						
@@ -61,6 +62,10 @@ namespace game_framework {
 		brother.init();
 
 		ShowInitProgress(50);
+
+		button.LoadBitmap();
+		button.init();
+
 		Sleep(300); 
 	}
 
@@ -144,6 +149,8 @@ namespace game_framework {
 	void CGameStateRun::OnShow()
 	{
 		map.OnShow();
+		button.OnShow();
+
 		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
 		{
 			sister.OnShow();
