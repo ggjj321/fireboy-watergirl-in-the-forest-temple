@@ -44,16 +44,12 @@ namespace game_framework {
 		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + 40);
 		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + 40);
 
+		for (int i = 0; i < 2; i++) {
+			buttons[i].OnMove(sister.GetX(), sister.GetY());
+			buttons[i].OnMove(brother.GetX(), brother.GetY());
+		}
 		if(sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 		if(brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
-		for (int i = 0; i < 2; i++) {
-			if ((brother.GetY() < buttons[i].GetY()) && (abs(brother.GetX() - buttons[i].GetX()) < 10)) {
-				buttons[i].SetDown(abs(brother.GetX() - buttons[i].GetX()));
-			}
-			if ((sister.GetY() < buttons[i].GetY()) && (abs(sister.GetX() - buttons[i].GetX()) < 10)) {
-				buttons[i].SetDown(abs(sister.GetX() - buttons[i].GetX()));
-			}
-		}
 	}
 
 	void CGameStateRun::OnInit()  								
