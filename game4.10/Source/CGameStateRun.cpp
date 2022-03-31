@@ -10,17 +10,18 @@ namespace game_framework {
 	CGameStateRun::CGameStateRun(CGame* g)
 		: CGameState(g)
 	{
+		buttons = new Button[2];
 	}
 
 	CGameStateRun::~CGameStateRun()
 	{
+		delete [] buttons;
 	}
 
 	void CGameStateRun::OnBeginState()
 	{
 		sister.init();
 		brother.init();
-		button.init();
 	}
 
 	void CGameStateRun::OnMove()						
@@ -45,6 +46,14 @@ namespace game_framework {
 
 		if(sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 		if(brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
+		for (int i = 0; i < 2; i++) {
+			if ((brother.GetY() < buttons[i].GetY()) && (abs(brother.GetX() - buttons[i].GetX()) < 10)) {
+				buttons[i].SetDown(abs(brother.GetX() - buttons[i].GetX()));
+			}
+			if ((sister.GetY() < buttons[i].GetY()) && (abs(sister.GetX() - buttons[i].GetX()) < 10)) {
+				buttons[i].SetDown(abs(sister.GetX() - buttons[i].GetX()));
+			}
+		}
 	}
 
 	void CGameStateRun::OnInit()  								
@@ -61,10 +70,14 @@ namespace game_framework {
 		brother.AddingBitmap();
 		brother.init();
 
-		ShowInitProgress(50);
+		buttons[0].init(75, 200, 1);
+		buttons[0].LoadBitmap();
 
-		button.LoadBitmap();
-		button.init();
+		buttons[1].init(430, 130, 1);
+		buttons[1].LoadBitmap();
+
+
+		ShowInitProgress(50);
 
 		Sleep(300); 
 	}
@@ -149,8 +162,10 @@ namespace game_framework {
 	void CGameStateRun::OnShow()
 	{
 		map.OnShow();
-		button.OnShow();
-
+		for (int i = 0; i < 2; i++) {
+			buttons[i].OnShow();
+		}
+		
 		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
 		{
 			sister.OnShow();

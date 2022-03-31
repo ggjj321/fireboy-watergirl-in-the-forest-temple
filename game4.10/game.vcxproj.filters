@@ -138,7 +138,7 @@
     <ClCompile Include="Source\brother.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
-    <ClCompile Include="Source\purple_button.cpp">
+    <ClCompile Include="Source\button.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -188,7 +188,7 @@
     <ClInclude Include="Source\brother.h">
       <Filter>MyGame</Filter>
     </ClInclude>
-    <ClInclude Include="Source\purple_button.h">
+    <ClInclude Include="Source\button.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
