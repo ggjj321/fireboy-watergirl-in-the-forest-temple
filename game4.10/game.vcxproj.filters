@@ -273,5 +273,8 @@
     <Image Include="RES\purple-botton.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
+    <Image Include="RES\endpic.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
