@@ -45,8 +45,15 @@ namespace game_framework {
 		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + 40);
 
 		for (int i = 0; i < 2; i++) {
-			buttons[i].OnMove(sister.GetX(), sister.GetY());
-			buttons[i].OnMove(brother.GetX(), brother.GetY());
+			int buttonPx = map.GetGx(buttons[i].GetX());
+			int buttonPy = map.GetGy(buttons[i].GetY());
+			int sisterPx = map.GetGx(sister.GetX());
+			int sisterPy = map.GetGy(sister.GetY());
+			int brotherPx = map.GetGx(brother.GetX());
+			int brotherPy = map.GetGy(brother.GetY());
+			
+			bool isDown = (buttonPx == brotherPx && buttonPy - 1 == brotherPy);
+			buttons[i].OnMove(isDown);
 		}
 		if(sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 		if(brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
@@ -66,10 +73,10 @@ namespace game_framework {
 		brother.AddingBitmap();
 		brother.init();
 
-		buttons[0].init(75, 200, 1);
+		buttons[0].init(140, 230, 1);
 		buttons[0].LoadBitmap();
 
-		buttons[1].init(430, 130, 1);
+		buttons[1].init(480, 165, 1);
 		buttons[1].LoadBitmap();
 
 

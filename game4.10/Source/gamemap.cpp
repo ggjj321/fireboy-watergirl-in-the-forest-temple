@@ -91,8 +91,13 @@ bool CGameMap::isGreenWater(int x, int y) noexcept {  // ºñ¤ô:5
     if (mapArray[gy][gx] == 5)return TRUE;
     else return FALSE;
 }
+int CGameMap::GetGx(int x) {
+    return (int)(x / 13.61);
+}
+int CGameMap::GetGy(int y) {
+    return (int)(y / 16.55);
+}
 void CGameMap::ChangeArray(int x, int y) {
-
 }
 void CGameMap::LastLevel() {
     if (mapLevel - 1 > 0) mapLevel -= 1;

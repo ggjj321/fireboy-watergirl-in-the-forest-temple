@@ -32,21 +32,17 @@ void Button::LoadBitmap()
 		int a = 1;
 	}	
 }
-void Button::OnMove(int peopleX, int peopleY)
+void Button::OnMove(bool isDown)
 {
-	int xGap = abs(peopleX - focusX);
-	int yGap = focusY - peopleY;
-	
-	if (xGap <= 5 && 0 <= yGap && yGap <= 10) {
-		if((y - focusY) <= 10) y += yGap;
-	}
+	if (isDown)y = focusY + 7;
+	else y = focusY;
 }
 int Button::GetX() 
 {
-	return x;
+	return focusX;
 }
 int Button::GetY() 
 {
-	return y;
+	return focusY;
 }
 }

@@ -4,7 +4,7 @@ namespace game_framework {
 		Button();
 		void OnShow();
 		void LoadBitmap();
-		void OnMove(int peopleX, int peopleY);
+		void OnMove(bool isDown);
 		void init(int x, int y, int buttonColor);
 		int GetX();
 		int GetY();

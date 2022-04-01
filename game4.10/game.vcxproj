@@ -335,9 +335,12 @@
     <Image Include="C:\Users\kevin\Downloads\sister (2).bmp" />
     <Image Include="res\bitmap10.bmp" />
     <Image Include="res\bitmap22.bmp" />
+    <Image Include="res\bitmap23.bmp" />
     <Image Include="res\bitmap3.bmp" />
     <Image Include="res\bitmap6.bmp" />
     <Image Include="res\bitmap8.bmp" />
+    <Image Include="RES\botton(1).bmp" />
+    <Image Include="RES\botton.bmp" />
     <Image Include="RES\brother.bmp" />
     <Image Include="RES\brother_leftrunning1.bmp" />
     <Image Include="RES\brother_leftrunning2.bmp" />

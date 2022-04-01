@@ -16,6 +16,8 @@ namespace game_framework {
 		void ReadMapData()noexcept; // 讀取關卡資料
 		void LastLevel();
 		void NextLevel();
+		int GetGx(int x);
+		int GetGy(int y);
 	private:
 		CMovingBitmap firstMap;	
 		int x, y;
