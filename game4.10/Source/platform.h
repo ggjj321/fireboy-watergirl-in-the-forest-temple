@@ -1,7 +1,7 @@
 namespace game_framework {
-	class Button {
+	class Platform {
 	public:
-		Button();
+		Platform();
 		void OnShow();
 		void LoadBitmap();
 		void OnMove(bool isDown);
@@ -9,6 +9,8 @@ namespace game_framework {
 		int GetX();
 		int GetY();
 		int GetColor();
+		int GetFocusX();
+		int GetFocusY();
 	private:
 		int x, y, colorIndex;    // 1:µµ¦â
 		int focusX, focusY;      // µJÂI

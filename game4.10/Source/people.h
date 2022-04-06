@@ -15,6 +15,8 @@ namespace game_framework {
 		bool isSetJumping;
 		bool GetIsMovingLeft();
 		bool GetIsMovingRight();
+		void SetX(int setX);
+		void SetY(int setY);
 	protected:
 		int x, y; // ®y¼Ð
 		CMovingBitmap peoplePic;

@@ -91,13 +91,18 @@ bool CGameMap::isGreenWater(int x, int y) noexcept {  // ºñ¤ô:5
     if (mapArray[gy][gx] == 5)return TRUE;
     else return FALSE;
 }
+
 int CGameMap::GetGx(int x) {
     return (int)(x / 13.61);
 }
 int CGameMap::GetGy(int y) {
     return (int)(y / 16.55);
 }
-void CGameMap::ChangeArray(int x, int y) {
+
+void CGameMap::ChangeArray(int x, int y, int num) {
+    const int gx = (int)(x / 13.61); // 640 / 47
+    const int gy = (int)(y / 16.55); // 480 / 29
+    mapArray[gy][gx] = num;
 }
 void CGameMap::LastLevel() {
     if (mapLevel - 1 > 0) mapLevel -= 1;
@@ -106,6 +111,14 @@ void CGameMap::LastLevel() {
 void CGameMap::NextLevel() {
     mapLevel += 1;
     ReadMapData();
+}
+bool CGameMap::isSameArray(int x1, int y1, int x2, int y2) 
+{
+    const int gx1 = (int)(x1 / 13.61); 
+    const int gy1 = (int)(y1 / 16.55); 
+    const int gx2 = (int)(x2 / 13.61); 
+    const int gy2 = (int)(y2 / 16.55); 
+    return(gx1 == gx2 && gy1 == gy2);
 }
 }
 

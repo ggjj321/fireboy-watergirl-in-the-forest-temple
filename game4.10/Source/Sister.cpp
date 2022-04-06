@@ -10,9 +10,9 @@ namespace game_framework {
 Sister::Sister() {
 	init();
 }
-void Sister::init() {
+void Sister::init() { // origin 33 345
 	x = 33;
-	y = 345;
+	y = 80;
 	jumpinVelocity = 0;
 	downVelocity = 0;
 	isMovingLeft = false;			

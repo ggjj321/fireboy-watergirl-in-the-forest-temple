@@ -2,6 +2,8 @@
 #include "sister.h"
 #include "brother.h"
 #include "button.h"
+#include "platform.h"
+
 namespace game_framework {
 	class CGameStateRun : public CGameState {
 	public:
@@ -20,9 +22,10 @@ namespace game_framework {
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
-		CGameMap		map;         // 地圖
-		Sister          sister;      // 姐姐
-		Brother         brother;     // 弟弟
-		Button         *buttons;     // 按鈕
+		CGameMap		map;         
+		Sister          sister;      
+		Brother         brother;     
+		Button         *buttons;         
+		Platform		purplePlatform; 
 	};
 }

@@ -74,4 +74,12 @@ bool People::GetIsMovingLeft() {
 bool People::GetIsMovingRight() {
 	return isMovingRight;
 }
+void People::SetX(int setX)
+{
+	x = setX;
+}
+void People::SetY(int setY)
+{
+	y = setY;
+}
 }

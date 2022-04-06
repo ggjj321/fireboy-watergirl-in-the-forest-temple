@@ -26,6 +26,17 @@ namespace game_framework {
 
 	void CGameStateRun::OnMove()						
 	{
+		int purpleFocusX = purplePlatform.GetFocusX();
+		int purpleFocusY = purplePlatform.GetFocusY();
+
+		for (int purpleX = 0; purpleX < 6; purpleX++) {
+			for (int purpleY = 0; purpleY < 6; purpleY++) {
+				map.ChangeArray(purpleFocusX + 14 * purpleX, purpleFocusY + 17 * purpleY + 17, 0);
+			}
+		}
+		for (int purpleBorder = 0; purpleBorder < 6; purpleBorder++) {
+			map.ChangeArray(purplePlatform.GetX() + 14 * purpleBorder, purplePlatform.GetY() + 17 , 1);
+		}
 		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);   
 		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
 		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
@@ -44,17 +55,28 @@ namespace game_framework {
 		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + 40);
 		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + 40);
 
-		for (int i = 0; i < 2; i++) {
-			int buttonPx = map.GetGx(buttons[i].GetX());
-			int buttonPy = map.GetGy(buttons[i].GetY());
+		bool purpleDown = false;
+		for (int puttonIndex = 0; puttonIndex < 2; puttonIndex++) {
+			int buttonPx = map.GetGx(buttons[puttonIndex].GetX());
+			int buttonPy = map.GetGy(buttons[puttonIndex].GetY());
 			int sisterPx = map.GetGx(sister.GetX());
 			int sisterPy = map.GetGy(sister.GetY());
 			int brotherPx = map.GetGx(brother.GetX());
 			int brotherPy = map.GetGy(brother.GetY());
 			
-			bool isDown = (buttonPx == brotherPx && buttonPy - 1 == brotherPy);
-			buttons[i].OnMove(isDown);
+			bool isBrotherDown = (buttonPx == brotherPx && buttonPy - 1 == brotherPy);
+			bool isSisterDown = (buttonPx == sisterPx && buttonPy - 1 == sisterPy);
+			bool isDown = isBrotherDown || isSisterDown;
+
+			buttons[puttonIndex].OnMove(isDown);
+
+			for (int platformIndex = 0; platformIndex < 1; platformIndex++) {
+				if (purplePlatform.GetColor() == buttons[puttonIndex].GetColor()) {
+					if (isDown) purpleDown = true;
+				}
+			}
 		}
+		purplePlatform.OnMove(purpleDown);
 		if(sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 		if(brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 	}
@@ -81,6 +103,9 @@ namespace game_framework {
 
 
 		ShowInitProgress(50);
+
+		purplePlatform.init(550, 180, 1);
+		purplePlatform.LoadBitmap();
 
 		Sleep(300); 
 	}
@@ -168,7 +193,7 @@ namespace game_framework {
 		for (int i = 0; i < 2; i++) {
 			buttons[i].OnShow();
 		}
-		
+		purplePlatform.OnShow();
 		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
 		{
 			sister.OnShow();

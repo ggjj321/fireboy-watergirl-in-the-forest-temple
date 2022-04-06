@@ -45,4 +45,8 @@ int Button::GetY()
 {
 	return focusY;
 }
+int Button::GetColor()
+{
+	return colorIndex;
+}
 }
