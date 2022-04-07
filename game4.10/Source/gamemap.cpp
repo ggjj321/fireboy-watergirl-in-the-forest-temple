@@ -118,7 +118,7 @@ bool CGameMap::isSameArray(int x1, int y1, int x2, int y2)
     const int gy1 = (int)(y1 / 16.55); 
     const int gx2 = (int)(x2 / 13.61); 
     const int gy2 = (int)(y2 / 16.55); 
-    return(gx1 == gx2 && gy1 == gy2);
+    return((gx1 == gx2) && (gy1 == gy2));
 }
 }
 

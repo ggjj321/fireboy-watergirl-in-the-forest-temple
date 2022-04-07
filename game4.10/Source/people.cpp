@@ -7,13 +7,13 @@
 #include "people.h"
 namespace game_framework {
 People::People() {}
-void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound)
+void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound, bool onPlatform)
 {
 	const int XSTEP_SIZE = 6;
 	const int YSTEP_SIZE = 4;
 
 	
-	if (downBound && (isJumpimg == false)) {
+	if (downBound && (isJumpimg == false) && (onPlatform == false)) {
 		y += downVelocity;
 		downVelocity += 1;
 	}

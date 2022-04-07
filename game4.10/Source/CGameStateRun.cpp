@@ -26,28 +26,41 @@ namespace game_framework {
 
 	void CGameStateRun::OnMove()						
 	{
-		int purpleFocusX = purplePlatform.GetFocusX();
-		int purpleFocusY = purplePlatform.GetFocusY();
+		bool sisterOnPurplePlatform = false;
+		bool brotherOnPurplePlatform = false;
 
-		for (int purpleX = 0; purpleX < 6; purpleX++) {
-			for (int purpleY = 0; purpleY < 6; purpleY++) {
-				map.ChangeArray(purpleFocusX + 14 * purpleX, purpleFocusY + 17 * purpleY + 17, 0);
-			}
-		}
 		for (int purpleBorder = 0; purpleBorder < 6; purpleBorder++) {
-			map.ChangeArray(purplePlatform.GetX() + 14 * purpleBorder, purplePlatform.GetY() + 17 , 1);
+			for (int purpleBorderHeight = 1; purpleBorderHeight < 3; purpleBorderHeight++) {
+				int purplePlatformX = purplePlatform.GetX() + 14 * purpleBorder;
+				int purplePlatformY = purplePlatform.GetY() - 17 * purpleBorderHeight;
+
+				if (map.isSameArray(purplePlatformX, purplePlatformY, sister.GetX(), sister.GetY())) {
+					sisterOnPurplePlatform = true;
+				}
+
+				if (map.isSameArray(purplePlatformX, purplePlatformY, brother.GetX(), brother.GetY())) {
+					brotherOnPurplePlatform = true;
+				}
+			}	
 		}
+		if (sisterOnPurplePlatform) {
+			sister.SetY(purplePlatform.GetY() - 34);
+		}
+		if (brotherOnPurplePlatform) {
+			brother.SetY(purplePlatform.GetY() - 34);
+		}
+		
 		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);   
 		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
 		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
-		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound);
+		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, sisterOnPurplePlatform);
 
 		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
 		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
 		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
 		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
-		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound);
+		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, brotherOnPurplePlatform);
 
 		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + 40);
