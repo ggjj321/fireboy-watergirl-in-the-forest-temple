@@ -12,7 +12,7 @@ Brother::Brother() {
 }
 void Brother::init() { // origin 33 400
 	x = 33;
-	y = 80;
+	y = 400;
 	jumpinVelocity = 0;
 	downVelocity = 0;
 	isMovingLeft = false;			

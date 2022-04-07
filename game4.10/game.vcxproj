@@ -285,6 +285,7 @@
     </ClCompile>
     <ClCompile Include="Source\people.cpp" />
     <ClCompile Include="Source\platform.cpp" />
+    <ClCompile Include="Source\rocker.cpp" />
     <ClCompile Include="Source\sister.cpp" />
     <ClCompile Include="Source\StdAfx.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -317,6 +318,7 @@
     <ClInclude Include="Source\people.h" />
     <ClInclude Include="Source\platform.h" />
     <ClInclude Include="Source\Resource.h" />
+    <ClInclude Include="Source\rocker.h" />
     <ClInclude Include="Source\sister.h" />
     <ClInclude Include="Source\StdAfx.h" />
     <ClInclude Include="Source\gamelib.h" />
@@ -355,9 +357,12 @@
     <Image Include="RES\leftrunning2.bmp" />
     <Image Include="RES\purple-botton.bmp" />
     <Image Include="RES\purple-platform.bmp" />
+    <Image Include="RES\rocker_left.bmp" />
+    <Image Include="RES\rocker_right.bmp" />
     <Image Include="RES\sister.bmp" />
     <Image Include="RES\sister_running.bmp" />
     <Image Include="RES\sister_running2.bmp" />
+    <Image Include="RES\yellow-platform.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

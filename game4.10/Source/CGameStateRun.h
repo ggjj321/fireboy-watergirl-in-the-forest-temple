@@ -3,6 +3,7 @@
 #include "brother.h"
 #include "button.h"
 #include "platform.h"
+#include "rocker.h"
 
 namespace game_framework {
 	class CGameStateRun : public CGameState {
@@ -27,5 +28,7 @@ namespace game_framework {
 		Brother         brother;     
 		Button         *buttons;         
 		Platform		purplePlatform; 
+		Platform        yellowPlatform;
+		Rocker          rocker;
 	};
 }

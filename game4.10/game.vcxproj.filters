@@ -144,6 +144,9 @@
     <ClCompile Include="Source\platform.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\rocker.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -195,6 +198,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\platform.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\rocker.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -289,6 +295,15 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\purple-platform.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\yellow-platform.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\rocker_left.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\rocker_right.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>

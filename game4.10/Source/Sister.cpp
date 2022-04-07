@@ -12,7 +12,7 @@ Sister::Sister() {
 }
 void Sister::init() { // origin 33 345
 	x = 33;
-	y = 80;
+	y = 345;
 	jumpinVelocity = 0;
 	downVelocity = 0;
 	isMovingLeft = false;			

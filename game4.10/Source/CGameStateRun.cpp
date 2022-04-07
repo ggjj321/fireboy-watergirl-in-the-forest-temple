@@ -26,6 +26,7 @@ namespace game_framework {
 
 	void CGameStateRun::OnMove()						
 	{
+		// purple platform move
 		bool sisterOnPurplePlatform = false;
 		bool brotherOnPurplePlatform = false;
 
@@ -49,18 +50,48 @@ namespace game_framework {
 		if (brotherOnPurplePlatform) {
 			brother.SetY(purplePlatform.GetY() - 34);
 		}
-		
+		//
+
+		// yellow platform move
+		bool sisterOnYellowPlatform = false;
+		bool brotherOnYellowPlatform = false;
+
+		for (int yellowBorder = 0; yellowBorder < 6; yellowBorder++) {
+			for (int yellowBorderHeight = 0; yellowBorderHeight < 3; yellowBorderHeight++) {
+				int yellowPlatformX = yellowPlatform.GetX() + 10 * yellowBorder;
+				int yellowPlatformY = yellowPlatform.GetY() - 17 * yellowBorderHeight;
+
+				if (map.isSameArray(yellowPlatformX, yellowPlatformY, sister.GetX(), sister.GetY())) {
+					sisterOnYellowPlatform = true;
+				}
+
+				if (map.isSameArray(yellowPlatformX, yellowPlatformY, brother.GetX(), brother.GetY())) {
+					brotherOnYellowPlatform = true;
+				}
+			}	
+		}
+		if (sisterOnYellowPlatform) {
+			sister.SetY(yellowPlatform.GetY() - 34);
+		}
+		if (brotherOnYellowPlatform) {
+			brother.SetY(yellowPlatform.GetY() - 34);
+		}
+		//
+
+		bool sisterOnPlatform = sisterOnPurplePlatform || sisterOnYellowPlatform;
+		bool brotherOnPlatform = brotherOnPurplePlatform || brotherOnYellowPlatform;
+
 		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);   
 		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
 		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
-		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, sisterOnPurplePlatform);
+		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, sisterOnPlatform);
 
 		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
 		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
 		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
 		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
-		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, brotherOnPurplePlatform);
+		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, brotherOnPlatform);
 
 		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + 40);
@@ -90,6 +121,11 @@ namespace game_framework {
 			}
 		}
 		purplePlatform.OnMove(purpleDown);
+
+		if (map.isSameArray(brother.GetX(), brother.GetY(), rocker.GetX() + 15, rocker.GetY() + 15)) rocker.Touch();
+		if (map.isSameArray(sister.GetX(), sister.GetY(), rocker.GetX() + 15, rocker.GetY() + 15)) rocker.Touch();
+
+		yellowPlatform.OnMove(rocker.GetIsTouch());
 		if(sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 		if(brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 	}
@@ -119,6 +155,12 @@ namespace game_framework {
 
 		purplePlatform.init(550, 180, 1);
 		purplePlatform.LoadBitmap();
+
+		yellowPlatform.init(13, 245, 2);
+		yellowPlatform.LoadBitmap();
+
+		rocker.init(120, 270);
+		rocker.LoadBitmap();
 
 		Sleep(300); 
 	}
@@ -206,7 +248,11 @@ namespace game_framework {
 		for (int i = 0; i < 2; i++) {
 			buttons[i].OnShow();
 		}
+
 		purplePlatform.OnShow();
+		yellowPlatform.OnShow();
+		rocker.OnShow();
+
 		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
 		{
 			sister.OnShow();

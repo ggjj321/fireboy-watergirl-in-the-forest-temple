@@ -28,6 +28,10 @@ void Platform::LoadBitmap()
 	switch (colorIndex) {
 	case 1:
 		buttonPic.LoadBitmap(IDB_PURPLEPLATFORM, RGB(255, 255, 255));
+		break;
+	case 2:
+		buttonPic.LoadBitmap(IDB_YELLOWPLATFORM, RGB(255, 255, 255));
+		break;
 	default:
 		int a = 1;
 	}	
@@ -35,7 +39,7 @@ void Platform::LoadBitmap()
 void Platform::OnMove(bool isDown)
 {
 	if (isDown) {
-		if (y < (focusY + 70)) {
+		if (y < (focusY + 60)) {
 			y += 1;
 		}
 	}

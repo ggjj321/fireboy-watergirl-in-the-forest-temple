@@ -76,10 +76,10 @@ bool People::GetIsMovingRight() {
 }
 void People::SetX(int setX)
 {
-	x = setX;
+	if(isJumpimg == false) x = setX;
 }
 void People::SetY(int setY)
 {
-	y = setY;
+	if (isJumpimg == false) y = setY;
 }
 }

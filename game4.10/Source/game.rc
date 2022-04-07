@@ -136,6 +136,12 @@ IDB_PURPLEBUTTON        BITMAP                  "D:\\fireboy-watergirl-in-the-fo
 
 IDB_PURPLEPLATFORM      BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\purple-platform.bmp"
 
+IDB_YELLOWPLATFORM      BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\yellow-platform.bmp"
+
+IDB_ROCKERLEFT          BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\rocker_left.bmp"
+
+IDB_ROCKERRIGHT         BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\rocker_right.bmp"
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
