@@ -22,11 +22,15 @@ namespace game_framework {
 	{
 		sister.init();
 		brother.init();
+		rocker.init(120, 270);
 	}
 
 	void CGameStateRun::OnMove()						
 	{
 		// purple platform move
+		int sisterPlatformY = 0;
+		int brotherPlatformY = 0;
+
 		bool sisterOnPurplePlatform = false;
 		bool brotherOnPurplePlatform = false;
 
@@ -45,10 +49,10 @@ namespace game_framework {
 			}	
 		}
 		if (sisterOnPurplePlatform) {
-			sister.SetY(purplePlatform.GetY() - 34);
+			sisterPlatformY = purplePlatform.GetY() - 34;
 		}
 		if (brotherOnPurplePlatform) {
-			brother.SetY(purplePlatform.GetY() - 34);
+			brotherPlatformY = purplePlatform.GetY() - 34;
 		}
 		//
 
@@ -71,10 +75,10 @@ namespace game_framework {
 			}	
 		}
 		if (sisterOnYellowPlatform) {
-			sister.SetY(yellowPlatform.GetY() - 34);
+			sisterPlatformY = yellowPlatform.GetY() - 34;
 		}
 		if (brotherOnYellowPlatform) {
-			brother.SetY(yellowPlatform.GetY() - 34);
+			brotherPlatformY = yellowPlatform.GetY() - 34;
 		}
 		//
 
@@ -85,13 +89,13 @@ namespace game_framework {
 		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
 		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
-		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, sisterOnPlatform);
+		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, sisterOnPlatform, sisterPlatformY);
 
 		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
 		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
 		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
 		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
-		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, brotherOnPlatform);
+		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, brotherOnPlatform, brotherPlatformY);
 
 		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + 40);
@@ -167,15 +171,15 @@ namespace game_framework {
 
 	void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
-		const char SISTER_KEY_LEFT = 0x25; 
-		const char SISTER_KEY_UP = 0x26;
-		const char SISTER_KEY_RIGHT = 0x27;
-		const char SISTER_KEY_DOWN = 0x28;
+		const char SISTER_KEY_LEFT = 0x41;
+		const char SISTER_KEY_UP = 0x57;
+		const char SISTER_KEY_RIGHT = 0x44;
+		const char SISTER_KEY_DOWN = 0x53;
 
-		const char BROTHER_KEY_LEFT = 0x41;
-		const char BROTHER_KEY_UP = 0x57;
-		const char BROTHER_KEY_RIGHT = 0x44;
-		const char BROTHER_KEY_DOWN = 0x53;
+		const char BROTHER_KEY_LEFT = 0x25;
+		const char BROTHER_KEY_UP = 0x26;
+		const char BROTHER_KEY_RIGHT = 0x27;
+		const char BROTHER_KEY_DOWN = 0x28;
 
 		if (nChar == SISTER_KEY_LEFT)
 			sister.SetMovingLeft(true);
@@ -196,15 +200,15 @@ namespace game_framework {
 
 	void CGameStateRun::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
-		const char SISTER_KEY_LEFT = 0x25;
-		const char SISTER_KEY_UP = 0x26;
-		const char SISTER_KEY_RIGHT = 0x27;
-		const char SISTER_KEY_DOWN = 0x28;
+		const char SISTER_KEY_LEFT = 0x41;
+		const char SISTER_KEY_UP = 0x57;
+		const char SISTER_KEY_RIGHT = 0x44;
+		const char SISTER_KEY_DOWN = 0x53;
 
-		const char BROTHER_KEY_LEFT = 0x41;
-		const char BROTHER_KEY_UP = 0x57;
-		const char BROTHER_KEY_RIGHT = 0x44;
-		const char BROTHER_KEY_DOWN = 0x53;
+		const char BROTHER_KEY_LEFT = 0x25;
+		const char BROTHER_KEY_UP = 0x26;
+		const char BROTHER_KEY_RIGHT = 0x27;
+		const char BROTHER_KEY_DOWN = 0x28;
 
 		if (nChar == SISTER_KEY_LEFT)
 			sister.SetMovingLeft(false);

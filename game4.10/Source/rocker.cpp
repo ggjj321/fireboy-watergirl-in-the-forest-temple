@@ -17,9 +17,14 @@ void Rocker::init(int coordinateX, int coordinateY)
 	focusX = coordinateX;
 	focusY = coordinateY;
 	isTouch = false;
+	touchStatus = 0;
 }
 void Rocker::OnShow()
 {
+	if (touchStatus != 0) {
+		touchStatus += 1;
+		if (touchStatus == 50) touchStatus = 0; // let rocker's move sleep
+	}
 	if (isTouch) {
 		rockerLeft.SetTopLeft(x, y);
 		rockerLeft.ShowBitmap();
@@ -37,7 +42,10 @@ void Rocker::LoadBitmap()
 }
 void Rocker::Touch()
 {
-	isTouch = !isTouch;
+	if (touchStatus == 0) {
+		isTouch = !isTouch;
+	}
+	touchStatus += 1;
 }
 int Rocker::GetX()
 {

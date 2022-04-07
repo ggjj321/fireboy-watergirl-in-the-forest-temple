@@ -7,12 +7,11 @@
 #include "people.h"
 namespace game_framework {
 People::People() {}
-void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound, bool onPlatform)
+void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound, bool onPlatform, int platformY)
 {
 	const int XSTEP_SIZE = 6;
 	const int YSTEP_SIZE = 4;
 
-	
 	if (downBound && (isJumpimg == false) && (onPlatform == false)) {
 		y += downVelocity;
 		downVelocity += 1;
@@ -28,7 +27,7 @@ void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBoun
 			jumpinVelocity = 0;
 		}
 		else {
-			if (jumpinVelocity == 0 && (downBound == false)) { // 在地上跳起
+			if (jumpinVelocity == 0 && ((downBound == false) || (onPlatform))) { // 在地上跳起
 				jumpinVelocity = 10;
 			}
 			else if (jumpinVelocity > 0 && (downBound == true)) { // 在空中
@@ -38,6 +37,8 @@ void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBoun
 			y -= jumpinVelocity;
 		}
 	}
+
+	if (onPlatform && (isJumpimg == false)) y = platformY;
 
 	if (isMovingLeft && leftBound)
 		x -= XSTEP_SIZE;
@@ -73,13 +74,5 @@ bool People::GetIsMovingLeft() {
 }
 bool People::GetIsMovingRight() {
 	return isMovingRight;
-}
-void People::SetX(int setX)
-{
-	if(isJumpimg == false) x = setX;
-}
-void People::SetY(int setY)
-{
-	if (isJumpimg == false) y = setY;
 }
 }

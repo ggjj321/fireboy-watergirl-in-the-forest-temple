@@ -12,6 +12,7 @@ namespace game_framework {
 	private:
 		int x, y;    // 1:µµ¦â
 		int focusX, focusY;      // µJÂI
+		int touchStatus;
 		bool isTouch;
 		CMovingBitmap rockerRight;
 		CMovingBitmap rockerLeft;
