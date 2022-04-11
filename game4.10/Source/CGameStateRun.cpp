@@ -22,7 +22,7 @@ namespace game_framework {
 	{
 		sister.init();
 		brother.init();
-		rocker.init(120, 270);
+		rocker.init(120, 280);
 	}
 
 	void CGameStateRun::OnMove()						
@@ -157,13 +157,13 @@ namespace game_framework {
 
 		ShowInitProgress(50);
 
-		purplePlatform.init(550, 180, 1);
+		purplePlatform.init(555, 180, 1);
 		purplePlatform.LoadBitmap();
 
 		yellowPlatform.init(13, 245, 2);
 		yellowPlatform.LoadBitmap();
 
-		rocker.init(120, 270);
+		rocker.init(120, 280);
 		rocker.LoadBitmap();
 
 		Sleep(300); 

@@ -39,7 +39,7 @@ void Platform::LoadBitmap()
 void Platform::OnMove(bool isDown)
 {
 	if (isDown) {
-		if (y < (focusY + 50)) {
+		if (y < (focusY + 60)) {
 			y += 1;
 		}
 	}
