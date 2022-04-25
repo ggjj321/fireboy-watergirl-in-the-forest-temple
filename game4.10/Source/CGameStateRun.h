@@ -4,6 +4,7 @@
 #include "button.h"
 #include "platform.h"
 #include "rocker.h"
+#include "timer.h"
 
 namespace game_framework {
 	class CGameStateRun : public CGameState {
@@ -30,5 +31,6 @@ namespace game_framework {
 		Platform		purplePlatform; 
 		Platform        yellowPlatform;
 		Rocker          rocker;
+		Timer           timer;
 	};
 }

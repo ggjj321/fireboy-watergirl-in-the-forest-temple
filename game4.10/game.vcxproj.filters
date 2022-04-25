@@ -147,6 +147,9 @@
     <ClCompile Include="Source\rocker.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\timer.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -201,6 +204,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\rocker.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\timer.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>

@@ -23,6 +23,7 @@ namespace game_framework {
 		sister.init();
 		brother.init();
 		rocker.init(120, 280);
+		timer.init(280, 0);
 	}
 
 	void CGameStateRun::OnMove()						
@@ -132,6 +133,9 @@ namespace game_framework {
 		yellowPlatform.OnMove(rocker.GetIsTouch());
 		if(sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 		if(brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
+
+		timer.OnMove();
+		timer.TimeCalculate();
 	}
 
 	void CGameStateRun::OnInit()  								
@@ -165,6 +169,8 @@ namespace game_framework {
 
 		rocker.init(120, 280);
 		rocker.LoadBitmap();
+
+		timer.init(280, 0);
 
 		Sleep(300); 
 	}
@@ -280,5 +286,7 @@ namespace game_framework {
 		else if (brother.GetIsMovingLeft() == true) {
 			brother.OnMoveAniLeft();
 		}
+
+		timer.OnShow();
 	}
 }
