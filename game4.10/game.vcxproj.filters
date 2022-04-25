@@ -150,6 +150,15 @@
     <ClCompile Include="Source\timer.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\diamond.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\blue-diamond .cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\red-diamond.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -207,6 +216,15 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\timer.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\diamond.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\blue-diamond.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\red-diamond.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -310,6 +328,12 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\rocker_right.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\gem_red.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\gem_blue.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>
