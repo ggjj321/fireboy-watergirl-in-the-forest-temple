@@ -317,12 +317,12 @@ namespace game_framework {
 		yellowPlatform.init(13, 245, 2);
 		rocker.init(120, 280);
 		timer.init(280, 0);
-		redDiamonds[0].init(150, 0);
-		redDiamonds[1].init(90, 190);
-		redDiamonds[2].init(290, 400);
-		blueDiamonds[0].init(370, 30);
-		blueDiamonds[1].init(0, 60);
-		blueDiamonds[2].init(350, 200);
-		blueDiamonds[3].init(420, 400);
+		redDiamonds[0].init(170, 30);
+		redDiamonds[1].init(95, 210);
+		redDiamonds[2].init(316, 420);
+		blueDiamonds[0].init(370, 55);
+		blueDiamonds[1].init(20, 80);
+		blueDiamonds[2].init(380, 225);
+		blueDiamonds[3].init(445, 418);
 	}
 }
