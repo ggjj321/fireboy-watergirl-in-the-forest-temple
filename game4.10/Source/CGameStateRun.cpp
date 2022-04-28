@@ -139,12 +139,12 @@ namespace game_framework {
 		timer.TimeCalculate();
 
 		for (int i = 0; i < 3; i++) {
-			if (map.isSameArray(brother.GetX(), brother.GetY(), redDiamonds[i].GetX() + 15, redDiamonds[i].GetY() + 15)) {
+			if (map.isSameArray(brother.GetX() + 10, brother.GetY(), redDiamonds[i].GetX() + 5, redDiamonds[i].GetY() - 5)) {
 				redDiamonds[i].Touch();
 			}
 		}
 		for (int i = 0; i < 4; i++) {
-			if (map.isSameArray(sister.GetX(), sister.GetY(), blueDiamonds[i].GetX() + 15, blueDiamonds[i].GetY() + 15)) {
+			if (map.isSameArray(sister.GetX() + 10, sister.GetY(), blueDiamonds[i].GetX() + 5, blueDiamonds[i].GetY() - 5)) {
 				blueDiamonds[i].Touch();
 			}
 		}
@@ -321,8 +321,8 @@ namespace game_framework {
 		redDiamonds[1].init(95, 210);
 		redDiamonds[2].init(316, 420);
 		blueDiamonds[0].init(370, 55);
-		blueDiamonds[1].init(20, 80);
+		blueDiamonds[1].init(20, 75);
 		blueDiamonds[2].init(380, 225);
-		blueDiamonds[3].init(445, 418);
+		blueDiamonds[3].init(445, 420);
 	}
 }
