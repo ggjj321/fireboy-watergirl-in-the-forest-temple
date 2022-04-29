@@ -11,19 +11,20 @@ namespace game_framework {
 		: CGameState(g)
 	{
 		buttons = new Button[2];
+		redDiamonds = new RedDiamond[3];
+		blueDiamonds = new BlueDiamond[4];
 	}
 
 	CGameStateRun::~CGameStateRun()
 	{
 		delete [] buttons;
+		delete[] redDiamonds;
+		delete[] blueDiamonds;
 	}
 
 	void CGameStateRun::OnBeginState()
 	{
-		sister.init();
-		brother.init();
-		rocker.init(120, 280);
-		timer.init(280, 0);
+		setLevelOneState();
 	}
 
 	void CGameStateRun::OnMove()						
@@ -136,41 +137,50 @@ namespace game_framework {
 
 		timer.OnMove();
 		timer.TimeCalculate();
+
+		for (int i = 0; i < 3; i++) {
+			if (map.isSameArray(brother.GetX() + 10, brother.GetY(), redDiamonds[i].GetX() + 5, redDiamonds[i].GetY() - 5)) {
+				redDiamonds[i].Touch();
+			}
+		}
+		for (int i = 0; i < 4; i++) {
+			if (map.isSameArray(sister.GetX() + 10, sister.GetY(), blueDiamonds[i].GetX() + 5, blueDiamonds[i].GetY() - 5)) {
+				blueDiamonds[i].Touch();
+			}
+		}
 	}
 
 	void CGameStateRun::OnInit()  								
 	{
+		setLevelOneState();
 		ShowInitProgress(33);	
 
 		map.LoadBitMap();
 
 		sister.LoadBitmap();
-		sister.AddingBitmap();
-		sister.init();
+		sister.AddingBitmap();		
 
 		brother.LoadBitmap();
 		brother.AddingBitmap();
-		brother.init();
-
-		buttons[0].init(140, 230, 1);
-		buttons[0].LoadBitmap();
-
-		buttons[1].init(480, 165, 1);
+				
+		buttons[0].LoadBitmap();		
 		buttons[1].LoadBitmap();
 
-
 		ShowInitProgress(50);
-
-		purplePlatform.init(555, 180, 1);
+		
 		purplePlatform.LoadBitmap();
-
-		yellowPlatform.init(13, 245, 2);
+		
 		yellowPlatform.LoadBitmap();
 
-		rocker.init(120, 280);
 		rocker.LoadBitmap();
 
-		timer.init(280, 0);
+		for (int i = 0; i < 3; i++) {
+			redDiamonds[i].LoadBitmap();
+		}
+
+		for (int i = 0; i < 4; i++) {
+			blueDiamonds[i].LoadBitmap();
+		}
 
 		Sleep(300); 
 	}
@@ -288,5 +298,31 @@ namespace game_framework {
 		}
 
 		timer.OnShow();
+
+		for (int i = 0; i < 3; i++) {
+			redDiamonds[i].OnShow();
+		}
+
+		for (int i = 0; i < 4; i++) {
+			blueDiamonds[i].OnShow();
+		}
+	}
+	void CGameStateRun::setLevelOneState()
+	{
+		sister.init();
+		brother.init();
+		buttons[0].init(140, 230, 1);
+		buttons[1].init(480, 165, 1);
+		purplePlatform.init(555, 180, 1);
+		yellowPlatform.init(13, 245, 2);
+		rocker.init(120, 280);
+		timer.init(280, 0);
+		redDiamonds[0].init(170, 30);
+		redDiamonds[1].init(95, 210);
+		redDiamonds[2].init(316, 420);
+		blueDiamonds[0].init(370, 55);
+		blueDiamonds[1].init(20, 75);
+		blueDiamonds[2].init(380, 225);
+		blueDiamonds[3].init(445, 420);
 	}
 }

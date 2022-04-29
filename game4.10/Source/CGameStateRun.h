@@ -5,6 +5,8 @@
 #include "platform.h"
 #include "rocker.h"
 #include "timer.h"
+#include "red-diamond.h"
+#include "blue-diamond.h"
 
 namespace game_framework {
 	class CGameStateRun : public CGameState {
@@ -20,6 +22,7 @@ namespace game_framework {
 		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
 		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
 		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
+		void setLevelOneState();
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
@@ -32,5 +35,7 @@ namespace game_framework {
 		Platform        yellowPlatform;
 		Rocker          rocker;
 		Timer           timer;
+		RedDiamond     *redDiamonds;
+		BlueDiamond    *blueDiamonds;
 	};
 }
