@@ -149,6 +149,16 @@ namespace game_framework {
 			}
 		}
 		
+		if (map.isSameArea(brother.GetX() + 35, brother.GetY() + 10, blueDoor.GetX() + 25, blueDoor.GetY() + 28, 25, 28)) {
+			blueDoor.Touch();
+		}
+		if (map.isSameArea(sister.GetX() + 25, sister.GetY() + 10, redDoor.GetX() + 25, redDoor.GetY() + 28, 25, 28)) {
+			redDoor.Touch();
+		}
+
+		if (redDoor.GetTouch() == true && blueDoor.GetTouch() == true) {
+			GotoGameState(GAME_STATE_OVER);
+		}
 	}
 
 	void CGameStateRun::OnInit()  								
@@ -182,6 +192,10 @@ namespace game_framework {
 		for (int i = 0; i < 4; i++) {
 			blueDiamonds[i].LoadBitmap();
 		}
+
+		redDoor.LoadBitmap();
+
+		blueDoor.LoadBitmap();
 
 		Sleep(300); 
 	}
@@ -309,6 +323,7 @@ namespace game_framework {
 		}
 
 		blueDoor.OnShow();
+
 		redDoor.OnShow();
 	}
 	void CGameStateRun::setLevelOneState()
@@ -328,7 +343,7 @@ namespace game_framework {
 		blueDiamonds[1].init(20, 75);
 		blueDiamonds[2].init(380, 225);
 		blueDiamonds[3].init(445, 420);
-		redDoor.init(480, 20);
-		blueDoor.init(510, 20);
+		redDoor.init(513, 43);
+		blueDoor.init(571, 43);
 	}
 }

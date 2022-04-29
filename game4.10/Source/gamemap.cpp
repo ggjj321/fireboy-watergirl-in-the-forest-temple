@@ -120,6 +120,17 @@ bool CGameMap::isSameArray(int x1, int y1, int x2, int y2)
     const int gy2 = (int)(y2 / 16.55); 
     return((gx1 == gx2) && (gy1 == gy2));
 }
+bool CGameMap::isSameArea(int x1, int y1, int x2, int y2, int w, int h)
+{
+    const int nx1 = (int)(x1 / 13.61);
+    const int ny1 = (int)(y1 / 16.55);
+    const int nx2 = (int)(x2 / 13.61);
+    const int ny2 = (int)(y2 / 16.55);
+    if ((x2 - w <= x1 && x1 <= x2 + w) && (y2 - h <= y1 && y1 <= y2 + h)) {
+        return true;
+    }
+    return false;
+}
 }
 
 

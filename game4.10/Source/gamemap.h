@@ -19,6 +19,7 @@ namespace game_framework {
 		int GetGx(int x);
 		int GetGy(int y);
 		bool isSameArray(int x1, int y1, int x2, int y2);
+		bool isSameArea(int x1, int y1, int x2, int y2, int w, int h);
 	private:
 		CMovingBitmap firstMap;	
 		int x, y;
