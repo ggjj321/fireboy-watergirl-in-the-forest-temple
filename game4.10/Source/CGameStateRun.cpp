@@ -148,6 +148,7 @@ namespace game_framework {
 				blueDiamonds[i].Touch();
 			}
 		}
+		
 	}
 
 	void CGameStateRun::OnInit()  								
@@ -306,6 +307,9 @@ namespace game_framework {
 		for (int i = 0; i < 4; i++) {
 			blueDiamonds[i].OnShow();
 		}
+
+		blueDoor.OnShow();
+		redDoor.OnShow();
 	}
 	void CGameStateRun::setLevelOneState()
 	{
@@ -324,5 +328,7 @@ namespace game_framework {
 		blueDiamonds[1].init(20, 75);
 		blueDiamonds[2].init(380, 225);
 		blueDiamonds[3].init(445, 420);
+		redDoor.init(480, 20);
+		blueDoor.init(510, 20);
 	}
 }

@@ -7,6 +7,8 @@
 #include "timer.h"
 #include "red-diamond.h"
 #include "blue-diamond.h"
+#include "red-door.h"
+#include "blue-door.h"
 
 namespace game_framework {
 	class CGameStateRun : public CGameState {
@@ -37,5 +39,7 @@ namespace game_framework {
 		Timer           timer;
 		RedDiamond     *redDiamonds;
 		BlueDiamond    *blueDiamonds;
+		RedDoor		    redDoor;
+		BlueDoor	    blueDoor;
 	};
 }
