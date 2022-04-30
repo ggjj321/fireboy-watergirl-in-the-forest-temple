@@ -13,14 +13,13 @@ namespace game_framework {
 
 	void CGameStateOver::OnMove()
 	{
-		counter--;
-		if (counter < 0)
-			GotoGameState(GAME_STATE_INIT);
+		if (retry)
+			GotoGameState(GAME_STATE_RUN);
 	}
 
 	void CGameStateOver::OnBeginState()
 	{
-		counter = 30 * 5; // 5 seconds
+		retry = false;
 	}
 
 	void CGameStateOver::OnInit()
@@ -30,6 +29,7 @@ namespace game_framework {
 		//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
 		//
 		ShowInitProgress(66);	// 接個前一個狀態的進度，此處進度視為66%
+		pictureDie.LoadBitmap(IDB_DIEPIC, RGB(255, 255, 255));
 		//
 		// 開始載入資料
 		//
@@ -42,16 +42,13 @@ namespace game_framework {
 
 	void CGameStateOver::OnShow()
 	{
-		CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
-		CFont f, * fp;
-		f.CreatePointFont(160, "Times New Roman");	// 產生 font f; 160表示16 point的字
-		fp = pDC->SelectObject(&f);					// 選用 font f
-		pDC->SetBkColor(RGB(0, 0, 0));
-		pDC->SetTextColor(RGB(255, 255, 0));
-		char str[80];								// Demo 數字對字串的轉換
-		sprintf(str, "Game Over ! (%d)", counter / 30);
-		pDC->TextOut(240, 210, str);
-		pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
-		CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
+		pictureDie.SetTopLeft(0, 0);
+		pictureDie.ShowBitmap();
+	}
+	void CGameStateOver::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
+	{
+		const char RETRY_KEY = 0x52;
+		if (nChar == RETRY_KEY)
+			retry = true;
 	}
 }

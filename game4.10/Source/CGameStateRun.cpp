@@ -280,6 +280,10 @@ namespace game_framework {
 	void CGameStateRun::OnShow()
 	{
 		map.OnShow();
+
+		blueDoor.OnShow();
+		redDoor.OnShow();
+
 		for (int i = 0; i < 2; i++) {
 			buttons[i].OnShow();
 		}
@@ -320,11 +324,7 @@ namespace game_framework {
 
 		for (int i = 0; i < 4; i++) {
 			blueDiamonds[i].OnShow();
-		}
-
-		blueDoor.OnShow();
-
-		redDoor.OnShow();
+		}		
 	}
 	void CGameStateRun::setLevelOneState()
 	{

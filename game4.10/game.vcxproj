@@ -366,6 +366,7 @@
     <Image Include="RES\brother_running2.bmp" />
     <Image Include="RES\doorBlue.bmp" />
     <Image Include="RES\doorRed.bmp" />
+    <Image Include="RES\endpic.bmp" />
     <Image Include="RES\final_map.bmp" />
     <Image Include="RES\gamestart.bmp" />
     <Image Include="RES\gem_blue.bmp" />
