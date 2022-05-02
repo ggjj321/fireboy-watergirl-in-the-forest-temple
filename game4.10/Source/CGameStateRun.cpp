@@ -149,7 +149,7 @@ namespace game_framework {
 			}
 		}
 		
-		if (map.isSameArea(brother.GetX() + 35, brother.GetY() + 10, blueDoor.GetX() + 25, blueDoor.GetY() + 28, 25, 28)) {
+		if (map.isSameArea(brother.GetX() + 40, brother.GetY() + 10, blueDoor.GetX() + 25, blueDoor.GetY() + 28, 25, 28)) {
 			blueDoor.Touch();
 		}
 		if (map.isSameArea(sister.GetX() + 25, sister.GetY() + 10, redDoor.GetX() + 25, redDoor.GetY() + 28, 25, 28)) {
