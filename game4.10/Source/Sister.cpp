@@ -8,13 +8,10 @@
 
 namespace game_framework {
 Sister::Sister() {
-	init();
 }
-void Sister::init() { // origin 33 345
-	//x = 33;
-	//y = 345;
-	x = 200;
-	y = 20;
+void Sister::init(int coordinateX, int coordinateY) { // origin 33 345
+	x = coordinateX;
+	y = coordinateY;
 	jumpinVelocity = 0;
 	downVelocity = 0;
 	isMovingLeft = false;			

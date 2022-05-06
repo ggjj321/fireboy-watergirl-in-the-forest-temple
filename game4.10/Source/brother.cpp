@@ -8,13 +8,10 @@
 
 namespace game_framework {
 Brother::Brother() {
-	init();
 }
-void Brother::init() { // origin 33 400
-	//x = 33;
-	//y = 400;
-	x = 200;
-	y = 20;
+void Brother::init(int coordinateX, int coordinateY) { // origin 33 400
+	x = coordinateX;
+	y = coordinateY;
 	jumpinVelocity = 0;
 	downVelocity = 0;
 	isMovingLeft = false;			

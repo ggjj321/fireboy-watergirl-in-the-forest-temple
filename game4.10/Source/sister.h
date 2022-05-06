@@ -3,7 +3,7 @@ namespace game_framework {
 	class Sister : public People {
 	public:
 		Sister();
-		void init();
+		void init(int x, int y);
 		void LoadBitmap();  	
 		void OnMoveAniRight();
 		void OnMoveAniLeft();

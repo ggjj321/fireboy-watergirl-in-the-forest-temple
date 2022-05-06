@@ -12,5 +12,6 @@ namespace game_framework {
 		int counter;
 		bool retry;
 		CMovingBitmap pictureDie;
+		CMovingBitmap picturePass;
 	};
 }

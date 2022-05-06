@@ -24,6 +24,7 @@ namespace game_framework {
 
 	void CGameStateRun::OnBeginState()
 	{
+		CGame::passGame = false;
 		setLevelOneState();
 	}
 
@@ -157,6 +158,7 @@ namespace game_framework {
 		}
 
 		if (redDoor.GetTouch() == true && blueDoor.GetTouch() == true) {
+			CGame::passGame = true;
 			GotoGameState(GAME_STATE_OVER);
 		}
 	}
@@ -328,8 +330,8 @@ namespace game_framework {
 	}
 	void CGameStateRun::setLevelOneState()
 	{
-		sister.init();
-		brother.init();
+		sister.init(33, 345);
+		brother.init(33, 400);
 		buttons[0].init(140, 230, 1);
 		buttons[1].init(480, 165, 1);
 		purplePlatform.init(555, 180, 1);
