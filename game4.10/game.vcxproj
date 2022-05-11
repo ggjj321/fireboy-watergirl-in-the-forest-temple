@@ -258,12 +258,14 @@
   <ItemGroup>
     <ClCompile Include="Source\audio.cpp" />
     <ClCompile Include="Source\blue-diamond .cpp" />
+    <ClCompile Include="Source\blue-door.cpp" />
     <ClCompile Include="Source\brother.cpp" />
     <ClCompile Include="Source\button.cpp" />
     <ClCompile Include="Source\CGameStateInit.cpp" />
     <ClCompile Include="Source\CGameStateOver.cpp" />
     <ClCompile Include="Source\CGameStateRun.cpp" />
     <ClCompile Include="Source\diamond.cpp" />
+    <ClCompile Include="Source\door.cpp" />
     <ClCompile Include="Source\game.cpp">
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -288,6 +290,7 @@
     <ClCompile Include="Source\people.cpp" />
     <ClCompile Include="Source\platform.cpp" />
     <ClCompile Include="Source\red-diamond.cpp" />
+    <ClCompile Include="Source\red-door.cpp" />
     <ClCompile Include="Source\rocker.cpp" />
     <ClCompile Include="Source\sister.cpp" />
     <ClCompile Include="Source\StdAfx.cpp">
@@ -310,12 +313,14 @@
   <ItemGroup>
     <ClInclude Include="Source\audio.h" />
     <ClInclude Include="Source\blue-diamond.h" />
+    <ClInclude Include="Source\blue-door.h" />
     <ClInclude Include="Source\brother.h" />
     <ClInclude Include="Source\button.h" />
     <ClInclude Include="Source\CGameStateInit.h" />
     <ClInclude Include="Source\CGameStateOver.h" />
     <ClInclude Include="Source\CGameStateRun.h" />
     <ClInclude Include="Source\diamond.h" />
+    <ClInclude Include="Source\door.h" />
     <ClInclude Include="Source\game.h" />
     <ClInclude Include="Source\gameDoc.h" />
     <ClInclude Include="Source\gamemap.h" />
@@ -324,6 +329,7 @@
     <ClInclude Include="Source\people.h" />
     <ClInclude Include="Source\platform.h" />
     <ClInclude Include="Source\red-diamond.h" />
+    <ClInclude Include="Source\red-door.h" />
     <ClInclude Include="Source\Resource.h" />
     <ClInclude Include="Source\rocker.h" />
     <ClInclude Include="Source\sister.h" />
@@ -358,6 +364,8 @@
     <Image Include="RES\brother_leftrunning2.bmp" />
     <Image Include="RES\brother_running .bmp" />
     <Image Include="RES\brother_running2.bmp" />
+    <Image Include="RES\doorBlue.bmp" />
+    <Image Include="RES\doorRed.bmp" />
     <Image Include="RES\endpic.bmp" />
     <Image Include="RES\final_map.bmp" />
     <Image Include="RES\gamestart.bmp" />
@@ -366,6 +374,7 @@
     <Image Include="RES\giraffe.bmp" />
     <Image Include="RES\leftrunning.bmp" />
     <Image Include="RES\leftrunning2.bmp" />
+    <Image Include="RES\pass.bmp" />
     <Image Include="RES\purple-botton.bmp" />
     <Image Include="RES\purple-platform.bmp" />
     <Image Include="RES\rocker_left.bmp" />

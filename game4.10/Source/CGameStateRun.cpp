@@ -24,6 +24,7 @@ namespace game_framework {
 
 	void CGameStateRun::OnBeginState()
 	{
+		CGame::passGame = false;
 		setLevelOneState();
 	}
 
@@ -148,6 +149,18 @@ namespace game_framework {
 				blueDiamonds[i].Touch();
 			}
 		}
+		
+		if (map.isInArea(sister.GetX(), sister.GetY(), blueDoor.GetX(), blueDoor.GetY())) {
+			blueDoor.Touch();
+		}
+		if (map.isInArea(brother.GetX(), brother.GetY(), redDoor.GetX(), redDoor.GetY())) {
+			redDoor.Touch();
+		}
+
+		if (redDoor.GetTouch() == true && blueDoor.GetTouch() == true) {
+			CGame::passGame = true;
+			GotoGameState(GAME_STATE_OVER);
+		}
 	}
 
 	void CGameStateRun::OnInit()  								
@@ -181,6 +194,10 @@ namespace game_framework {
 		for (int i = 0; i < 4; i++) {
 			blueDiamonds[i].LoadBitmap();
 		}
+
+		redDoor.LoadBitmap();
+
+		blueDoor.LoadBitmap();
 
 		Sleep(300); 
 	}
@@ -265,6 +282,10 @@ namespace game_framework {
 	void CGameStateRun::OnShow()
 	{
 		map.OnShow();
+
+		blueDoor.OnShow();
+		redDoor.OnShow();
+
 		for (int i = 0; i < 2; i++) {
 			buttons[i].OnShow();
 		}
@@ -305,12 +326,12 @@ namespace game_framework {
 
 		for (int i = 0; i < 4; i++) {
 			blueDiamonds[i].OnShow();
-		}
+		}		
 	}
 	void CGameStateRun::setLevelOneState()
 	{
-		sister.init();
-		brother.init();
+		sister.init(33, 345);
+		brother.init(33, 400);
 		buttons[0].init(140, 230, 1);
 		buttons[1].init(480, 165, 1);
 		purplePlatform.init(555, 180, 1);
@@ -324,5 +345,7 @@ namespace game_framework {
 		blueDiamonds[1].init(20, 75);
 		blueDiamonds[2].init(380, 225);
 		blueDiamonds[3].init(445, 420);
+		redDoor.init(513, 43);
+		blueDoor.init(571, 43);
 	}
 }

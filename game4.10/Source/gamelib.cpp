@@ -492,7 +492,7 @@ void CGameState::OnCycle() // Template Method
 // 這個class是遊戲的facade，是MFC與各個遊戲狀態的橋樑，如果不增加或減少
 // 遊戲狀態的話，可以不用管這個class的介面與實作。
 /////////////////////////////////////////////////////////////////////////////
-
+bool CGame::passGame = false;
 CGame CGame::instance;
 
 CGame::CGame()

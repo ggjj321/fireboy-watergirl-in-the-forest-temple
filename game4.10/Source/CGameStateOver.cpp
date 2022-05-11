@@ -24,26 +24,29 @@ namespace game_framework {
 
 	void CGameStateOver::OnInit()
 	{
-		//
-		// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
-		//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
-		//
-		ShowInitProgress(66);	// 接個前一個狀態的進度，此處進度視為66%
+		ShowInitProgress(66);
+
 		pictureDie.LoadBitmap(IDB_DIEPIC, RGB(255, 255, 255));
-		//
-		// 開始載入資料
-		//
-		Sleep(300);				// 放慢，以便看清楚進度，實際遊戲請刪除此Sleep
-		//
-		// 最終進度為100%
-		//
+
+		Sleep(300);			
+
+		picturePass.LoadBitmap(IDB_PASSPIC, RGB(255, 255, 255));
+		
 		ShowInitProgress(100);
 	}
 
 	void CGameStateOver::OnShow()
 	{
-		pictureDie.SetTopLeft(0, 0);
-		pictureDie.ShowBitmap();
+		picturePass.SetTopLeft(0, 0);
+		picturePass.ShowBitmap();
+		if (CGame::passGame) {
+			picturePass.SetTopLeft(0, 0);
+			picturePass.ShowBitmap();
+		}
+		else{
+			pictureDie.SetTopLeft(0, 0);
+			pictureDie.ShowBitmap();
+		}	
 	}
 	void CGameStateOver::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{

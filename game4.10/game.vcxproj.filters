@@ -159,6 +159,15 @@
     <ClCompile Include="Source\red-diamond.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\door.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\blue-door.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\red-door.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -225,6 +234,15 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\red-diamond.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\door.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\blue-door.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\red-door.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -336,7 +354,16 @@
     <Image Include="RES\gem_blue.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
+    <Image Include="RES\doorBlue.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\doorRed.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
     <Image Include="RES\endpic.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pass.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>
