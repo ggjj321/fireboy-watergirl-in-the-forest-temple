@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// §§§Â (¡c≈È°A•x∆W) resources
+// ‰∏≠Êñá (ÁπÅÈ´îÔºåÂè∞ÁÅ£) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -162,12 +162,12 @@ IDB_PASSPIC             BITMAP                  "D:\\fireboy-watergirl-in-the-fo
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // §§§Â (¡c≈È°A•x∆W) resources
+#endif    // ‰∏≠Êñá (ÁπÅÈ´îÔºåÂè∞ÁÅ£) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ≠^§Â (¨¸∞Í) resources
+// Ëã±Êñá (ÁæéÂúã) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -465,7 +465,7 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // ≠^§Â (¨¸∞Í) resources
+#endif    // Ëã±Êñá (ÁæéÂúã) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

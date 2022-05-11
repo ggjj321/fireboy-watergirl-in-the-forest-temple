@@ -2,12 +2,12 @@ namespace game_framework {
 	class CGameStateOver : public CGameState {
 	public:
 		CGameStateOver(CGame* g);
-		void OnBeginState();							// ³]©w¨C¦Έ­«ª±©Ò»έªΊΕάΌΖ
+		void OnBeginState();							// θ¨­ε®ζ―ζ¬΅ι‡η©ζ‰€ι€η„θ®ζ•Έ
 		void OnInit();
 		void OnKeyDown(UINT, UINT, UINT);
 	protected:
-		void OnMove();									// ²Ύ°ΚΉCΐΈ¤Έ―ΐ
-		void OnShow();									// Εγ¥ά³o­Σª¬ΊAªΊΉCΐΈµe­±
+		void OnMove();									// η§»ε‹•ιζ²ε…ƒη΄ 
+		void OnShow();									// ι΅―η¤Ίι€™ε€‹η‹€ζ…‹η„ιζ²η•«ιΆ
 	private:
 		int counter;
 		bool retry;
