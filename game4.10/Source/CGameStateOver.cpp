@@ -30,7 +30,7 @@ namespace game_framework {
 
 		Sleep(300);			
 
-		picturePass.LoadBitmap(IDB_PASSPIC, RGB(255, 255, 255));
+		picturePass.LoadBitmap(IDB_BITMAP30, RGB(255, 255, 255));
 		
 		ShowInitProgress(100);
 	}

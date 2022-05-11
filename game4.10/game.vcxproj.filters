@@ -369,5 +369,11 @@
     <Image Include="RES\map2.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
+    <Image Include="res\bitmap30.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pass_pic.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
