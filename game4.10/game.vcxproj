@@ -376,6 +376,7 @@
     <Image Include="RES\leftrunning2.bmp" />
     <Image Include="RES\map2.bmp" />
     <Image Include="RES\pass.bmp" />
+    <Image Include="RES\pass_pic.bmp" />
     <Image Include="RES\purple-botton.bmp" />
     <Image Include="RES\purple-platform.bmp" />
     <Image Include="RES\rocker_left.bmp" />
