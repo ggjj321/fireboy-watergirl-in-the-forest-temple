@@ -21,7 +21,7 @@ namespace game_framework {
 		bool isSameArray(int x1, int y1, int x2, int y2);
 		bool isInArea(int x1, int y1, int x2, int y2);
 	private:
-		CMovingBitmap firstMap;	
+		CMovingBitmap firstMap, secondMap;	
 		int x, y;
 		int mapArray[29][47]; // 地圖邊界陣列
 		int mapLevel; // 當前是第幾關

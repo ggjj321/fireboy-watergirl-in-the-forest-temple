@@ -51,7 +51,8 @@ namespace game_framework {
 	void CGameStateOver::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
 		const char RETRY_KEY = 0x52;
-		if (nChar == RETRY_KEY)
+		const char NEXTMAP_KEY = 0x4E;
+		if (nChar == RETRY_KEY || nChar == NEXTMAP_KEY)
 			retry = true;
 	}
 }

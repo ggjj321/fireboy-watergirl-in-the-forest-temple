@@ -158,6 +158,7 @@ namespace game_framework {
 		}
 
 		if (redDoor.GetTouch() == true && blueDoor.GetTouch() == true) {
+			map.NextLevel();
 			CGame::passGame = true;
 			GotoGameState(GAME_STATE_OVER);
 		}

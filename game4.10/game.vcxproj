@@ -374,6 +374,7 @@
     <Image Include="RES\giraffe.bmp" />
     <Image Include="RES\leftrunning.bmp" />
     <Image Include="RES\leftrunning2.bmp" />
+    <Image Include="RES\map2.bmp" />
     <Image Include="RES\pass.bmp" />
     <Image Include="RES\purple-botton.bmp" />
     <Image Include="RES\purple-platform.bmp" />
