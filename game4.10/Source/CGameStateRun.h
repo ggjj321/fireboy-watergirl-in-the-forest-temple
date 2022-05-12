@@ -24,7 +24,12 @@ namespace game_framework {
 		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
 		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
 		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
-		void setLevelOneState();
+		void SetLevelOneState();
+		void LevelOneMove();
+		void LevelOneShow();
+		void SetLevelTwoState();
+		void LevelTwoMove();
+		void LevelTwoShow();
 	protected:
 		void OnMove();									// 移動遊戲元素
 		void OnShow();									// 顯示這個狀態的遊戲畫面
@@ -32,13 +37,17 @@ namespace game_framework {
 		CGameMap		map;         
 		Sister          sister;      
 		Brother         brother;     
-		Button         *buttons;         
+		Button         *buttons;
+		Button         *whiteButtons;
+		Button         *greenButtons;
 		Platform		purplePlatform; 
 		Platform        yellowPlatform;
 		Rocker          rocker;
 		Timer           timer;
 		RedDiamond     *redDiamonds;
 		BlueDiamond    *blueDiamonds;
+		RedDiamond     *redDiamondsTwo;
+		BlueDiamond    *blueDiamondsTwo;
 		RedDoor		    redDoor;
 		BlueDoor	    blueDoor;
 	};

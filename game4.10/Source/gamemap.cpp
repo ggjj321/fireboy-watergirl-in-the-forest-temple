@@ -9,7 +9,7 @@ namespace game_framework {
 CGameMap::CGameMap(){
     x = 0;
     y = 0;
-    mapLevel = 1;
+    mapLevel = 1; // set to 1
     ReadMapData();
 }
 void CGameMap::OnMove(){
@@ -66,7 +66,7 @@ void CGameMap::ReadMapData() noexcept {
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1},// 27
                     {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,3,3,3,3,1,1,1,1,1,4,4,4,4,4,4,1,1,1,1,1,1,1,1,1,1} };//28
     
-    int map2Origin[29][47] = { {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, // 0
+    int map2Origin[29][39] = { {1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1}, // 0
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // 1
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // 2
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // 3
@@ -81,7 +81,7 @@ void CGameMap::ReadMapData() noexcept {
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1}, // 12
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1}, // 13
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,1}, // 14
-                    {1,0,0,0,0,0,1,1,5,5,5,5,5,5,5,5,5,1,1,1,1,1,1,5,5,5,5,5,5,5,1,1,1,1,1,1,1,1,1}, // 15
+                    {1,0,0,0,0,1,1,1,5,5,5,5,5,5,5,5,5,1,1,1,1,1,1,5,5,5,5,5,5,5,1,1,1,1,1,1,1,1,1}, // 15
                     {1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // 16
                     {1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // 17
                     {1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1}, // 18
@@ -104,57 +104,61 @@ void CGameMap::ReadMapData() noexcept {
                 mapArray[y][x] = map1Origin[y][x];
             }
         }
+        gridSizeWeight = 13.61; // 640 / 47
+        gridSizeHeight = 16.55; // 480 / 29
         break;
     case 2:
         for (int y = 0; y < 29; y++) {
-            for (int x = 0; x < 47; x++) {
+            for (int x = 0; x < 39; x++) {
                 mapArray[y][x] = map2Origin[y][x];
             }
         }
+        gridSizeWeight = 16.41; // 640 / 39
+        gridSizeHeight = 16.55; // 480 / 29
         break;
     }
 }
 bool CGameMap::isEmpty(int x, int y) noexcept {
-    const int gx = (int)(x / 13.61); // 640 / 47
-    const int gy = (int)(y / 16.55); // 480 / 29
+    const int gx = GetGx(x);
+    const int gy = GetGy(y);
     if (mapArray[gy][gx] == 0)return TRUE;
     else return FALSE;
 }
 bool CGameMap::isFull(int x, int y) noexcept {
-    const int gx = (int)(x / 13.61); // 640 / 47
-    const int gy = (int)(y / 16.55); // 480 / 29
+    const int gx = GetGx(x);
+    const int gy = GetGy(y);
     if (mapArray[gy][gx] == 1)return TRUE;
     else return FALSE;
 }
 bool CGameMap::isRedWater(int x, int y) noexcept {  // ¬õ¤ô:3
-    const int gx = (int)(x / 13.61); // 640 / 47
-    const int gy = (int)(y / 16.55); // 480 / 29
+    const int gx = GetGx(x);
+    const int gy = GetGy(y);
     if (mapArray[gy][gx] == 3)return TRUE;
     else return FALSE;
 }
 bool CGameMap::isBlueWater(int x, int y) noexcept {  // ÂÅ¤ô:4
-    const int gx = (int)(x / 13.61); // 640 / 47
-    const int gy = (int)(y / 16.55); // 480 / 29
+    const int gx = GetGx(x);
+    const int gy = GetGy(y);
     if (mapArray[gy][gx] == 4)return TRUE;
     else return FALSE;
 }
 bool CGameMap::isGreenWater(int x, int y) noexcept {  // ºñ¤ô:5
-    const int gx = (int)(x / 13.61); // 640 / 47
-    const int gy = (int)(y / 16.55); // 480 / 29
+    const int gx = GetGx(x);
+    const int gy = GetGy(y);
     if (mapArray[gy][gx] == 5)return TRUE;
     else return FALSE;
 }
 
 int CGameMap::GetGx(int x) {
-    return (int)(x / 13.61);
+    return (int)(x / gridSizeWeight);
 }
 int CGameMap::GetGy(int y) {
-    return (int)(y / 16.55);
+    return (int)(y / gridSizeHeight);
 }
 
 void CGameMap::ChangeArray(int x, int y, int num) {
-    const int gx = (int)(x / 13.61); // 640 / 47
-    const int gy = (int)(y / 16.55); // 480 / 29
+    const int gx = GetGx(x);
+    const int gy = GetGy(y);
     mapArray[gy][gx] = num;
 }
 void CGameMap::LastLevel() {
@@ -167,19 +171,19 @@ void CGameMap::NextLevel() {
 }
 bool CGameMap::isSameArray(int x1, int y1, int x2, int y2) 
 {
-    const int gx1 = (int)(x1 / 13.61); 
-    const int gy1 = (int)(y1 / 16.55); 
-    const int gx2 = (int)(x2 / 13.61); 
-    const int gy2 = (int)(y2 / 16.55); 
+    const int gx1 = GetGx(x1);
+    const int gy1 = GetGy(y1);
+    const int gx2 = GetGx(x2);
+    const int gy2 = GetGy(y2);
     return((gx1 == gx2) && (gy1 == gy2));
 }
 bool CGameMap::isInArea(int x1, int y1, int x2, int y2)
 {
     bool check1 = false, check2 = false;
-    const int nx1 = (int)(x1 / 13.61);
-    const int ny1 = (int)(y1 / 16.55);
-    const int nx2 = (int)(x2 / 13.61);
-    const int ny2 = (int)(y2 / 16.55);
+    const int nx1 = GetGx(x1);
+    const int ny1 = GetGy(y1);
+    const int nx2 = GetGx(x2);
+    const int ny2 = GetGy(y2);
     const int nw = 1;
     const int nh = 1;
     if ((nx1 >= nx2) && (nx1 <= (nx2 + nw))) {
@@ -190,6 +194,7 @@ bool CGameMap::isInArea(int x1, int y1, int x2, int y2)
     }
     return check1 && check2;
 }
+
 }
 
 

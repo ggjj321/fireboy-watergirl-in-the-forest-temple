@@ -10,26 +10,27 @@ namespace game_framework {
 Button::Button() 
 {
 }
-void Button::init(int coordinateX, int coordinateY, int color)
+void Button::init(int coordinateX, int coordinateY)
 {
 	x = coordinateX;
 	y = coordinateY;
 	focusX = coordinateX;
 	focusY = coordinateY;
-	colorIndex = color;
 }
 void Button::OnShow()
 {
 	buttonPic.SetTopLeft(x, y);
 	buttonPic.ShowBitmap();
 }
-void Button::LoadBitmap()
+void Button::LoadBitmap(int color)
 {
+	colorIndex = color;
 	switch (colorIndex) {
 	case 1:
 		buttonPic.LoadBitmap(IDB_PURPLEBUTTON, RGB(255, 255, 255));
+		break;
 	default:
-		int a = 1;
+		break;
 	}	
 }
 void Button::OnMove(bool isDown)
