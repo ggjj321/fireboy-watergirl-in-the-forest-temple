@@ -223,8 +223,8 @@ namespace game_framework {
 
 	void CGameStateRun::SetLevelOneState()
 	{
-		sister.init(500, 43);
-		brother.init(520, 43);
+		sister.init(33, 345);
+		brother.init(33, 400);
 		buttons[0].init(140, 230);
 		buttons[1].init(480, 165);
 		purplePlatform.init(555, 180, 1);
@@ -424,8 +424,8 @@ namespace game_framework {
 		}
 	}
 	void CGameStateRun::SetLevelTwoState() {
-		sister.init(50, 400);
-		brother.init(15, 400);
+		sister.init(50, 400);   // 50 400
+		brother.init(15, 400);  // 15 400
 		redDoor.init(20, 30);
 		blueDoor.init(80, 30);
 		redDiamondsTwo[0].init(130, 430);
