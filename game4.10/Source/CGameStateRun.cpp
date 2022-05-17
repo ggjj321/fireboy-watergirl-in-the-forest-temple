@@ -126,6 +126,8 @@ namespace game_framework {
 
 		blueDoor.LoadBitmap();
 
+		stone.LoadBitmap();
+
 		Sleep(300); 		
 	}
 
@@ -223,8 +225,8 @@ namespace game_framework {
 
 	void CGameStateRun::SetLevelOneState()
 	{
-		sister.init(33, 345);
-		brother.init(33, 400);
+		sister.init(513, 150); // 33 345
+		brother.init(513, 150); // 33 400
 		buttons[0].init(140, 230);
 		buttons[1].init(480, 165);
 		purplePlatform.init(555, 180, 1);
@@ -240,6 +242,7 @@ namespace game_framework {
 		blueDiamonds[3].init(445, 420);
 		redDoor.init(513, 43);
 		blueDoor.init(571, 43);
+		stone.init(340, 115); 
 	}
 	void CGameStateRun::LevelOneMove() {
 		// purple platform move
@@ -300,7 +303,16 @@ namespace game_framework {
 		bool sisterOnPlatform = sisterOnPurplePlatform || sisterOnYellowPlatform;
 		bool brotherOnPlatform = brotherOnPurplePlatform || brotherOnYellowPlatform;
 
-		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);
+		bool stoneLeftBound = map.isEmpty(stone.GetX(), stone.GetY() + 17);
+		const bool stoneRightBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 17);
+		const bool stoneDownBound = map.isEmpty(stone.GetX(), stone.GetY() + 37);
+		
+		stone.OnMove(stoneLeftBound, stoneRightBound, stoneDownBound, sister.GetX(), sister.GetY(), brother.GetX(), brother.GetY());
+
+		stoneLeftBound = !stoneLeftBound && stone.RightPush(sister.GetX(), sister.GetY());
+			
+
+		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17) && !stoneLeftBound;
 		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
 		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
@@ -422,6 +434,7 @@ namespace game_framework {
 		for (int i = 0; i < 4; i++) {
 			blueDiamonds[i].OnShow();
 		}
+		stone.OnShow();
 	}
 	void CGameStateRun::SetLevelTwoState() {
 		sister.init(50, 400);   // 50 400

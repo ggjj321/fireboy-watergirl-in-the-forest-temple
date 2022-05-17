@@ -17,7 +17,6 @@ void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBoun
 		downVelocity += 1;
 	}
 	
-
 	if (downBound == false) {
 		downVelocity = 0;
 	}
