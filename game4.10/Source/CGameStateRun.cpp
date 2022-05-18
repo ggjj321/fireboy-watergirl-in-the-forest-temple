@@ -305,7 +305,7 @@ namespace game_framework {
 
 		bool stoneLeftBound = map.isEmpty(stone.GetX(), stone.GetY() + 17);
 		const bool stoneRightBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 17);
-		const bool stoneDownBound = map.isEmpty(stone.GetX(), stone.GetY() + 37);
+		const bool stoneDownBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 37);
 		
 		stone.OnMove(stoneLeftBound, stoneRightBound, stoneDownBound, sister.GetX(), sister.GetY(), brother.GetX(), brother.GetY());
 
