@@ -245,10 +245,51 @@ namespace game_framework {
 		stone.init(340, 115); 
 	}
 	void CGameStateRun::LevelOneMove() {
-		// purple platform move
+
+		// stone and platform
 		int sisterPlatformY = 0;
 		int brotherPlatformY = 0;
 
+		// stone move
+		bool sisterOnStone = false;
+		bool brotherOnStone = false;
+
+
+		bool stoneLeftBound = map.isEmpty(stone.GetX(), stone.GetY() + 17);
+		bool stoneRightBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 17);
+		const bool stoneDownBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 37);
+
+		stone.OnMove(stoneLeftBound, stoneRightBound, stoneDownBound,
+			sister.GetX(), sister.GetY(), brother.GetX(), brother.GetY(), sister.GetWidth(), brother.GetWidth());
+
+		stoneLeftBound = !stoneLeftBound && (stone.RightPush(sister.GetX(), sister.GetY()) || stone.RightPush(brother.GetX(), brother.GetY()));
+		stoneRightBound = !stoneRightBound && (stone.LeftPush(sister.GetX(), sister.GetY(), sister.GetWidth()) ||
+			stone.LeftPush(brother.GetX(), brother.GetY(), brother.GetWidth()));
+
+		for (int stoneBorder = 0; stoneBorder < 3; stoneBorder++) {
+			for (int stoneBorderHeight = 1; stoneBorderHeight < 5; stoneBorderHeight++) {
+				int stoneX = stone.GetX() + 7 * stoneBorder;
+				int stoneY = stone.GetY() - 8 * stoneBorderHeight;
+
+				if (map.isSameArray(stoneX, stoneY, sister.GetX(), sister.GetY())) {
+					sisterOnStone = true;
+				}
+
+				if (map.isSameArray(stoneX, stoneY, brother.GetX(), brother.GetY())) {
+					brotherOnStone = true;
+				}
+			}		
+		}
+
+		if (sisterOnStone) {
+			sisterPlatformY = stone.GetY() - 35;
+		}
+		if (brotherOnStone) {
+			brotherPlatformY = stone.GetY() - 35;
+		}
+
+		// purple platform move
+		
 		bool sisterOnPurplePlatform = false;
 		bool brotherOnPurplePlatform = false;
 
@@ -300,32 +341,19 @@ namespace game_framework {
 		}
 		//
 
-		bool sisterOnPlatform = sisterOnPurplePlatform || sisterOnYellowPlatform;
-		bool brotherOnPlatform = brotherOnPurplePlatform || brotherOnYellowPlatform;
-
-
-
-		bool stoneLeftBound = map.isEmpty(stone.GetX(), stone.GetY() + 17);
-		bool stoneRightBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 17);
-		const bool stoneDownBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 37);
-		
-		stone.OnMove(stoneLeftBound, stoneRightBound, stoneDownBound, 
-			sister.GetX(), sister.GetY(), brother.GetX(), brother.GetY(), sister.GetWidth(), brother.GetWidth());
-
-		stoneLeftBound = !stoneLeftBound && (stone.RightPush(sister.GetX(), sister.GetY()) || stone.RightPush(brother.GetX(), brother.GetY()));
-		stoneRightBound = !stoneRightBound && (stone.LeftPush(sister.GetX(), sister.GetY(), sister.GetWidth()) || 
-			stone.LeftPush(brother.GetX(), brother.GetY(), brother.GetWidth()));
+		bool sisterOnPlatform = sisterOnPurplePlatform || sisterOnYellowPlatform || sisterOnStone;
+		bool brotherOnPlatform = brotherOnPurplePlatform || brotherOnYellowPlatform || brotherOnStone;
 
 		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17) && !stoneLeftBound;
 		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17) && !stoneRightBound;
 		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
-		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
+		const bool sisterUpBound = map.isEmpty(sister.GetX() + 5, sister.GetY());
 		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, sisterOnPlatform, sisterPlatformY);
 
 		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17) && !stoneLeftBound;
 		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17) && !stoneRightBound;
 		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
-		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
+		const bool brotherUpBound = map.isEmpty(brother.GetX() + 5, brother.GetY());
 		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, brotherOnPlatform, brotherPlatformY);
 
 		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + 40);

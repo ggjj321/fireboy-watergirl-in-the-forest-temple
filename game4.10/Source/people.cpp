@@ -37,7 +37,10 @@ void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBoun
 		}
 	}
 
-	if (onPlatform && (isJumpimg == false)) y = platformY;
+	if (onPlatform && (isJumpimg == false)) {
+		y = platformY;
+		jumpinVelocity = 0;
+	} 
 
 	if (isMovingLeft && leftBound)
 		x -= XSTEP_SIZE;
