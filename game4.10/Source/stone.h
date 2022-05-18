@@ -5,9 +5,9 @@ namespace game_framework {
 		void init(int coordinateX, int coordinateY);
 		void OnShow();
 		void LoadBitmap();
-		void OnMove(bool leftBound, bool rightBound, bool downBound, int sisterX, int sisterY, int brotherX, int brotherY);
+		void OnMove(bool leftBound, bool rightBound, bool downBound, int sisterX, int sisterY, int brotherX, int brotherY, int sisterWidth, int brotherWidth);
 		bool RightPush(int peopleX, int peopleY);
-		//bool LeftPush(int peopleX, int peopleY);
+		bool LeftPush(int peopleX, int peopleY, int peopleWidth);
 		int GetX();
 		int GetY();
 	private:

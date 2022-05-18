@@ -303,23 +303,27 @@ namespace game_framework {
 		bool sisterOnPlatform = sisterOnPurplePlatform || sisterOnYellowPlatform;
 		bool brotherOnPlatform = brotherOnPurplePlatform || brotherOnYellowPlatform;
 
+
+
 		bool stoneLeftBound = map.isEmpty(stone.GetX(), stone.GetY() + 17);
-		const bool stoneRightBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 17);
+		bool stoneRightBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 17);
 		const bool stoneDownBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 37);
 		
-		stone.OnMove(stoneLeftBound, stoneRightBound, stoneDownBound, sister.GetX(), sister.GetY(), brother.GetX(), brother.GetY());
+		stone.OnMove(stoneLeftBound, stoneRightBound, stoneDownBound, 
+			sister.GetX(), sister.GetY(), brother.GetX(), brother.GetY(), sister.GetWidth(), brother.GetWidth());
 
-		stoneLeftBound = !stoneLeftBound && stone.RightPush(sister.GetX(), sister.GetY());
-			
+		stoneLeftBound = !stoneLeftBound && (stone.RightPush(sister.GetX(), sister.GetY()) || stone.RightPush(brother.GetX(), brother.GetY()));
+		stoneRightBound = !stoneRightBound && (stone.LeftPush(sister.GetX(), sister.GetY(), sister.GetWidth()) || 
+			stone.LeftPush(brother.GetX(), brother.GetY(), brother.GetWidth()));
 
 		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17) && !stoneLeftBound;
-		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
+		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17) && !stoneRightBound;
 		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
 		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, sisterOnPlatform, sisterPlatformY);
 
-		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
-		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
+		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17) && !stoneLeftBound;
+		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17) && !stoneRightBound;
 		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
 		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
 		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, brotherOnPlatform, brotherPlatformY);

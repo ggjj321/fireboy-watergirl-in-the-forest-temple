@@ -25,13 +25,17 @@ void Stone::LoadBitmap()
 {
 	stonePic.LoadBitmap(IDB_STONE, RGB(255, 255, 255));
 }
-void Stone::OnMove(bool leftBound, bool rightBound, bool downBound, int sisterX, int sisterY, int brotherX, int brotherY)
+void Stone::OnMove(bool leftBound, bool rightBound, bool downBound, int sisterX, int sisterY, int brotherX, int brotherY, int sisterWidth, int brotherWidth)
 {
 	stoneWidth = stonePic.Width();
 
 	// left side is empty and person pushs stone to right side.
 	if (leftBound && RightPush(sisterX, sisterY)) x = sisterX - stoneWidth;
 	if (leftBound && RightPush(brotherX, brotherY)) x = brotherX - stoneWidth;
+
+	// right side is empty and person pushs stone to right side.
+	if (rightBound && LeftPush(sisterX, sisterY, sisterWidth)) x = sisterX + sisterWidth;
+	if (rightBound && LeftPush(brotherX, brotherY, brotherWidth)) x = brotherX + brotherWidth;
 
 	if (downBound) {
 		y += downVelocity;
@@ -45,17 +49,22 @@ void Stone::OnMove(bool leftBound, bool rightBound, bool downBound, int sisterX,
 bool Stone::RightPush(int peopleX, int peopleY)
 {
 	const bool isSameHeight = ((y - 10) <= peopleY && peopleY <= (y + 10));
-	const bool isRightTouch = peopleX - x <= stoneWidth;
+	bool isRightTouch = false;
 
+	if(x<peopleX) isRightTouch = peopleX - x <= stoneWidth;
+		
 	return isSameHeight && isRightTouch;
 }
-/*
-* bool Stone::LeftPush(int peopleX, int peopleY)
+
+bool Stone::LeftPush(int peopleX, int peopleY, int peopleWidth)
 {
+	const bool isSameHeight = ((y - 10) <= peopleY && peopleY <= (y + 10));
+	bool isLeftTouch = false;
 
+	if (x > peopleX)isLeftTouch = x - peopleX <= peopleWidth + 10;
+
+	return isSameHeight && isLeftTouch;
 }
-*/
-
 int Stone::GetX()
 {
 	return x;

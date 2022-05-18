@@ -68,6 +68,14 @@ int People::GetX() {
 int People::GetY() {
 	return y;
 }
+int People::GetWidth()
+{
+	if(isMovingRight) return peopleAniR.Width();
+
+	if (isMovingLeft) return peopleAniL.Width();
+
+	return peoplePic.Width();
+}
 bool People::GetIsMovingLeft() {
 	return isMovingLeft;
 }
