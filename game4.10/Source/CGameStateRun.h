@@ -9,6 +9,7 @@
 #include "blue-diamond.h"
 #include "red-door.h"
 #include "blue-door.h"
+#include "plat.h"
 
 namespace game_framework {
 	class CGameStateRun : public CGameState {
@@ -42,6 +43,8 @@ namespace game_framework {
 		Button         *greenButtons;
 		Platform		purplePlatform; 
 		Platform        yellowPlatform;
+		Plat			greyPlatform;
+		Plat			greenPlatform;
 		Rocker          rocker;
 		Timer           timer;
 		RedDiamond     *redDiamonds;

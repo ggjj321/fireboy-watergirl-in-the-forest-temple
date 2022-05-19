@@ -32,6 +32,12 @@ void Platform::LoadBitmap()
 	case 2:
 		buttonPic.LoadBitmap(IDB_YELLOWPLATFORM, RGB(255, 255, 255));
 		break;
+	case 3:
+		buttonPic.LoadBitmap(IDB_BITMAP31, RGB(255, 255, 255)); // grey
+		break;
+	case 4:
+		buttonPic.LoadBitmap(IDB_BITMAP32, RGB(255, 255, 255)); // green
+		break;
 	default:
 		int a = 1;
 	}	

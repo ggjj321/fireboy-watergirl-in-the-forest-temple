@@ -1,15 +1,19 @@
 namespace game_framework {
-	class Button {
+	class Plat {
 	public:
-		Button();
+		Plat();
 		void OnShow();
 		void LoadBitmap();
-		void OnMove(int peopleX, int peopleY);
-		void init(int x, int y, int buttonColor);
+		void OnMove(bool isDown);
+		void GrenOnMove(bool isDown);
+		void init(int x, int y, int color);
 		int GetX();
 		int GetY();
+		int GetColor();
+		int GetFocusX();
+		int GetFocusY();
 	private:
-		int x, y, colorIndex;    // 1:µµ¦â
+		int x, y, colorIndex;    //
 		int focusX, focusY;      // µJÂI
 		bool isDown, isUp;
 		CMovingBitmap buttonPic;

@@ -9,7 +9,7 @@ namespace game_framework {
 CGameMap::CGameMap(){
     x = 0;
     y = 0;
-    mapLevel = 1; // set to 1
+    mapLevel = 2; // set to 1
     ReadMapData();
 }
 void CGameMap::OnMove(){
