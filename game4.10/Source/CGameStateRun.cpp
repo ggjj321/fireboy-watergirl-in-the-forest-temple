@@ -231,9 +231,9 @@ namespace game_framework {
 
 	void CGameStateRun::SetLevelOneState()
 	{
-		sister.init(33, 345); // 33 345
-		brother.init(33, 400); // 33 400
-		buttons[0].init(140, 230);
+		sister.init(33, 345);
+		brother.init(33, 400);
+		buttons[0].init(128, 230);
 		buttons[1].init(480, 165);
 		purplePlatform.init(555, 180, 1);
 		yellowPlatform.init(13, 245, 2);
@@ -379,9 +379,10 @@ namespace game_framework {
 			int sisterPy = map.GetGy(sister.GetY());
 			int brotherPx = map.GetGx(brother.GetX());
 			int brotherPy = map.GetGy(brother.GetY());
-
-			bool isBrotherDown = (buttonPx == brotherPx && buttonPy - 1 == brotherPy);
-			bool isSisterDown = (buttonPx == sisterPx && buttonPy - 1 == sisterPy);
+			bool isBrotherDown = ((buttonPx <= brotherPx && brotherPx <= buttonPx + 2) && buttonPy - 1 == brotherPy);
+			bool isSisterDown = ((buttonPx <= sisterPx && sisterPx <= buttonPx + 2) && buttonPy - 1 == sisterPy);
+			// bool isBrotherDown = map.isInArea(brother.GetX(), brother.GetY(), buttons[puttonIndex].GetX(), buttons[puttonIndex].GetY() - 1);
+			// bool isSisterDown = map.isInArea(sister.GetX(), sister.GetY(), buttons[puttonIndex].GetX(), buttons[puttonIndex].GetY() - 1);
 			bool isDown = isBrotherDown || isSisterDown;
 
 			buttons[puttonIndex].OnMove(isDown);
@@ -405,12 +406,12 @@ namespace game_framework {
 		timer.TimeCalculate();
 
 		for (int i = 0; i < 3; i++) {
-			if (map.isSameArray(brother.GetX() + 10, brother.GetY(), redDiamonds[i].GetX() + 5, redDiamonds[i].GetY() - 5)) {
+			if (map.isInArea(brother.GetX(), brother.GetY(), redDiamonds[i].GetX(), redDiamonds[i].GetY())) {
 				redDiamonds[i].Touch();
 			}
 		}
 		for (int i = 0; i < 4; i++) {
-			if (map.isSameArray(sister.GetX() + 10, sister.GetY(), blueDiamonds[i].GetX() + 5, blueDiamonds[i].GetY() - 5)) {
+			if (map.isInArea(sister.GetX(), sister.GetY(), blueDiamonds[i].GetX(), blueDiamonds[i].GetY())) {
 				blueDiamonds[i].Touch();
 			}
 		}
