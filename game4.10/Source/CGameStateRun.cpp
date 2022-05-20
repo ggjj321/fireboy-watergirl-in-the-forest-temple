@@ -504,10 +504,14 @@ namespace game_framework {
 		}
 	}
 	void CGameStateRun::LevelTwoMove() {
+		int greyPlatformTop = greyPlatform.GetFocusY() - 68;
 		for(int i = 0 ; i < 4; i++) {
 			map.ChangeArray(greyPlatform.GetX() + 8, greyPlatform.GetY() + 17 * i, 1);
 			if (greyPlatform.GetY() + 70 <= greyPlatform.GetFocusY() + 17 * i) {
 				map.ChangeArray(greyPlatform.GetX() + 8, greyPlatform.GetFocusY() + 17 * i, 0);
+			}
+			if (greyPlatform.GetY() > greyPlatformTop + 17 * i) {
+				map.ChangeArray(greyPlatform.GetX() + 8, greyPlatformTop + 17 * i, 0);
 			}
 		}
 		int sisterPlatformY = 0;
