@@ -264,6 +264,7 @@
     <ClCompile Include="Source\CGameStateInit.cpp" />
     <ClCompile Include="Source\CGameStateOver.cpp" />
     <ClCompile Include="Source\CGameStateRun.cpp" />
+    <ClCompile Include="Source\chain-platform.cpp" />
     <ClCompile Include="Source\diamond.cpp" />
     <ClCompile Include="Source\door.cpp" />
     <ClCompile Include="Source\game.cpp">
@@ -308,6 +309,7 @@
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">UnitTest/</ObjectFileName>
       <ProgramDataBaseFileName Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">UnitTest/</ProgramDataBaseFileName>
     </ClCompile>
+    <ClCompile Include="Source\stone.cpp" />
     <ClCompile Include="Source\timer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -319,6 +321,7 @@
     <ClInclude Include="Source\CGameStateInit.h" />
     <ClInclude Include="Source\CGameStateOver.h" />
     <ClInclude Include="Source\CGameStateRun.h" />
+    <ClInclude Include="Source\chain-platform.h" />
     <ClInclude Include="Source\diamond.h" />
     <ClInclude Include="Source\door.h" />
     <ClInclude Include="Source\game.h" />
@@ -335,6 +338,7 @@
     <ClInclude Include="Source\sister.h" />
     <ClInclude Include="Source\StdAfx.h" />
     <ClInclude Include="Source\gamelib.h" />
+    <ClInclude Include="Source\stone.h" />
     <ClInclude Include="Source\timer.h" />
   </ItemGroup>
   <ItemGroup>
@@ -364,6 +368,7 @@
     <Image Include="RES\brother_leftrunning2.bmp" />
     <Image Include="RES\brother_running .bmp" />
     <Image Include="RES\brother_running2.bmp" />
+    <Image Include="RES\chain_platform.bmp" />
     <Image Include="RES\doorBlue.bmp" />
     <Image Include="RES\doorRed.bmp" />
     <Image Include="RES\endpic.bmp" />
@@ -384,6 +389,7 @@
     <Image Include="RES\sister.bmp" />
     <Image Include="RES\sister_running.bmp" />
     <Image Include="RES\sister_running2.bmp" />
+    <Image Include="RES\stone.bmp" />
     <Image Include="RES\yellow-platform.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
