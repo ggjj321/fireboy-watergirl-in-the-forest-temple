@@ -171,6 +171,9 @@
     <ClCompile Include="Source\stone.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\chain-platform.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -249,6 +252,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\stone.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\chain-platform.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -379,6 +385,9 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\stone.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\chain_platform.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>

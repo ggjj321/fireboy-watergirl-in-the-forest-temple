@@ -10,6 +10,7 @@
 #include "red-door.h"
 #include "blue-door.h"
 #include "stone.h"
+#include "chain-platform.h"
 
 namespace game_framework {
 	class CGameStateRun : public CGameState {
@@ -52,5 +53,6 @@ namespace game_framework {
 		RedDoor		    redDoor;
 		BlueDoor	    blueDoor;
 		Stone           stone;
+		ChainPlatform  *chainPlatforms;
 	};
 }

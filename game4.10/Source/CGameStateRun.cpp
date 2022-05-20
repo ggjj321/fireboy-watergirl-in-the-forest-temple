@@ -19,6 +19,8 @@ namespace game_framework {
 
 		redDiamondsTwo = new RedDiamond[8];
 		blueDiamondsTwo = new BlueDiamond[8];
+
+		chainPlatforms = new ChainPlatform[2];
 	}
 
 	CGameStateRun::~CGameStateRun()
@@ -32,6 +34,8 @@ namespace game_framework {
 
 		delete[] redDiamondsTwo;
 		delete[] blueDiamondsTwo;
+
+		delete[] chainPlatforms;
 	}
 
 	void CGameStateRun::OnBeginState()
@@ -127,6 +131,8 @@ namespace game_framework {
 		blueDoor.LoadBitmap();
 
 		stone.LoadBitmap();
+
+		for(int i = 0; i < 2; i++) chainPlatforms[i].LoadBitmap();
 
 		Sleep(300); 		
 	}
@@ -497,6 +503,8 @@ namespace game_framework {
 		greenButtons[0].init(120, 70);
 		greenButtons[1].init(460, 70);
 		timer.init(280, 0);
+		chainPlatforms[0].init(160, 218);
+		chainPlatforms[1].init(400, 218);
 	}
 	void CGameStateRun::LevelTwoShow() {
 		map.OnShow();
@@ -542,6 +550,8 @@ namespace game_framework {
 			whiteButtons[i].OnShow();
 			greenButtons[i].OnShow();
 		}
+
+		for (int i = 0; i < 2; i++) chainPlatforms[i].OnShow();
 	}
 	void CGameStateRun::LevelTwoMove() {
 		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);

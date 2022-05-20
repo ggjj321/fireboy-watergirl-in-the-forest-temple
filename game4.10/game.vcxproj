@@ -264,6 +264,7 @@
     <ClCompile Include="Source\CGameStateInit.cpp" />
     <ClCompile Include="Source\CGameStateOver.cpp" />
     <ClCompile Include="Source\CGameStateRun.cpp" />
+    <ClCompile Include="Source\chain-platform.cpp" />
     <ClCompile Include="Source\diamond.cpp" />
     <ClCompile Include="Source\door.cpp" />
     <ClCompile Include="Source\game.cpp">
@@ -320,6 +321,7 @@
     <ClInclude Include="Source\CGameStateInit.h" />
     <ClInclude Include="Source\CGameStateOver.h" />
     <ClInclude Include="Source\CGameStateRun.h" />
+    <ClInclude Include="Source\chain-platform.h" />
     <ClInclude Include="Source\diamond.h" />
     <ClInclude Include="Source\door.h" />
     <ClInclude Include="Source\game.h" />
@@ -366,6 +368,7 @@
     <Image Include="RES\brother_leftrunning2.bmp" />
     <Image Include="RES\brother_running .bmp" />
     <Image Include="RES\brother_running2.bmp" />
+    <Image Include="RES\chain_platform.bmp" />
     <Image Include="RES\doorBlue.bmp" />
     <Image Include="RES\doorRed.bmp" />
     <Image Include="RES\endpic.bmp" />
