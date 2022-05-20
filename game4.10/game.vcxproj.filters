@@ -168,6 +168,9 @@
     <ClCompile Include="Source\red-door.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\stone.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -243,6 +246,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\red-door.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\stone.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -370,6 +376,9 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\pass_pic.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\stone.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -17,7 +17,6 @@ void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBoun
 		downVelocity += 1;
 	}
 	
-
 	if (downBound == false) {
 		downVelocity = 0;
 	}
@@ -38,7 +37,10 @@ void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBoun
 		}
 	}
 
-	if (onPlatform && (isJumpimg == false)) y = platformY;
+	if (onPlatform && (isJumpimg == false)) {
+		y = platformY;
+		jumpinVelocity = 0;
+	} 
 
 	if (isMovingLeft && leftBound)
 		x -= XSTEP_SIZE;
@@ -68,6 +70,14 @@ int People::GetX() {
 }
 int People::GetY() {
 	return y;
+}
+int People::GetWidth()
+{
+	if(isMovingRight) return peopleAniR.Width();
+
+	if (isMovingLeft) return peopleAniL.Width();
+
+	return peoplePic.Width();
 }
 bool People::GetIsMovingLeft() {
 	return isMovingLeft;

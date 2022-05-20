@@ -126,6 +126,8 @@ namespace game_framework {
 
 		blueDoor.LoadBitmap();
 
+		stone.LoadBitmap();
+
 		Sleep(300); 		
 	}
 
@@ -223,8 +225,8 @@ namespace game_framework {
 
 	void CGameStateRun::SetLevelOneState()
 	{
-		sister.init(33, 345);
-		brother.init(33, 400);
+		sister.init(33, 345); // 33 345
+		brother.init(33, 400); // 33 400
 		buttons[0].init(140, 230);
 		buttons[1].init(480, 165);
 		purplePlatform.init(555, 180, 1);
@@ -240,12 +242,57 @@ namespace game_framework {
 		blueDiamonds[3].init(445, 420);
 		redDoor.init(513, 43);
 		blueDoor.init(571, 43);
+		stone.init(340, 115); 
 	}
 	void CGameStateRun::LevelOneMove() {
-		// purple platform move
+
+		// stone and platform
 		int sisterPlatformY = 0;
 		int brotherPlatformY = 0;
 
+		// stone move
+		bool sisterOnStone = false;
+		bool brotherOnStone = false;
+
+
+		bool stoneLeftBound = map.isEmpty(stone.GetX(), stone.GetY() + 17);
+		bool stoneRightBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 17);
+		const bool stoneDownBound = map.isEmpty(stone.GetX() + 10, stone.GetY() + 37);
+
+		stone.OnMove(stoneLeftBound, stoneRightBound, stoneDownBound,
+			sister.GetX(), sister.GetY(), brother.GetX(), brother.GetY(), sister.GetWidth(), brother.GetWidth());
+
+		bool stoneSisterLeftBound = !stoneLeftBound && stone.RightPush(sister.GetX(), sister.GetY());
+		bool stoneBrotherLeftBound = !stoneLeftBound && stone.RightPush(brother.GetX(), brother.GetY());
+
+		bool stoneSisterRightBound = !stoneRightBound && stone.LeftPush(sister.GetX(), sister.GetY(), sister.GetWidth());
+		bool stoneBrotherRightBound = !stoneRightBound && stone.LeftPush(brother.GetX(), brother.GetY(), brother.GetWidth());
+
+
+		for (int stoneBorder = 0; stoneBorder < 4; stoneBorder++) {
+			for (int stoneBorderHeight = 1; stoneBorderHeight < 5; stoneBorderHeight++) {
+				int stoneX = stone.GetX() + 3 * stoneBorder;
+				int stoneY = stone.GetY() - 8 * stoneBorderHeight;
+
+				if (map.isSameArray(stoneX, stoneY, sister.GetX(), sister.GetY())) {
+					sisterOnStone = true;
+				}
+
+				if (map.isSameArray(stoneX, stoneY, brother.GetX(), brother.GetY())) {
+					brotherOnStone = true;
+				}
+			}		
+		}
+
+		if (sisterOnStone) {
+			sisterPlatformY = stone.GetY() - 35;
+		}
+		if (brotherOnStone) {
+			brotherPlatformY = stone.GetY() - 35;
+		}
+
+		// purple platform move
+		
 		bool sisterOnPurplePlatform = false;
 		bool brotherOnPurplePlatform = false;
 
@@ -297,26 +344,26 @@ namespace game_framework {
 		}
 		//
 
-		bool sisterOnPlatform = sisterOnPurplePlatform || sisterOnYellowPlatform;
-		bool brotherOnPlatform = brotherOnPurplePlatform || brotherOnYellowPlatform;
+		bool sisterOnPlatform = sisterOnPurplePlatform || sisterOnYellowPlatform || sisterOnStone;
+		bool brotherOnPlatform = brotherOnPurplePlatform || brotherOnYellowPlatform || brotherOnStone;
 
-		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);
-		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
+		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17) && ! stoneSisterLeftBound;
+		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17) && !stoneSisterRightBound;
 		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
-		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
+		const bool sisterUpBound = map.isEmpty(sister.GetX() + 5, sister.GetY());
 		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, sisterOnPlatform, sisterPlatformY);
 
-		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
-		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
+		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17) && !stoneBrotherLeftBound;
+		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17) && !stoneBrotherRightBound;
 		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
-		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
+		const bool brotherUpBound = map.isEmpty(brother.GetX() + 10, brother.GetY());
 		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, brotherOnPlatform, brotherPlatformY);
 
 		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + 40);
 		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + 40);
 
 		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + 40);
-		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + 40);
+		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 10, brother.GetY() + 40);
 
 		bool purpleDown = false;
 		for (int puttonIndex = 0; puttonIndex < 2; puttonIndex++) {
@@ -422,6 +469,7 @@ namespace game_framework {
 		for (int i = 0; i < 4; i++) {
 			blueDiamonds[i].OnShow();
 		}
+		stone.OnShow();
 	}
 	void CGameStateRun::SetLevelTwoState() {
 		sister.init(50, 400);   // 50 400
