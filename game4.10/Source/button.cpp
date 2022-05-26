@@ -29,6 +29,12 @@ void Button::LoadBitmap(int color)
 	case 1:
 		buttonPic.LoadBitmap(IDB_PURPLEBUTTON, RGB(255, 255, 255));
 		break;
+	case 2:
+		buttonPic.LoadBitmap(IDB_BITMAP34, RGB(255, 255, 255)); // white
+		break;
+	case 3:
+		buttonPic.LoadBitmap(IDB_BITMAP33, RGB(255, 255, 255)); // green
+		break;
 	default:
 		break;
 	}	

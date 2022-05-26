@@ -92,11 +92,11 @@ namespace game_framework {
 		buttons[0].LoadBitmap(1);		
 		buttons[1].LoadBitmap(1);
 
-		whiteButtons[0].LoadBitmap(1);
-		whiteButtons[1].LoadBitmap(1);
+		whiteButtons[0].LoadBitmap(2);
+		whiteButtons[1].LoadBitmap(2);
 
-		greenButtons[0].LoadBitmap(1);
-		greenButtons[1].LoadBitmap(1);
+		greenButtons[0].LoadBitmap(3);
+		greenButtons[1].LoadBitmap(3);
 
 		ShowInitProgress(50);
 		
@@ -427,8 +427,8 @@ namespace game_framework {
 		}
 	}
 	void CGameStateRun::SetLevelTwoState() {
-		sister.init(50, 400);   // 50 400
-		brother.init(15, 400);  // 15 400
+		sister.init(320, 200);   // 50 400
+		brother.init(15, 200);  // 15 400
 		redDoor.init(20, 30);
 		blueDoor.init(80, 30);
 		redDiamondsTwo[0].init(130, 430);
@@ -445,12 +445,12 @@ namespace game_framework {
 		blueDiamondsTwo[3].init(450, 430);
 		blueDiamondsTwo[4].init(400, 300);
 		blueDiamondsTwo[5].init(140, 300);
-		blueDiamondsTwo[6].init(320, 190);
+		blueDiamondsTwo[6].init(325, 190);
 		blueDiamondsTwo[7].init(340, 40);
-		whiteButtons[0].init(60, 314);
-		whiteButtons[1].init(480, 314);
-		greenButtons[0].init(120, 70);
-		greenButtons[1].init(460, 70);
+		whiteButtons[0].init(75, 314);
+		whiteButtons[1].init(495, 314);
+		greenButtons[0].init(135, 66);
+		greenButtons[1].init(460, 66);
 		greyPlatform.init(320, 264, 1);
 		greenPlatform.init(367, 82, 2);
 		timer.init(280, 0);
@@ -464,6 +464,11 @@ namespace game_framework {
 		blueDoor.OnShow();
 		redDoor.OnShow();
 		
+		for (int i = 0; i < 2; i++) {
+			whiteButtons[i].OnShow();
+			greenButtons[i].OnShow();
+		}
+
 		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
 		{
 			sister.OnShow();
@@ -497,16 +502,11 @@ namespace game_framework {
 		for (int i = 0; i < 8; i++) {
 			blueDiamondsTwo[i].OnShow();
 		}
-		
-		for (int i = 0; i < 2; i++) {
-			whiteButtons[i].OnShow();
-			greenButtons[i].OnShow();
-		}
 	}
 	void CGameStateRun::LevelTwoMove() {
 		int greyPlatformTop = greyPlatform.GetFocusY() - 68;
 		for(int i = 0 ; i < 4; i++) {
-			map.ChangeArray(greyPlatform.GetX() + 8, greyPlatform.GetY() + 17 * i, 1);
+			map.ChangeArray(greyPlatform.GetX() + 8, (greyPlatform.GetY() + 5) + 17 * i, 1);
 			if (greyPlatform.GetY() + 70 <= greyPlatform.GetFocusY() + 17 * i) {
 				map.ChangeArray(greyPlatform.GetX() + 8, greyPlatform.GetFocusY() + 17 * i, 0);
 			}
@@ -584,8 +584,8 @@ namespace game_framework {
 			int brotherPx = map.GetGx(brother.GetX());
 			int brotherPy = map.GetGy(brother.GetY());
 
-			bool isBrotherDown = ((buttonPx <= brotherPx && brotherPx <= buttonPx + 2) && buttonPy - 1 == brotherPy);
-			bool isSisterDown = ((buttonPx <= sisterPx && sisterPx <= buttonPx + 2) && buttonPy - 1 == sisterPy);
+			bool isBrotherDown = ((buttonPx - 1 <= brotherPx && brotherPx <= buttonPx + 1) && buttonPy - 1 == brotherPy);
+			bool isSisterDown = ((buttonPx - 1 <= sisterPx && sisterPx <= buttonPx + 1) && buttonPy - 1 == sisterPy);
 			bool isDown = isBrotherDown || isSisterDown;
 
 			whiteButtons[puttonIndex].OnMove(isDown);
@@ -603,8 +603,8 @@ namespace game_framework {
 			int brotherPx = map.GetGx(brother.GetX());
 			int brotherPy = map.GetGy(brother.GetY());
 
-			bool isBrotherDown = ((buttonPx <= brotherPx && brotherPx <= buttonPx + 2) && buttonPy - 1 == brotherPy);
-			bool isSisterDown = ((buttonPx <= sisterPx && sisterPx <= buttonPx + 2) && buttonPy - 1 == sisterPy);
+			bool isBrotherDown = ((buttonPx - 1 <= brotherPx && brotherPx <= buttonPx + 1) && buttonPy - 1 == brotherPy);
+			bool isSisterDown = ((buttonPx - 1 <= sisterPx && sisterPx <= buttonPx + 1) && buttonPy - 1 == sisterPy);
 			bool isDown = isBrotherDown || isSisterDown;
 
 			greenButtons[puttonIndex].OnMove(isDown);

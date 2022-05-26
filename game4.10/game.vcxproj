@@ -375,6 +375,7 @@
     <Image Include="RES\gem_blue.bmp" />
     <Image Include="RES\gem_red.bmp" />
     <Image Include="RES\giraffe.bmp" />
+    <Image Include="RES\green_bot.bmp" />
     <Image Include="RES\green_platform.bmp" />
     <Image Include="RES\grey_platform.bmp" />
     <Image Include="RES\leftrunning.bmp" />
@@ -389,6 +390,7 @@
     <Image Include="RES\sister.bmp" />
     <Image Include="RES\sister_running.bmp" />
     <Image Include="RES\sister_running2.bmp" />
+    <Image Include="RES\white_bot.bmp" />
     <Image Include="RES\yellow-platform.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

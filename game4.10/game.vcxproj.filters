@@ -387,5 +387,11 @@
     <Image Include="RES\grey_platform.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
+    <Image Include="RES\green_bot.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\white_bot.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>
