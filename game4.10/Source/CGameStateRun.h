@@ -18,15 +18,15 @@ namespace game_framework {
 	public:
 		CGameStateRun(CGame* g);
 		~CGameStateRun();
-		void OnBeginState();							// 設定每次重玩所需的變數
-		void OnInit();  								// 遊戲的初值及圖形設定
+		void OnBeginState();							
+		void OnInit();  								
 		void OnKeyDown(UINT, UINT, UINT);
 		void OnKeyUp(UINT, UINT, UINT);
-		void OnLButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
-		void OnLButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
-		void OnMouseMove(UINT nFlags, CPoint point);	// 處理滑鼠的動作 
-		void OnRButtonDown(UINT nFlags, CPoint point);  // 處理滑鼠的動作
-		void OnRButtonUp(UINT nFlags, CPoint point);	// 處理滑鼠的動作
+		void OnLButtonDown(UINT nFlags, CPoint point);  
+		void OnLButtonUp(UINT nFlags, CPoint point);	
+		void OnMouseMove(UINT nFlags, CPoint point);	
+		void OnRButtonDown(UINT nFlags, CPoint point);  
+		void OnRButtonUp(UINT nFlags, CPoint point);	
 		void SetLevelOneState();
 		void LevelOneMove();
 		void LevelOneShow();
@@ -34,8 +34,8 @@ namespace game_framework {
 		void LevelTwoMove();
 		void LevelTwoShow();
 	protected:
-		void OnMove();									// 移動遊戲元素
-		void OnShow();									// 顯示這個狀態的遊戲畫面
+		void OnMove();									
+		void OnShow();									
 	private:
 		CGameMap		map;         
 		Sister          sister;      
