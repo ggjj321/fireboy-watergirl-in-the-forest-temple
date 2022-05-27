@@ -427,8 +427,8 @@ namespace game_framework {
 		}
 	}
 	void CGameStateRun::SetLevelTwoState() {
-		sister.init(320, 200);   // 50 400
-		brother.init(15, 200);  // 15 400
+		sister.init(50, 400);   // 50 400
+		brother.init(15, 400);  // 15 400
 		redDoor.init(20, 30);
 		blueDoor.init(80, 30);
 		redDiamondsTwo[0].init(130, 430);
