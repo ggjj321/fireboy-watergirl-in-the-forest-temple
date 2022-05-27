@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ ���ͪ� Include �ɮסC
-// �� game.rc �ϥ�
+// Microsoft Visual C++ ²£¥Íªº Include ÀÉ®×¡C
+// ¥Ñ game.rc ¨Ï¥Î
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_SOCKETS_INIT_FAILED         104
@@ -81,6 +81,8 @@
 #define IDB_BITMAP32                    224
 #define IDB_BITMAP33                    225
 #define IDB_BITMAP34                    226
+#define IDB_STONE                       220
+#define IDB_CHAINPLATFORM               221
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771
 #define ID_TOGGLE_FULLSCREEN            32772
