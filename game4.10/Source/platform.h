@@ -3,9 +3,9 @@ namespace game_framework {
 	public:
 		Platform();
 		void OnShow();
-		void LoadBitmap();
+		void LoadBitmap(int color);
 		void OnMove(bool isDown);
-		void init(int x, int y, int buttonColor);
+		void init(int x, int y);
 		int GetX();
 		int GetY();
 		int GetColor();

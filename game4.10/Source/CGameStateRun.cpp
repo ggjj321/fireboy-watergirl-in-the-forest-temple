@@ -104,13 +104,13 @@ namespace game_framework {
 
 		ShowInitProgress(50);
 		
-		purplePlatform.LoadBitmap();
+		purplePlatform.LoadBitmap(1);
 		
-		yellowPlatform.LoadBitmap();
+		yellowPlatform.LoadBitmap(2);
 
-		greyPlatform.LoadBitmap();
+		greyPlatform.LoadBitmap(1);
 
-		greenPlatform.LoadBitmap();
+		greenPlatform.LoadBitmap(2);
 
 		rocker.LoadBitmap();
 
@@ -239,8 +239,8 @@ namespace game_framework {
 		brother.init(33, 400);
 		buttons[0].init(128, 230);
 		buttons[1].init(480, 165);
-		purplePlatform.init(555, 180, 1);
-		yellowPlatform.init(13, 245, 2);
+		purplePlatform.init(555, 180);
+		yellowPlatform.init(13, 245);
 		rocker.init(120, 280);
 		timer.init(280, 0);
 		redDiamonds[0].init(170, 30);
@@ -505,8 +505,8 @@ namespace game_framework {
 		whiteButtons[1].init(495, 314);
 		greenButtons[0].init(135, 66);
 		greenButtons[1].init(460, 66);
-		greyPlatform.init(320, 264, 1);
-		greenPlatform.init(367, 82, 2);
+		greyPlatform.init(320, 264);
+		greenPlatform.init(367, 82);
 		timer.init(280, 0);
 		chainPlatforms[0].init(160, 218);
 		chainPlatforms[1].init(400, 218);

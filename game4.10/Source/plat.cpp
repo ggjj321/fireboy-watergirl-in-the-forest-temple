@@ -10,21 +10,22 @@ namespace game_framework {
 Plat::Plat()
 {
 }
-void Plat::init(int coordinateX, int coordinateY, int color)
+void Plat::init(int coordinateX, int coordinateY)
 {
 	x = coordinateX;
 	y = coordinateY;
 	focusX = coordinateX;
 	focusY = coordinateY;
-	colorIndex = color;
+	
 }
 void Plat::OnShow()
 {
 	buttonPic.SetTopLeft(x, y);
 	buttonPic.ShowBitmap();
 }
-void Plat::LoadBitmap()
+void Plat::LoadBitmap(int color)
 {
+	colorIndex = color;
 	switch (colorIndex) {
 	case 1:
 		buttonPic.LoadBitmap(IDB_BITMAP31, RGB(255, 255, 255));

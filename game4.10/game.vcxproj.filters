@@ -169,6 +169,8 @@
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\plat.cpp">
+		<Filter>MyGame</Filter>
+	</ClCompile>
     <ClCompile Include="Source\stone.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
@@ -253,6 +255,8 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\plat.h">
+		<Filter>MyGame</Filter>
+	</ClInclude>
     <ClInclude Include="Source\stone.h">
       <Filter>MyGame</Filter>
     </ClInclude>
@@ -399,6 +403,8 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\white_bot.bmp">
+		<Filter>MyGame\Resource Files</Filter>
+	</Image>
     <Image Include="RES\stone.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>

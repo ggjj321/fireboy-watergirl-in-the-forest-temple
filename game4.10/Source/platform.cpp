@@ -10,21 +10,21 @@ namespace game_framework {
 Platform::Platform()
 {
 }
-void Platform::init(int coordinateX, int coordinateY, int color)
+void Platform::init(int coordinateX, int coordinateY)
 {
 	x = coordinateX;
 	y = coordinateY;
 	focusX = coordinateX;
 	focusY = coordinateY;
-	colorIndex = color;
 }
 void Platform::OnShow()
 {
 	buttonPic.SetTopLeft(x, y);
 	buttonPic.ShowBitmap();
 }
-void Platform::LoadBitmap()
+void Platform::LoadBitmap(int color)
 {
+	colorIndex = color;
 	switch (colorIndex) {
 	case 1:
 		buttonPic.LoadBitmap(IDB_PURPLEPLATFORM, RGB(255, 255, 255));

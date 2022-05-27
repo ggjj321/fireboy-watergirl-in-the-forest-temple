@@ -3,10 +3,10 @@ namespace game_framework {
 	public:
 		Plat();
 		void OnShow();
-		void LoadBitmap();
+		void LoadBitmap(int color);
 		void OnMove(bool isDown);
 		void GrenOnMove(bool isDown);
-		void init(int x, int y, int color);
+		void init(int x, int y);
 		int GetX();
 		int GetY();
 		int GetColor();
