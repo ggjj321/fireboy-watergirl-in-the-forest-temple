@@ -289,6 +289,7 @@
       <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='UnitTest|Win32'">%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <ClCompile Include="Source\people.cpp" />
+    <ClCompile Include="Source\plat.cpp" />
     <ClCompile Include="Source\platform.cpp" />
     <ClCompile Include="Source\red-diamond.cpp" />
     <ClCompile Include="Source\red-door.cpp" />
@@ -330,6 +331,7 @@
     <ClInclude Include="Source\gameView.h" />
     <ClInclude Include="Source\MainFrm.h" />
     <ClInclude Include="Source\people.h" />
+    <ClInclude Include="Source\plat.h" />
     <ClInclude Include="Source\platform.h" />
     <ClInclude Include="Source\red-diamond.h" />
     <ClInclude Include="Source\red-door.h" />
@@ -359,6 +361,7 @@
     <Image Include="res\bitmap22.bmp" />
     <Image Include="res\bitmap23.bmp" />
     <Image Include="res\bitmap3.bmp" />
+    <Image Include="res\bitmap31.bmp" />
     <Image Include="res\bitmap6.bmp" />
     <Image Include="res\bitmap8.bmp" />
     <Image Include="RES\botton(1).bmp" />
@@ -377,6 +380,9 @@
     <Image Include="RES\gem_blue.bmp" />
     <Image Include="RES\gem_red.bmp" />
     <Image Include="RES\giraffe.bmp" />
+    <Image Include="RES\green_bot.bmp" />
+    <Image Include="RES\green_platform.bmp" />
+    <Image Include="RES\grey_platform.bmp" />
     <Image Include="RES\leftrunning.bmp" />
     <Image Include="RES\leftrunning2.bmp" />
     <Image Include="RES\map2.bmp" />
@@ -389,6 +395,7 @@
     <Image Include="RES\sister.bmp" />
     <Image Include="RES\sister_running.bmp" />
     <Image Include="RES\sister_running2.bmp" />
+    <Image Include="RES\white_bot.bmp" />
     <Image Include="RES\stone.bmp" />
     <Image Include="RES\yellow-platform.bmp" />
   </ItemGroup>
