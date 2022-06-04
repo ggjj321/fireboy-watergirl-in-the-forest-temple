@@ -6,10 +6,11 @@
 #include "gamelib.h"
 #include "gamemap.h"
 namespace game_framework {
+int CGameMap::mapLevel = 1;
+
 CGameMap::CGameMap(){
     x = 0;
     y = 0;
-    mapLevel = 1; // set to 1
     ReadMapData();
 }
 void CGameMap::OnMove(){

@@ -169,12 +169,18 @@
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\plat.cpp">
-		<Filter>MyGame</Filter>
-	</ClCompile>
+      <Filter>MyGame</Filter>
+    </ClCompile>
     <ClCompile Include="Source\stone.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
     <ClCompile Include="Source\chain-platform.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\LevelMenu.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\pointers.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
   </ItemGroup>
@@ -255,12 +261,18 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\plat.h">
-		<Filter>MyGame</Filter>
-	</ClInclude>
+      <Filter>MyGame</Filter>
+    </ClInclude>
     <ClInclude Include="Source\stone.h">
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\chain-platform.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LevelMenu.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\pointers.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -403,12 +415,22 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\white_bot.bmp">
-		<Filter>MyGame\Resource Files</Filter>
-	</Image>
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
     <Image Include="RES\stone.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\chain_platform.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\level_menu.png" />
+    <Image Include="res\bitmap35.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\level_menu.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pointer.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>

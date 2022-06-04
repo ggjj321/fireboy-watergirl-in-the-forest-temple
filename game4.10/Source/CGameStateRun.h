@@ -13,6 +13,7 @@
 #include "stone.h"
 #include "chain-platform.h"
 
+
 namespace game_framework {
 	class CGameStateRun : public CGameState {
 	public:
@@ -26,7 +27,7 @@ namespace game_framework {
 		void OnLButtonUp(UINT nFlags, CPoint point);	
 		void OnMouseMove(UINT nFlags, CPoint point);	
 		void OnRButtonDown(UINT nFlags, CPoint point);  
-		void OnRButtonUp(UINT nFlags, CPoint point);	
+		void OnRButtonUp(UINT nFlags, CPoint point);
 		void SetLevelOneState();
 		void LevelOneMove();
 		void LevelOneShow();
@@ -56,6 +57,6 @@ namespace game_framework {
 		RedDoor		    redDoor;
 		BlueDoor	    blueDoor;
 		Stone           stone;
-		ChainPlatform  *chainPlatforms;
+		ChainPlatform  *chainPlatforms;		
 	};
 }
