@@ -9,7 +9,7 @@ namespace game_framework {
 CGameMap::CGameMap(){
     x = 0;
     y = 0;
-    mapLevel = 1; // set to 1
+    mapLevel = 3; // set to 1
     ReadMapData();
 }
 void CGameMap::OnMove(){
@@ -18,6 +18,7 @@ void CGameMap::OnMove(){
 void CGameMap::LoadBitMap() {
     firstMap.LoadBitmap(IDB_FINALMAP);
     secondMap.LoadBitmap(IDB_FINALMAP2);
+    thirdMap.LoadBitmap(IDB_BITMAP35);
 }
 void CGameMap::OnShow() {
     switch (mapLevel)
@@ -29,6 +30,10 @@ void CGameMap::OnShow() {
     case 2:
         secondMap.SetTopLeft(x, y);
         secondMap.ShowBitmap();
+        break;
+    case 3:
+        thirdMap.SetTopLeft(x, y);
+        thirdMap.ShowBitmap();
         break;
     default:
         break;
@@ -141,6 +146,15 @@ void CGameMap::ReadMapData() noexcept {
         for (int y = 0; y < 29; y++) {
             for (int x = 0; x < 39; x++) {
                 mapArray[y][x] = map2Origin[y][x];
+            }
+        }
+        gridSizeWeight = 16.41; // 640 / 39
+        gridSizeHeight = 16.55; // 480 / 29
+        break;
+    case 3:
+        for (int y = 0; y < 29; y++) {
+            for (int x = 0; x < 39; x++) {
+                mapArray[y][x] = map3Origin[y][x];
             }
         }
         gridSizeWeight = 16.41; // 640 / 39

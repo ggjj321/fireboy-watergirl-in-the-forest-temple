@@ -289,10 +289,11 @@ LRESULT CMainFrame::WindowProc(UINT message, WPARAM wParam, LPARAM lParam)
 				return 0;
 		}
 	} else if (message == WM_POWERBROADCAST) {
-		if (wParam == PBT_APMSUSPEND)
-			game_framework::CGame::Instance()->OnSuspend();
-		else if (wParam == PBT_APMRESUMECRITICAL || wParam == PBT_APMRESUMESUSPEND)
-			game_framework::CGame::Instance()->OnResume();
+			if (wParam == PBT_APMSUSPEND)
+				game_framework::CGame::Instance()->OnSuspend();
+			else if (wParam == PBT_APMRESUMECRITICAL || wParam == PBT_APMRESUMESUSPEND)
+				game_framework::CGame::Instance()->OnResume();	
 	}
 	return CFrameWnd::WindowProc(message, wParam, lParam);
 }
+

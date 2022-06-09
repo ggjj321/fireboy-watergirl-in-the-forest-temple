@@ -22,7 +22,7 @@ namespace game_framework {
 		bool isInArea(int x1, int y1, int x2, int y2);
 		int mapLevel; // 當前是第幾關
 	private:
-		CMovingBitmap firstMap, secondMap;	
+		CMovingBitmap firstMap, secondMap, thirdMap;	
 		int x, y;
 		int mapArray[29][47]; // 地圖邊界陣列	
 		double gridSizeWeight;
