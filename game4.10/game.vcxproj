@@ -390,9 +390,11 @@
     <Image Include="RES\grey_platform.bmp" />
     <Image Include="RES\leftrunning.bmp" />
     <Image Include="RES\leftrunning2.bmp" />
+    <Image Include="RES\level3.bmp" />
     <Image Include="RES\level_menu.bmp" />
-    <Image Include="RES\level_menu.png" />
     <Image Include="RES\map2.bmp" />
+    <Image Include="RES\map3.bmp" />
+    <Image Include="RES\map_3.bmp" />
     <Image Include="RES\pass.bmp" />
     <Image Include="RES\pass_pic.bmp" />
     <Image Include="RES\pointer.bmp" />

@@ -423,8 +423,7 @@
     <Image Include="RES\chain_platform.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
-    <Image Include="RES\level_menu.png" />
-    <Image Include="res\bitmap35.bmp">
+    <Image Include="RES\level3.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\level_menu.bmp">

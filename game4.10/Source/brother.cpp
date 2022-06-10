@@ -21,14 +21,14 @@ void Brother::init(int coordinateX, int coordinateY) { // origin 33 400
 }
 void Brother::LoadBitmap()
 {
-	peoplePic.LoadBitmap(IDB_BITMAP8, RGB(255, 255, 255));
+	peoplePic.LoadBitmap(IDB_BROTHER, RGB(255, 255, 255));
 }
 void Brother::AddingBitmap()
 {
-	peopleAniR.AddBitmap(IDB_BITMAP15, RGB(255, 255, 255));  //right sister_running
-	peopleAniR.AddBitmap(IDB_BITMAP16, RGB(255, 255, 255)); //right sister_running2
-	peopleAniL.AddBitmap(IDB_BITMAP13, RGB(255, 255, 255)); //left sister_running
-	peopleAniL.AddBitmap(IDB_BITMAP14, RGB(255, 255, 255)); //left sister_running2
+	peopleAniR.AddBitmap(IDB_BROTHERRIGHTRUN1, RGB(255, 255, 255));  //right sister_running
+	peopleAniR.AddBitmap(IDB_BROTHERRIGHTRUN2, RGB(255, 255, 255)); //right sister_running2
+	peopleAniL.AddBitmap(IDB_BROTHERLEFTRUN1, RGB(255, 255, 255)); //left sister_running
+	peopleAniL.AddBitmap(IDB_BROTHERLEFTRUN2, RGB(255, 255, 255)); //left sister_running2
 }
 void Brother::OnMoveAniRight()
 {

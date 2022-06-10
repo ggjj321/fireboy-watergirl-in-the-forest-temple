@@ -21,14 +21,14 @@ void Sister::init(int coordinateX, int coordinateY) { // origin 33 345
 }
 void Sister::LoadBitmap()
 {
-	peoplePic.LoadBitmap(IDB_BITMAP19, RGB(255, 255, 255));
+	peoplePic.LoadBitmap(IDB_SISTER, RGB(255, 255, 255));
 }
 void Sister::AddingBitmap()
 {
-	peopleAniR.AddBitmap(IDB_BITMAP20, RGB(255, 255, 255));  //right sister_running
-	peopleAniR.AddBitmap(IDB_BITMAP21, RGB(255, 255, 255)); //right sister_running2
-	peopleAniL.AddBitmap(IDB_BITMAP17, RGB(255, 255, 255)); //left sister_running
-	peopleAniL.AddBitmap(IDB_BITMAP18, RGB(255, 255, 255)); //left sister_running2
+	peopleAniR.AddBitmap(IDB_SISTERRIGHTRUN1, RGB(255, 255, 255));  //right sister_running
+	peopleAniR.AddBitmap(IDB_SISTERRIGHTRUN2, RGB(255, 255, 255)); //right sister_running2
+	peopleAniL.AddBitmap(IDB_SISTERLEFTRUN1, RGB(255, 255, 255)); //left sister_running
+	peopleAniL.AddBitmap(IDB_SISTERLEFTRUN2, RGB(255, 255, 255)); //left sister_running2
 }
 void Sister::OnMoveAniRight()
 {

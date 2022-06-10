@@ -34,6 +34,9 @@ namespace game_framework {
 		void SetLevelTwoState();
 		void LevelTwoMove();
 		void LevelTwoShow();
+		void SetLevelThreeState();
+		void LevelThreeMove();
+		void LevelThreeShow();
 	protected:
 		void OnMove();									
 		void OnShow();									
@@ -54,6 +57,8 @@ namespace game_framework {
 		BlueDiamond    *blueDiamonds;
 		RedDiamond     *redDiamondsTwo;
 		BlueDiamond    *blueDiamondsTwo;
+		RedDiamond	   *redDiamondsThree;
+		BlueDiamond	   *blueDiamondsThree;
 		RedDoor		    redDoor;
 		BlueDoor	    blueDoor;
 		Stone           stone;

@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ ���ͪ� Include �ɮסC
-// �� game.rc �ϥ�
+// Microsoft Visual C++ ²£¥Íªº Include ÀÉ®×¡C
+// ¥Ñ game.rc ¨Ï¥Î
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_SOCKETS_INIT_FAILED         104
@@ -48,15 +48,26 @@
 #define IDB_BITMAP11                    177
 #define IDB_BITMAP12                    178
 #define IDB_BITMAP8                     181
+#define IDB_BROTHER                     181
 #define IDB_BITMAP13                    182
+#define IDB_BROTHERLEFTRUN1             182
 #define IDB_BITMAP14                    183
+#define IDB_BROTHERLEFTRUN2             183
 #define IDB_BITMAP15                    184
+#define IDB_BROTHERRIGHTRUN1            184
 #define IDB_BITMAP16                    185
+#define IDB_BROTHERRIGHTRUN2            185
 #define IDB_BITMAP17                    186
+#define IDB_SISTERLEFTRUN1              186
 #define IDB_BITMAP18                    187
+#define IDB_SISTERLEFTRUN2              187
 #define IDB_BITMAP19                    188
+#define IDB_SISTER                      188
 #define IDB_BITMAP20                    189
+#define IDB_SISTERRIGHTRUN1             189
 #define IDB_BITMAP21                    190
+#define IDB_SISTERRIGHTRUN              190
+#define IDB_SISTERRIGHTRUN2             190
 #define IDB_BITMAP22                    193
 #define IDB_BITMAP23                    207
 #define IDB_PURPLEBUTTON                207
@@ -70,21 +81,28 @@
 #define IDB_BITMAP25                    213
 #define IDB_BLUEDIAMOND                 213
 #define IDB_BITMAP27                    214
+#define IDB_BLUEDOOR                    214
 #define IDB_BITMAP28                    215
+#define IDB_REDDOOR                     215
 #define IDB_DIEPIC                      216
 #define IDB_PASS                        217
 #define IDB_PASSPIC                     217
 #define IDB_BITMAP29                    218
 #define IDB_FINALMAP2                   218
 #define IDB_BITMAP30                    219
+#define IDB_CONGRAT                     219
 #define IDB_STONE                       220
 #define IDB_CHAINPLATFORM               221
 #define IDB_BITMAP31                    223
+#define IDB_WHITEPLAT                   223
 #define IDB_BITMAP32                    224
+#define IDB_GREENPLAT                   224
 #define IDB_BITMAP33                    225
+#define IDB_GREENBOTTON                 225
 #define IDB_BITMAP34                    226
+#define IDB_WHITEBOT                    226
+#define IDB_MAP3                        231
 #define IDB_LEVELMENU                   227
-#define IDB_BITMAP35                    228
 #define IDB_POINTER                     228
 #define IDC_README                      1001
 #define ID_FILE_PAUSE                   32771

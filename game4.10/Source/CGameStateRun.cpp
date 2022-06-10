@@ -20,6 +20,9 @@ namespace game_framework {
 		redDiamondsTwo = new RedDiamond[8];
 		blueDiamondsTwo = new BlueDiamond[8];
 
+		redDiamondsThree = new RedDiamond[8];
+		blueDiamondsThree = new BlueDiamond[8];
+
 		chainPlatforms = new ChainPlatform[2];
 	}
 
@@ -34,6 +37,9 @@ namespace game_framework {
 
 		delete[] redDiamondsTwo;
 		delete[] blueDiamondsTwo;
+
+		delete[] redDiamondsThree;
+		delete[] blueDiamondsThree;
 
 		delete[] chainPlatforms;
 	}
@@ -50,6 +56,9 @@ namespace game_framework {
 		case 2:
 			SetLevelTwoState();
 			break;
+		case 3:
+			SetLevelThreeState();
+			break;
 		default:
 			break;
 		}		
@@ -64,6 +73,9 @@ namespace game_framework {
 			break;
 		case 2:
 			LevelTwoMove();
+			break;
+		case 3:
+			LevelThreeMove();
 			break;
 		default:
 			break;
@@ -80,6 +92,9 @@ namespace game_framework {
 			break;
 		case 2:
 			SetLevelTwoState();
+			break;
+		case 3:
+			SetLevelThreeState();
 			break;
 		default:
 			break;
@@ -134,6 +149,14 @@ namespace game_framework {
 			blueDiamondsTwo[i].LoadBitmap();
 		}
 
+		for (int i = 0; i < 8; i++) {
+			redDiamondsThree[i].LoadBitmap();
+		}
+
+		for (int i = 0; i < 8; i++) {
+			blueDiamondsThree[i].LoadBitmap();
+		}
+
 		redDoor.LoadBitmap();
 
 		blueDoor.LoadBitmap();
@@ -154,6 +177,9 @@ namespace game_framework {
 			break;
 		case 2:
 			LevelTwoShow();
+			break;
+		case 3:
+			LevelThreeShow();
 			break;
 		default:
 			break;
@@ -679,5 +705,133 @@ namespace game_framework {
 			if (isDown) greenDown = true;
 		}
 		greenPlatform.GrenOnMove(greenDown);
+
+		if (map.isInArea(sister.GetX(), sister.GetY(), blueDoor.GetX(), blueDoor.GetY())) {
+			blueDoor.Touch();
+		}
+		if (map.isInArea(brother.GetX(), brother.GetY(), redDoor.GetX(), redDoor.GetY())) {
+			redDoor.Touch();
+		}
+
+		if (redDoor.GetTouch() == true && blueDoor.GetTouch() == true) {
+			map.NextLevel();
+			CGame::passGame = true;
+			GotoGameState(GAME_STATE_OVER);
+		}
+	}
+
+	void CGameStateRun::SetLevelThreeState() {
+		sister.init(30, 200);   // 50 400
+		brother.init(580, 40);  // 15 400
+		redDoor.init(510, 195);
+		blueDoor.init(65, 410);
+		redDiamondsThree[0].init(420, 80);
+		redDiamondsThree[1].init(320, 80);
+		redDiamondsThree[2].init(220, 80);
+		redDiamondsThree[3].init(150, 40);
+		redDiamondsThree[4].init(55, 85);
+		redDiamondsThree[5].init(40, 160);
+		redDiamondsThree[6].init(385, 145);
+		redDiamondsThree[7].init(285, 145);
+		blueDiamondsThree[0].init(190, 280);
+		blueDiamondsThree[1].init(290, 280);
+		blueDiamondsThree[2].init(380, 275);
+		blueDiamondsThree[3].init(440, 230);
+		blueDiamondsThree[4].init(530, 290);
+		blueDiamondsThree[5].init(540, 360);
+		blueDiamondsThree[6].init(355, 345);
+		blueDiamondsThree[7].init(220, 345);
+		timer.init(280, 0);
+	}
+
+	void CGameStateRun::LevelThreeShow() {
+		map.OnShow();
+
+		blueDoor.OnShow();
+		redDoor.OnShow();
+
+		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
+		{
+			sister.OnShow();
+		}
+		else if (sister.GetIsMovingRight() == true)
+		{
+			sister.OnMoveAniRight();
+		}
+		else if (sister.GetIsMovingLeft() == true) {
+			sister.OnMoveAniLeft();
+		}
+
+		if (brother.GetIsMovingRight() == false && brother.GetIsMovingLeft() == false)
+		{
+			brother.OnShow();
+		}
+		else if (brother.GetIsMovingRight() == true)
+		{
+			brother.OnMoveAniRight();
+		}
+		else if (brother.GetIsMovingLeft() == true) {
+			brother.OnMoveAniLeft();
+		}
+
+		timer.OnShow();
+
+		for (int i = 0; i < 8; i++) {
+			redDiamondsThree[i].OnShow();
+		}
+
+		for (int i = 0; i < 8; i++) {
+			blueDiamondsThree[i].OnShow();
+		}
+	}
+
+	void CGameStateRun::LevelThreeMove() {
+		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);
+		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
+		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
+		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
+		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, false, false);
+
+		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
+		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
+		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
+		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
+		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, false, false);
+
+		timer.OnMove();
+		timer.TimeCalculate();
+
+		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + 40);
+		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + 40);
+
+		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + 40);
+		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + 40);
+
+		if (sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
+		if (brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
+
+		for (int i = 0; i < 8; i++) {
+			if (map.isInArea(brother.GetX(), brother.GetY(), redDiamondsThree[i].GetX(), redDiamondsThree[i].GetY())) {
+				redDiamondsThree[i].Touch();
+			}
+		}
+		for (int i = 0; i < 8; i++) {
+			if (map.isInArea(sister.GetX(), sister.GetY(), blueDiamondsThree[i].GetX(), blueDiamondsThree[i].GetY())) {
+				blueDiamondsThree[i].Touch();
+			}
+		}
+
+		if (map.isInArea(sister.GetX(), sister.GetY(), blueDoor.GetX(), blueDoor.GetY())) {
+			blueDoor.Touch();
+		}
+		if (map.isInArea(brother.GetX(), brother.GetY(), redDoor.GetX(), redDoor.GetY())) {
+			redDoor.Touch();
+		}
+
+		if (redDoor.GetTouch() == true && blueDoor.GetTouch() == true) {
+			map.NextLevel();
+			CGame::passGame = true;
+			GotoGameState(GAME_STATE_OVER);
+		}
 	}
 }
