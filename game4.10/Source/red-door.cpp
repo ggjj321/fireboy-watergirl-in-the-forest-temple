@@ -12,6 +12,6 @@ RedDoor::RedDoor()
 }
 void RedDoor::LoadBitmap()
 {
-	doorPic.LoadBitmap(IDB_BITMAP28, RGB(255, 255, 255));
+	doorPic.LoadBitmap(IDB_REDDOOR, RGB(255, 255, 255));
 }
 }

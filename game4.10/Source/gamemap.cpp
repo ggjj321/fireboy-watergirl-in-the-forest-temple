@@ -18,7 +18,7 @@ void CGameMap::OnMove(){
 void CGameMap::LoadBitMap() {
     firstMap.LoadBitmap(IDB_FINALMAP);
     secondMap.LoadBitmap(IDB_FINALMAP2);
-    thirdMap.LoadBitmap(IDB_BITMAP36);
+    thirdMap.LoadBitmap(IDB_MAP3);
 }
 void CGameMap::OnShow() {
     switch (mapLevel)

@@ -12,6 +12,6 @@ BlueDoor::BlueDoor()
 }
 void BlueDoor::LoadBitmap()
 {
-	doorPic.LoadBitmap(IDB_BITMAP27, RGB(255, 255, 255));
+	doorPic.LoadBitmap(IDB_BLUEDOOR, RGB(255, 255, 255));
 }
 }

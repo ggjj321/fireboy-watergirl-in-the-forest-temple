@@ -112,25 +112,25 @@ IDB_GAMESTARTVIEW       BITMAP                  "..\\res\\gamestart.bmp"
 
 IDB_FINALMAP            BITMAP                  "..\\res\\final_map.bmp"
 
-IDB_BITMAP8             BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother.bmp"
+IDB_BROTHER             BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother.bmp"
 
-IDB_BITMAP13            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother_leftrunning1.bmp"
+IDB_BROTHERLEFTRUN1     BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother_leftrunning1.bmp"
 
-IDB_BITMAP14            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother_leftrunning2.bmp"
+IDB_BROTHERLEFTRUN2     BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother_leftrunning2.bmp"
 
-IDB_BITMAP15            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother_running .bmp"
+IDB_BROTHERRIGHTRUN1    BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother_running .bmp"
 
-IDB_BITMAP16            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother_running2.bmp"
+IDB_BROTHERRIGHTRUN2    BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\brother_running2.bmp"
 
-IDB_BITMAP17            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\leftrunning.bmp"
+IDB_SISTERLEFTRUN1      BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\leftrunning.bmp"
 
-IDB_BITMAP18            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\leftrunning2.bmp"
+IDB_SISTERLEFTRUN2      BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\leftrunning2.bmp"
 
-IDB_BITMAP19            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister.bmp"
+IDB_SISTER              BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister.bmp"
 
-IDB_BITMAP20            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister_running.bmp"
+IDB_SISTERRIGHTRUN1     BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister_running.bmp"
 
-IDB_BITMAP21            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister_running2.bmp"
+IDB_SISTERRIGHTRUN2     BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\sister_running2.bmp"
 
 IDB_PURPLEBUTTON        BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\purple-botton.bmp"
 
@@ -146,9 +146,9 @@ IDB_REDDIAMOND          BITMAP                  "D:\\fireboy-watergirl-in-the-fo
 
 IDB_BLUEDIAMOND         BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\gem_blue.bmp"
 
-IDB_BITMAP27            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\doorBlue.bmp"
+IDB_BLUEDOOR            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\doorBlue.bmp"
 
-IDB_BITMAP28            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\doorRed.bmp"
+IDB_REDDOOR             BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\doorRed.bmp"
 
 IDB_DIEPIC              BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\endpic.bmp"
 
@@ -156,15 +156,15 @@ IDB_PASSPIC             BITMAP                  "D:\\fireboy-watergirl-in-the-fo
 
 IDB_FINALMAP2           BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\map2.bmp"
 
-IDB_BITMAP30            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\pass_pic.bmp"
+IDB_CONGRAT             BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\pass_pic.bmp"
 
-IDB_BITMAP31            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\grey_platform.bmp"
+IDB_WHITEPLAT           BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\grey_platform.bmp"
 
-IDB_BITMAP32            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\green_platform.bmp"
+IDB_GREENPLAT           BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\green_platform.bmp"
 
-IDB_BITMAP33            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\green_bot.bmp"
+IDB_GREENBOTTON         BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\green_bot.bmp"
 
-IDB_BITMAP34            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\white_bot.bmp"
+IDB_WHITEBOT            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\white_bot.bmp"
 
 IDB_STONE               BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\stone.bmp"
 
@@ -172,7 +172,7 @@ IDB_CHAINPLATFORM       BITMAP                  "D:\\fireboy-watergirl-in-the-fo
 
 IDB_BITMAP35            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\map3.bmp"
 
-IDB_BITMAP36            BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\level3.bmp"
+IDB_MAP3                BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\level3.bmp"
 
 
 /////////////////////////////////////////////////////////////////////////////
