@@ -519,16 +519,16 @@ namespace game_framework {
 		redDiamondsTwo[1].init(180, 430);
 		redDiamondsTwo[2].init(400, 380);
 		redDiamondsTwo[3].init(450, 380);
-		redDiamondsTwo[4].init(450, 300);
-		redDiamondsTwo[5].init(220, 300);
+		redDiamondsTwo[4].init(450, 290);
+		redDiamondsTwo[5].init(220, 290);
 		redDiamondsTwo[6].init(290, 190);
 		redDiamondsTwo[7].init(280, 40);
 		blueDiamondsTwo[0].init(130, 380);
 		blueDiamondsTwo[1].init(180, 380);
 		blueDiamondsTwo[2].init(400, 430);
 		blueDiamondsTwo[3].init(450, 430);
-		blueDiamondsTwo[4].init(400, 300);
-		blueDiamondsTwo[5].init(140, 300);
+		blueDiamondsTwo[4].init(400, 290);
+		blueDiamondsTwo[5].init(140, 290);
 		blueDiamondsTwo[6].init(325, 190);
 		blueDiamondsTwo[7].init(340, 40);
 		whiteButtons[0].init(75, 314);
@@ -658,12 +658,12 @@ namespace game_framework {
 		if (brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 
 		for (int i = 0; i < 8; i++) {
-			if (map.isSameArray(brother.GetX() + 10, brother.GetY(), redDiamondsTwo[i].GetX() + 5, redDiamondsTwo[i].GetY() - 5)) {
+			if (map.isInArea(brother.GetX(), brother.GetY(), redDiamondsTwo[i].GetX(), redDiamondsTwo[i].GetY())) {
 				redDiamondsTwo[i].Touch();
 			}
 		}
 		for (int i = 0; i < 8; i++) {
-			if (map.isSameArray(sister.GetX() + 10, sister.GetY(), blueDiamondsTwo[i].GetX() + 5, blueDiamondsTwo[i].GetY() - 5)) {
+			if (map.isInArea(sister.GetX(), sister.GetY(), blueDiamondsTwo[i].GetX(), blueDiamondsTwo[i].GetY())) {
 				blueDiamondsTwo[i].Touch();
 			}
 		}

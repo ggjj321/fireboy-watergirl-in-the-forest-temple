@@ -1,7 +1,3 @@
-//{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ ²£¥Íªº Include ÀÉ®×¡C
-// ¥Ñ game.rc ¨Ï¥Î
-//
 #define IDD_ABOUTBOX                    100
 #define IDP_SOCKETS_INIT_FAILED         104
 #define IDR_MAINFRAME                   128
