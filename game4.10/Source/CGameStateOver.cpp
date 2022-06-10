@@ -14,7 +14,7 @@ namespace game_framework {
 	void CGameStateOver::OnMove()
 	{
 		if (retry)
-			GotoGameState(GAME_STATE_RUN);
+			GotoGameState(GAME_STATE_INIT);
 	}
 
 	void CGameStateOver::OnBeginState()

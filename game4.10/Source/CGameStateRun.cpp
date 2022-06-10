@@ -46,8 +46,9 @@ namespace game_framework {
 
 	void CGameStateRun::OnBeginState()
 	{
+		map.ReadMapData();
 		CGame::passGame = false;
-		switch (map.mapLevel)
+		switch (CGameMap::mapLevel)
 		{
 		case 1:
 			SetLevelOneState();
@@ -65,7 +66,7 @@ namespace game_framework {
 
 	void CGameStateRun::OnMove()						
 	{
-		switch (map.mapLevel)
+		switch (CGameMap::mapLevel)
 		{
 		case 1:
 			LevelOneMove();
@@ -81,9 +82,10 @@ namespace game_framework {
 		}	
 	}
 
-	void CGameStateRun::OnInit()  								
+	void CGameStateRun::OnInit()  	
 	{
-		switch (map.mapLevel)
+		map.ReadMapData();
+		switch (CGameMap::mapLevel)
 		{
 		case 1:
 			SetLevelOneState();
@@ -101,6 +103,8 @@ namespace game_framework {
 		ShowInitProgress(33);	
 
 		map.LoadBitMap();
+
+		
 
 		sister.LoadBitmap();
 		sister.AddingBitmap();		
@@ -166,7 +170,7 @@ namespace game_framework {
 
 	void CGameStateRun::OnShow()
 	{
-		switch (map.mapLevel)
+		switch (CGameMap::mapLevel)
 		{
 		case 1:
 			LevelOneShow();

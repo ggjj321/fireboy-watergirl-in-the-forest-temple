@@ -177,6 +177,12 @@
     <ClCompile Include="Source\chain-platform.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\LevelMenu.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\pointers.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -261,6 +267,12 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\chain-platform.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\LevelMenu.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\pointers.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -411,13 +423,13 @@
     <Image Include="RES\chain_platform.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
-    <Image Include="RES\map3.bmp">
-      <Filter>MyGame\Resource Files</Filter>
-    </Image>
-    <Image Include="RES\map_3.bmp">
-      <Filter>MyGame\Resource Files</Filter>
-    </Image>
     <Image Include="RES\level3.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\level_menu.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\pointer.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -1,3 +1,5 @@
+#include "LevelMenu.h"
+#include "pointers.h"
 namespace game_framework {
 	class CGameStateInit : public CGameState {
 	public:
@@ -10,5 +12,8 @@ namespace game_framework {
 		void OnShow();									// 顯示這個狀態的遊戲畫面
 	private:
 		CMovingBitmap logo;								// csie的logo
+		LevelMenu       levelMenu;
+		Pointers        pointers;
+		bool isEnterrSelectMenu;
 	};
 }

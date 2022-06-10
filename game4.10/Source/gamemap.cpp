@@ -6,10 +6,11 @@
 #include "gamelib.h"
 #include "gamemap.h"
 namespace game_framework {
+int CGameMap::mapLevel = 1;
+
 CGameMap::CGameMap(){
     x = 0;
     y = 0;
-    mapLevel = 3; // set to 1
     ReadMapData();
 }
 void CGameMap::OnMove(){
@@ -174,19 +175,19 @@ bool CGameMap::isFull(int x, int y) noexcept {
     if (mapArray[gy][gx] == 1)return TRUE;
     else return FALSE;
 }
-bool CGameMap::isRedWater(int x, int y) noexcept {  // ¬õ¤ô:3
+bool CGameMap::isRedWater(int x, int y) noexcept {  // Â¬ÃµÂ¤Ã´:3
     const int gx = GetGx(x);
     const int gy = GetGy(y);
     if (mapArray[gy][gx] == 3)return TRUE;
     else return FALSE;
 }
-bool CGameMap::isBlueWater(int x, int y) noexcept {  // ÂÅ¤ô:4
+bool CGameMap::isBlueWater(int x, int y) noexcept {  // Ã‚Ã…Â¤Ã´:4
     const int gx = GetGx(x);
     const int gy = GetGy(y);
     if (mapArray[gy][gx] == 4)return TRUE;
     else return FALSE;
 }
-bool CGameMap::isGreenWater(int x, int y) noexcept {  // ºñ¤ô:5
+bool CGameMap::isGreenWater(int x, int y) noexcept {  // ÂºÃ±Â¤Ã´:5
     const int gx = GetGx(x);
     const int gy = GetGy(y);
     if (mapArray[gy][gx] == 5)return TRUE;
