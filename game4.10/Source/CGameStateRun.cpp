@@ -46,6 +46,7 @@ namespace game_framework {
 
 	void CGameStateRun::OnBeginState()
 	{
+		secretNum = 0;
 		map.ReadMapData();
 		CGame::passGame = false;
 		switch (CGameMap::mapLevel)
@@ -84,6 +85,7 @@ namespace game_framework {
 
 	void CGameStateRun::OnInit()  	
 	{
+		secretNum = 0;
 		map.ReadMapData();
 		switch (CGameMap::mapLevel)
 		{
@@ -183,7 +185,11 @@ namespace game_framework {
 			break;
 		default:
 			break;
-		}		
+		}	
+
+		if (secretNum == 1) SecretTechText("c");
+		if (secretNum == 2) SecretTechText("co");
+		if (secretNum == 3) SecretTechText("con");
 	}
 
 	void CGameStateRun::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -197,6 +203,11 @@ namespace game_framework {
 		const char BROTHER_KEY_UP = 0x26;
 		const char BROTHER_KEY_RIGHT = 0x27;
 		const char BROTHER_KEY_DOWN = 0x28;
+
+		const char SECRET_C = 0x43;
+		const char SECRET_O = 0x4F;
+		const char SECRET_N = 0x4E;
+		const char SECRET_G = 0x47;
 
 		if (nChar == SISTER_KEY_LEFT)
 			sister.SetMovingLeft(true);
@@ -212,6 +223,17 @@ namespace game_framework {
 			brother.SetMovingRight(true);
 		if (nChar == BROTHER_KEY_UP) {
 			brother.SetJumpimg(true);
+		}
+
+		if (nChar == SECRET_C && secretNum == 0)
+			secretNum += 1;
+		if (nChar == SECRET_O && secretNum == 1)
+			secretNum += 1;
+		if (nChar == SECRET_N && secretNum == 2)
+			secretNum += 1;
+		if (nChar == SECRET_G && secretNum == 3) {
+			CGame::passGame = true;
+			GotoGameState(GAME_STATE_OVER);
 		}
 	}
 
@@ -261,6 +283,21 @@ namespace game_framework {
 	void CGameStateRun::OnRButtonUp(UINT nFlags, CPoint point)	
 	{
 
+	}
+
+	void CGameStateRun::SecretTechText(char* text)
+	{
+		CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
+		CFont f, * fp;
+		f.CreatePointFont(230, "Times New Roman");	// 產生 font f; 160表示16 point的字
+		fp = pDC->SelectObject(&f);					// 選用 font f
+		pDC->SetBkColor(RGB(0, 0, 0));
+		pDC->SetTextColor(RGB(255, 255, 0));
+		char str[80];								// Demo 數字對字串的轉換
+		sprintf(str, text);
+		pDC->TextOut(0, 0, str);
+		pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
+		CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
 	}
 
 	void CGameStateRun::SetLevelOneState()
