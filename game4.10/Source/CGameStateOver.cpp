@@ -42,17 +42,25 @@ namespace game_framework {
 		if (CGame::passGame) {
 			picturePass.SetTopLeft(0, 0);
 			picturePass.ShowBitmap();
+
+			PutText(145, 355, 340, "Press N to select level");
 		}
 		else{
 			pictureDie.SetTopLeft(0, 0);
 			pictureDie.ShowBitmap();
-		}	
+		}			
 	}
 	void CGameStateOver::OnKeyDown(UINT nChar, UINT nRepCnt, UINT nFlags)
 	{
 		const char RETRY_KEY = 0x52;
 		const char NEXTMAP_KEY = 0x4E;
-		if (nChar == RETRY_KEY || nChar == NEXTMAP_KEY)
-			retry = true;
+		if (CGame::passGame) {
+			if (nChar == NEXTMAP_KEY) GotoGameState(GAME_STATE_INIT);
+		}
+		else
+		{
+			if (nChar == NEXTMAP_KEY) GotoGameState(GAME_STATE_INIT);
+			if (nChar == RETRY_KEY) GotoGameState(GAME_STATE_RUN);
+		}
 	}
 }

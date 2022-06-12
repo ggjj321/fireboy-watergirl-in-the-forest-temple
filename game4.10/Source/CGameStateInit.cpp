@@ -11,10 +11,12 @@ namespace game_framework {
 		: CGameState(g)
 	{
 		isEnterrSelectMenu = false;
+		showAbout = false;
 	}
 
 	void CGameStateInit::OnInit()
 	{
+		showAbout = false;
 		//
 		// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
 		//     等的不耐煩，遊戲會出現「Loading ...」，顯示Loading的進度。
@@ -28,6 +30,8 @@ namespace game_framework {
 		levelMenu.LoadBitmap();
 
 		pointers.LoadBitmap();
+
+		aboutPic.LoadBitmap(IDB_ABOUT);
 		//
 		// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
 		//
@@ -36,7 +40,8 @@ namespace game_framework {
 	void CGameStateInit::OnBeginState()
 	{
 		levelMenu.init(0, 0);
-		pointers.init(70, 250, 150, 300, 240, 260, 350, 260, 460, 260);
+		pointers.init(70, 250, 150, 300, 240, 260, 350, 260, 330, 410);
+		showAbout = false;
 	}
 
 	void CGameStateInit::OnKeyUp(UINT nChar, UINT nRepCnt, UINT nFlags)
@@ -47,6 +52,8 @@ namespace game_framework {
 		const char NEXT_LEVEL = 0x27;
 		const char LAST_LEVEL = 0x25;
 		const char LEVEL_SELECT = 0xd;
+
+		const char ABOUT_BACK = 0x42;
 
 		if (nChar == KEY_SPACE)
 			isEnterrSelectMenu = true;					// 切換至GAME_STATE_RUN
@@ -59,9 +66,15 @@ namespace game_framework {
 			pointers.LastLevel();
 		if (nChar == LEVEL_SELECT)
 		{
-			CGameMap::mapLevel = pointers.GetSelectedLevel();
-			GotoGameState(GAME_STATE_RUN);
-		}		
+			if (pointers.GetSelectedLevel() == 5) showAbout = true;
+			else
+			{
+				CGameMap::mapLevel = pointers.GetSelectedLevel();
+				GotoGameState(GAME_STATE_RUN);
+			}	
+		}
+
+		if (nChar == ABOUT_BACK && showAbout) showAbout = false;
 	}
 
 	void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)
@@ -75,22 +88,15 @@ namespace game_framework {
 			levelMenu.OnShow();
 			pointers.OnShow();
 
-			CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
-			CFont f, * fp;
-			f.CreatePointFont(230, "Times New Roman");	// 產生 font f; 160表示16 point的字
-			fp = pDC->SelectObject(&f);					// 選用 font f
-			pDC->SetBkColor(RGB(0, 0, 0));
-			pDC->SetTextColor(RGB(255, 255, 0));
-			char str[80];								// Demo 數字對字串的轉換
-			sprintf(str, "Please use arrow key to select level");
-			pDC->TextOut(110, 350, str);
-			pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
-			CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
+			PutText(110, 80, 230, "Please use arrow key to select level");
+
+			PutText(330, 380, 280, "about");
 		}
 		else
 		{
 			logo.SetTopLeft(0, 0);
 			logo.ShowBitmap();
+
 			//
 			// Demo螢幕字型的使用，不過開發時請盡量避免直接使用字型，改用CMovingBitmap比較好
 			//
@@ -107,6 +113,14 @@ namespace game_framework {
 			pDC->TextOut(5, 455, "Press Alt-F4 or ESC to Quit.");
 			pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
 			CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
-		}		
+		}	
+
+		if (showAbout)
+		{
+			aboutPic.SetTopLeft(0, 0);
+			aboutPic.ShowBitmap();
+
+			PutText(330, 380, 280, "press B to back");
+		}
 	}
 }
