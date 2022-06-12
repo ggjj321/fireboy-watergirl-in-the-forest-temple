@@ -671,25 +671,25 @@ namespace game_framework {
 			brotherPlatformY = greenPlatform.GetY() - 34;
 		}
 		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);
-		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
-		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
+		const bool sisterRightBound = map.isEmpty(sister.GetX() + sister.GetWidth(), sister.GetY() + 17);
+		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + (int)(sister.GetHeight()*1.2));
 		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
 		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, sisterOnGreenPlatform, sisterPlatformY);
 
 		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
-		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
-		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
+		const bool brotherRightBound = map.isEmpty(brother.GetX() + brother.GetWidth(), brother.GetY() + 17);
+		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + (int)(brother.GetHeight() * 1.2));
 		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
 		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, brotherOnGreenPlatform, brotherPlatformY);
 
 		timer.OnMove();
 		timer.TimeCalculate();
 
-		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + 40);
-		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + 40);
+		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + sister.GetHeight());
+		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + sister.GetHeight());
 
-		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + 40);
-		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + 40);
+		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + brother.GetHeight());
+		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + brother.GetHeight());
 
 		if (sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 		if (brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);

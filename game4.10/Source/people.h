@@ -13,6 +13,7 @@ namespace game_framework {
 		int GetY();
 		int jumpinVelocity;
 		int GetWidth();
+		int GetHeight();
 		bool isSetJumping;
 		bool GetIsMovingLeft();
 		bool GetIsMovingRight();

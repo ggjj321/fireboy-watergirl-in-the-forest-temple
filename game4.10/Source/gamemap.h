@@ -24,7 +24,7 @@ namespace game_framework {
 	private:
 		CMovingBitmap firstMap, secondMap, thirdMap;	
 		int x, y;
-		int mapArray[29][47]; // 地圖邊界陣列	
+		int mapArray[30][47]; // 地圖邊界陣列	
 		double gridSizeWeight;
 		double gridSizeHeight;
 	};
