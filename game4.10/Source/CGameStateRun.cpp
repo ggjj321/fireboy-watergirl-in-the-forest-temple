@@ -59,6 +59,9 @@ namespace game_framework {
 		case 3:
 			SetLevelThreeState();
 			break;
+		case 4:
+			SetLevelFourState();
+			break;
 		default:
 			break;
 		}		
@@ -76,6 +79,9 @@ namespace game_framework {
 			break;
 		case 3:
 			LevelThreeMove();
+			break;
+		case 4:
+			LevelFourMove();
 			break;
 		default:
 			break;
@@ -96,6 +102,9 @@ namespace game_framework {
 		case 3:
 			SetLevelThreeState();
 			break;
+		case 4:
+			SetLevelFourState();
+			break;
 		default:
 			break;
 		}
@@ -114,12 +123,15 @@ namespace game_framework {
 				
 		buttons[0].LoadBitmap(1);		
 		buttons[1].LoadBitmap(1);
+		buttonsFour.LoadBitmap(1);
 
 		whiteButtons[0].LoadBitmap(2);
 		whiteButtons[1].LoadBitmap(2);
 
 		greenButtons[0].LoadBitmap(3);
 		greenButtons[1].LoadBitmap(3);
+
+		greenButtonsFour.LoadBitmap(3);
 
 		ShowInitProgress(50);
 		
@@ -130,6 +142,12 @@ namespace game_framework {
 		greyPlatform.LoadBitmap(1);
 
 		greenPlatform.LoadBitmap(2);
+
+		level4Grey.LoadBitmap(3);
+
+		level4Green.LoadBitmap(4);
+
+		level4Purple.LoadBitmap(5);
 
 		rocker.LoadBitmap();
 
@@ -157,6 +175,8 @@ namespace game_framework {
 			blueDiamondsThree[i].LoadBitmap();
 		}
 
+		whiteDiamonds.LoadBitmap();
+
 		redDoor.LoadBitmap();
 
 		blueDoor.LoadBitmap();
@@ -180,6 +200,9 @@ namespace game_framework {
 			break;
 		case 3:
 			LevelThreeShow();
+			break;
+		case 4:
+			LevelFourShow();
 			break;
 		default:
 			break;
@@ -704,7 +727,7 @@ namespace game_framework {
 
 			if (isDown) greenDown = true;
 		}
-		greenPlatform.GrenOnMove(greenDown);
+		greenPlatform.GrenOnMove(greenDown, 87);
 
 		if (map.isInArea(sister.GetX(), sister.GetY(), blueDoor.GetX(), blueDoor.GetY())) {
 			blueDoor.Touch();
@@ -833,5 +856,183 @@ namespace game_framework {
 			CGame::passGame = true;
 			GotoGameState(GAME_STATE_OVER);
 		}
+	}
+
+	void CGameStateRun::SetLevelFourState()
+	{
+		sister.init(310, 185); // 120 20
+		brother.init(80, 20);
+		rocker.init(320, 180);
+		buttonsFour.init(84, 264);
+		greenButtonsFour.init(265, 445);
+		level4Grey.init(561, 347);
+		level4Green.init(315, 245);
+		level4Purple.init(263, 415);
+		timer.init(280, 0);
+		whiteDiamonds.init(210, 430);
+		redDoor.init(528, 213);
+		blueDoor.init(578, 410);
+	}
+	void CGameStateRun::LevelFourMove() {
+		int greenPlatformTop = level4Green.GetFocusY() - 52;
+		for (int i = 0; i < 3; i++) {
+			map.ChangeArray(level4Green.GetX() + 8, (level4Green.GetY() + 5) + 17 * i, 1);
+			if (level4Green.GetY() + 52 <= level4Green.GetFocusY() + 17 * i) {
+				map.ChangeArray(level4Green.GetX() + 8, level4Green.GetFocusY() + 17 * i, 0);
+			}
+			if (level4Green.GetY() > greenPlatformTop + 17 * i) {
+				map.ChangeArray(level4Green.GetX() + 8, greenPlatformTop + 17 * i, 0);
+			}
+		}
+
+		int purplePlatformLeft = level4Purple.GetFocusX() - 52;
+		for (int i = 0; i < 3; i++) {
+			map.ChangeArray(level4Purple.GetX() + 17 * i, level4Purple.GetY() + 7, 1);
+			if (level4Purple.GetX() + 52 <= level4Purple.GetFocusX() + 17 * i) {
+				map.ChangeArray(level4Purple.GetX() + 17 * i, level4Purple.GetY() + 7, 0);
+			}
+			if (level4Purple.GetX() > purplePlatformLeft + 17 * i) {
+				map.ChangeArray(purplePlatformLeft + 17 * i, level4Purple.GetY() + 7, 0);
+			}
+		}
+
+		int greyPlatformTop = level4Grey.GetFocusY() + 52;
+		for (int i = 0; i < 3; i++) {
+			map.ChangeArray(level4Grey.GetX() + 8, level4Grey.GetY() + 17 * i, 1);
+			if (level4Grey.GetY() + 52 <= level4Grey.GetFocusY() + 17 * i) {
+				map.ChangeArray(level4Grey.GetX() + 8, level4Green.GetFocusY() + 17 * i, 0);
+			}
+			if(level4Grey.GetY() < greyPlatformTop + 17 * i) {
+				map.ChangeArray(level4Grey.GetX() + 8, greyPlatformTop + 17 * i, 0);
+			}
+		}
+
+		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);
+		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
+		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
+		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
+		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, false, false);
+
+		const bool brotherLeftBound = map.isEmpty(brother.GetX() - 1, brother.GetY() + 17);
+		const bool brotherRightBound = map.isEmpty(brother.GetX() + 10, brother.GetY() + 17);
+		const bool brotherDownBound = map.isEmpty(brother.GetX() + 5, brother.GetY() + 40);
+		const bool brotherUpBound = map.isEmpty(brother.GetX(), brother.GetY());
+		brother.OnMove(brotherLeftBound, brotherRightBound, brotherDownBound, brotherUpBound, false, false);
+
+		if (map.isSameArray(brother.GetX(), brother.GetY(), rocker.GetX() + 15, rocker.GetY() + 15)) rocker.Touch();
+		if (map.isSameArray(sister.GetX(), sister.GetY(), rocker.GetX() + 15, rocker.GetY() + 15)) rocker.Touch();
+
+		level4Grey.level4DownMove(rocker.GetIsTouch());
+
+		timer.OnMove();
+		timer.TimeCalculate();
+
+		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + 40);
+		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + 40);
+
+		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + 40);
+		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + 40);
+
+		if (sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
+		if (brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
+
+		if (map.isInArea(sister.GetX(), sister.GetY(), whiteDiamonds.GetX(), whiteDiamonds.GetY())) {
+			whiteDiamonds.Touch();
+		}
+
+		if (map.isInArea(brother.GetX(), brother.GetY(), whiteDiamonds.GetX(), whiteDiamonds.GetY())) {
+			whiteDiamonds.Touch();
+		}
+
+		bool greenDown = false;
+		int buttonPx = map.GetGx(greenButtonsFour.GetX());
+		int buttonPy = map.GetGy(greenButtonsFour.GetY());
+		int sisterPx = map.GetGx(sister.GetX());
+		int sisterPy = map.GetGy(sister.GetY());
+		int brotherPx = map.GetGx(brother.GetX());
+		int brotherPy = map.GetGy(brother.GetY());
+
+		bool isBrotherDown = ((buttonPx - 1 <= brotherPx && brotherPx <= buttonPx + 1) && buttonPy - 1 == brotherPy);
+		bool isSisterDown = ((buttonPx - 1 <= sisterPx && sisterPx <= buttonPx + 1) && buttonPy - 1 == sisterPy);
+		bool isDown = isBrotherDown || isSisterDown;
+
+		greenButtonsFour.OnMove(isDown);
+
+		if (isDown) greenDown = true;
+	
+		level4Green.level4OnMove(greenDown);
+
+		bool purpleDown = false;
+		int buttonPurplePx = map.GetGx(buttonsFour.GetX());
+		int buttonPurplePy = map.GetGy(buttonsFour.GetY());
+
+		bool isBrotherPurpleDown = ((buttonPurplePx - 1 <= brotherPx && brotherPx <= buttonPurplePx + 1) && buttonPurplePy - 1 == brotherPy);
+		bool isSisterPurpleDown = ((buttonPurplePx - 1 <= sisterPx && sisterPx <= buttonPurplePx + 1) && buttonPurplePy - 1 == sisterPy);
+		bool isPurpleDown = isBrotherPurpleDown || isSisterPurpleDown;
+
+		buttonsFour.OnMove(isPurpleDown);
+
+		if (isPurpleDown) purpleDown = true;
+		
+		level4Purple.GrenOnMove(purpleDown, 52);
+
+		if (map.isInArea(sister.GetX(), sister.GetY(), blueDoor.GetX(), blueDoor.GetY())) {
+			blueDoor.Touch();
+		}
+		if (map.isInArea(brother.GetX(), brother.GetY(), redDoor.GetX(), redDoor.GetY())) {
+			redDoor.Touch();
+		}
+
+		if (redDoor.GetTouch() == true && blueDoor.GetTouch() == true) {
+			map.NextLevel();
+			CGame::passGame = true;
+			GotoGameState(GAME_STATE_OVER);
+		}
+	}
+	void CGameStateRun::LevelFourShow() {
+		map.OnShow();
+
+		blueDoor.OnShow();
+		redDoor.OnShow();
+
+		rocker.OnShow();
+
+		buttonsFour.OnShow();
+
+		greenButtonsFour.OnShow();
+
+		level4Grey.OnShow();
+
+		level4Green.OnShow();
+
+		level4Purple.OnShow();
+
+		if (sister.GetIsMovingRight() == false && sister.GetIsMovingLeft() == false)
+		{
+			sister.OnShow();
+		}
+		else if (sister.GetIsMovingRight() == true)
+		{
+			sister.OnMoveAniRight();
+		}
+		else if (sister.GetIsMovingLeft() == true) {
+			sister.OnMoveAniLeft();
+		}
+
+		if (brother.GetIsMovingRight() == false && brother.GetIsMovingLeft() == false)
+		{
+			brother.OnShow();
+		}
+		else if (brother.GetIsMovingRight() == true)
+		{
+			brother.OnMoveAniRight();
+		}
+		else if (brother.GetIsMovingLeft() == true) {
+			brother.OnMoveAniLeft();
+		}
+
+		timer.OnShow();
+
+		whiteDiamonds.OnShow();
 	}
 }

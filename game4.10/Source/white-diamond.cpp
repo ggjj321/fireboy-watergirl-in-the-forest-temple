@@ -12,6 +12,6 @@ WhiteDiamond::WhiteDiamond()
 }
 void WhiteDiamond::LoadBitmap()
 {
-	diamondPic.LoadBitmap(IDB_REDDIAMOND, RGB(255, 255, 255));
+	diamondPic.LoadBitmap(IDB_WHITEDIAMOND, RGB(255, 255, 255));
 }
 }

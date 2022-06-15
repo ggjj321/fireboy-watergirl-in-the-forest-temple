@@ -33,15 +33,24 @@ void Plat::LoadBitmap(int color)
 	case 2:
 		buttonPic.LoadBitmap(IDB_BITMAP32, RGB(255, 255, 255));
 		break;
+	case 3:
+		buttonPic.LoadBitmap(IDB_LEVELFOURGREY, RGB(255, 255, 255));
+		break;
+	case 4:
+		buttonPic.LoadBitmap(IDB_LEVELFOURGREEN, RGB(255, 255, 255));
+		break;
+	case 5:
+		buttonPic.LoadBitmap(IDB_LEVELFOURPURPLE, RGB(255, 255, 255));
+		break;
 	default:
 		break;
 	}
 		
 }
-void Plat::GrenOnMove(bool isDown)
+void Plat::GrenOnMove(bool isDown, int length)
 {
 	if (isDown) {
-		if (x >= (focusX - 87)) {
+		if (x >= (focusX - length)) {
 			x -= 1;
 		}
 	}
@@ -63,6 +72,34 @@ void Plat::OnMove(bool isDown)
 			y += 1;
 		}
 	}
+}
+
+void Plat::level4DownMove(bool isDown)
+{
+	if (isDown == true) {
+		if (y <= (focusY + 51)) {
+			y += 1;
+		}
+		else {
+			if (y > focusY) {
+				y -= 1;
+			}
+		}
+	}
+}
+
+void Plat::level4OnMove(bool isDown)
+{
+		if (isDown == true) {
+			if (y >= (focusY - 51)) {
+				y -= 1;
+			}
+		}
+		else {
+			if (y < focusY) {
+				y += 1;
+			}
+		}
 }
 int Plat::GetX()
 {

@@ -314,6 +314,7 @@
     </ClCompile>
     <ClCompile Include="Source\stone.cpp" />
     <ClCompile Include="Source\timer.cpp" />
+    <ClCompile Include="Source\white-diamond.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h" />
@@ -346,6 +347,7 @@
     <ClInclude Include="Source\gamelib.h" />
     <ClInclude Include="Source\stone.h" />
     <ClInclude Include="Source\timer.h" />
+    <ClInclude Include="Source\white-diamond.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Source\game.rc">
@@ -385,8 +387,10 @@
     <Image Include="RES\gem_blue.bmp" />
     <Image Include="RES\gem_red.bmp" />
     <Image Include="RES\giraffe.bmp" />
+    <Image Include="RES\greenlplat.bmp" />
     <Image Include="RES\green_bot.bmp" />
     <Image Include="RES\green_platform.bmp" />
+    <Image Include="RES\greyplat.bmp" />
     <Image Include="RES\grey_platform.bmp" />
     <Image Include="RES\leftrunning.bmp" />
     <Image Include="RES\leftrunning2.bmp" />
@@ -394,12 +398,14 @@
     <Image Include="RES\level_menu.bmp" />
     <Image Include="RES\map2.bmp" />
     <Image Include="RES\map3.bmp" />
+    <Image Include="RES\map4.bmp" />
     <Image Include="RES\map_3.bmp" />
     <Image Include="RES\pass.bmp" />
     <Image Include="RES\pass_pic.bmp" />
     <Image Include="RES\pointer.bmp" />
     <Image Include="RES\purple-botton.bmp" />
     <Image Include="RES\purple-platform.bmp" />
+    <Image Include="RES\purpleplat.bmp" />
     <Image Include="RES\rocker_left.bmp" />
     <Image Include="RES\rocker_right.bmp" />
     <Image Include="RES\sister.bmp" />
@@ -407,6 +413,7 @@
     <Image Include="RES\sister_running2.bmp" />
     <Image Include="RES\white_bot.bmp" />
     <Image Include="RES\stone.bmp" />
+    <Image Include="RES\white_diamond.bmp" />
     <Image Include="RES\yellow-platform.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
