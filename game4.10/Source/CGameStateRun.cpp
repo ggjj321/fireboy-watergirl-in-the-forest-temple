@@ -896,14 +896,11 @@ namespace game_framework {
 			}
 		}
 
-		int greyPlatformTop = level4Grey.GetFocusY() + 52;
+		int greyPlatformTop = level4Grey.GetFocusY() + (2 * 52);
 		for (int i = 0; i < 3; i++) {
 			map.ChangeArray(level4Grey.GetX() + 8, level4Grey.GetY() + 17 * i, 1);
-			if (level4Grey.GetY() + 52 <= level4Grey.GetFocusY() + 17 * i) {
-				map.ChangeArray(level4Grey.GetX() + 8, level4Green.GetFocusY() + 17 * i, 0);
-			}
-			if(level4Grey.GetY() < greyPlatformTop + 17 * i) {
-				map.ChangeArray(level4Grey.GetX() + 8, greyPlatformTop + 17 * i, 0);
+			if (level4Grey.GetFocusY() + 52 >= level4Grey.GetY() + 17 * i) {
+				map.ChangeArray(level4Grey.GetX() + 8, level4Grey.GetY() - 17 * i, 0);
 			}
 		}
 

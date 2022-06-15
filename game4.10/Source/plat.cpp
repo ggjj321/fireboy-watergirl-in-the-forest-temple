@@ -76,14 +76,14 @@ void Plat::OnMove(bool isDown)
 
 void Plat::level4DownMove(bool isDown)
 {
-	if (isDown == true) {
-		if (y <= (focusY + 51)) {
+	if (isDown) {
+		if (y < (focusY + 52)) {
 			y += 1;
 		}
-		else {
-			if (y > focusY) {
-				y -= 1;
-			}
+	}
+	else {
+		if (y > focusY) {
+			y -= 1;
 		}
 	}
 }
