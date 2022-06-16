@@ -448,7 +448,7 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\about.bmp">
-       <Filter>MyGame\Resource Files</Filter>
+      <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\greenlplat.bmp">
       <Filter>MyGame\Resource Files</Filter>
@@ -463,6 +463,9 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\white_diamond.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="res\bitmap36.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>
