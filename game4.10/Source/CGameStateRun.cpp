@@ -860,7 +860,7 @@ namespace game_framework {
 
 	void CGameStateRun::SetLevelFourState()
 	{
-		sister.init(310, 185); // 120 20
+		sister.init(120, 20); // 120 20
 		brother.init(80, 20);
 		rocker.init(320, 180);
 		buttonsFour.init(84, 264);
