@@ -5,7 +5,9 @@ namespace game_framework {
 		void OnShow();
 		void LoadBitmap(int color);
 		void OnMove(bool isDown);
-		void GrenOnMove(bool isDown);
+		void GrenOnMove(bool isDown, int length);
+		void level4OnMove(bool isDown);
+		void level4DownMove(bool isDown);
 		void init(int x, int y);
 		int GetX();
 		int GetY();
