@@ -13,7 +13,7 @@
 #undef APSTUDIO_READONLY_SYMBOLS
 
 /////////////////////////////////////////////////////////////////////////////
-// §§§Â (¡c≈È°A•x∆W) resources
+// ‰∏≠Êñá (ÁπÅÈ´îÔºåÂè∞ÁÅ£) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHT)
 LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_TRADITIONAL
@@ -178,6 +178,17 @@ IDB_POINTER             BITMAP                  "D:\\fireboy-watergirl-in-the-fo
 
 IDB_ABOUT               BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\about.bmp"
 
+IDB_LEVELFOURGREEN      BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\greenlplat.bmp"
+
+IDB_LEVELFOURGREY       BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\greyplat.bmp"
+
+IDB_MAP4                BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\map4.bmp"
+
+IDB_LEVELFOURPURPLE     BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\purpleplat.bmp"
+
+IDB_WHITEDIAMOND        BITMAP                  "D:\\fireboy-watergirl-in-the-forest-temple\\game4.10\\RES\\white_diamond.bmp"
+
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -186,12 +197,12 @@ IDB_ABOUT               BITMAP                  "D:\\fireboy-watergirl-in-the-fo
 
 IDC_GAMECURSOR          CURSOR                  "..\\res\\gamecurs.cur"
 
-#endif    // §§§Â (¡c≈È°A•x∆W) resources
+#endif    // ‰∏≠Êñá (ÁπÅÈ´îÔºåÂè∞ÁÅ£) resources
 /////////////////////////////////////////////////////////////////////////////
 
 
 /////////////////////////////////////////////////////////////////////////////
-// ≠^§Â (¨¸∞Í) resources
+// Ëã±Êñá (ÁæéÂúã) resources
 
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
@@ -489,7 +500,7 @@ BEGIN
     ID_BUTTON_UNITTEST      "Perform Unit Test"
 END
 
-#endif    // ≠^§Â (¨¸∞Í) resources
+#endif    // Ëã±Êñá (ÁæéÂúã) resources
 /////////////////////////////////////////////////////////////////////////////
 
 

@@ -183,6 +183,9 @@
     <ClCompile Include="Source\pointers.cpp">
       <Filter>MyGame</Filter>
     </ClCompile>
+    <ClCompile Include="Source\white-diamond.cpp">
+      <Filter>MyGame</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Source\audio.h">
@@ -273,6 +276,9 @@
       <Filter>MyGame</Filter>
     </ClInclude>
     <ClInclude Include="Source\pointers.h">
+      <Filter>MyGame</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\white-diamond.h">
       <Filter>MyGame</Filter>
     </ClInclude>
   </ItemGroup>
@@ -442,6 +448,21 @@
       <Filter>MyGame\Resource Files</Filter>
     </Image>
     <Image Include="RES\about.bmp">
+       <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\greenlplat.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\greyplat.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\map4.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\purpleplat.bmp">
+      <Filter>MyGame\Resource Files</Filter>
+    </Image>
+    <Image Include="RES\white_diamond.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
   </ItemGroup>
