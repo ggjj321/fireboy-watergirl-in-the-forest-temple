@@ -38,6 +38,7 @@ namespace game_framework {
 		void SetLevelThreeState();
 		void LevelThreeMove();
 		void LevelThreeShow();
+		void SecretTechText(char* text);
 		void SetLevelFourState();
 		void LevelFourMove();
 		void LevelFourShow();
@@ -72,6 +73,7 @@ namespace game_framework {
 		RedDoor		    redDoor;
 		BlueDoor	    blueDoor;
 		Stone           stone;
-		ChainPlatform  *chainPlatforms;		
+		ChainPlatform  *chainPlatforms;	
+		int secretNum;
 	};
 }

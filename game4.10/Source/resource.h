@@ -1,6 +1,6 @@
 //{{NO_DEPENDENCIES}}
-// Microsoft Visual C++ ���ͪ� Include �ɮסC
-// �� game.rc �ϥ�
+// Microsoft Visual C++ ²£¥Íªº Include ÀÉ®×¡C
+// ¥Ñ game.rc ¨Ï¥Î
 //
 #define IDD_ABOUTBOX                    100
 #define IDP_SOCKETS_INIT_FAILED         104
@@ -103,9 +103,11 @@
 #define IDB_WHITEBOT                    226
 #define IDB_LEVELMENU                   227
 #define IDB_POINTER                     228
+#define IDB_BITMAP35                    229
+#define IDB_ABOUT                       229
+#define IDB_MAP3                        231
 #define IDB_LEVELFOURGREEN              229
 #define IDB_LEVELFOURGREY               230
-#define IDB_MAP3                        231
 #define IDB_MAP4                        232
 #define IDB_LEVELFURPURPLE              233
 #define IDB_LEVELFOURPURPLE             233

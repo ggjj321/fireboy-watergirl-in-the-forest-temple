@@ -476,6 +476,21 @@ void CGameState::ShowInitProgress(int percent)
 	CDDraw::BltBackToPrimary();					// 將 Back Plain 貼到螢幕
 }
 
+void CGameState::PutText(int x, int y, int size, char* text)
+{
+	CDC* pDC = CDDraw::GetBackCDC();			// 取得 Back Plain 的 CDC 
+	CFont f, * fp;
+	f.CreatePointFont(size, "Times New Roman");	// 產生 font f; 160表示16 point的字
+	fp = pDC->SelectObject(&f);					// 選用 font f
+	pDC->SetBkColor(RGB(0, 0, 0));
+	pDC->SetTextColor(RGB(255, 255, 0));
+	char str[80];								// Demo 數字對字串的轉換
+	sprintf(str, text);
+	pDC->TextOut(x, y, str);
+	pDC->SelectObject(fp);						// 放掉 font f (千萬不要漏了放掉)
+	CDDraw::ReleaseBackCDC();					// 放掉 Back Plain 的 CDC
+}
+
 void CGameState::OnDraw() // Template Method
 {
 	OnShow();

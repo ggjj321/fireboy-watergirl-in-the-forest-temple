@@ -447,6 +447,9 @@
     <Image Include="RES\map_3.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>
+    <Image Include="RES\about.bmp">
+       <Filter>MyGame\Resource Files</Filter>
+    </Image>
     <Image Include="RES\greenlplat.bmp">
       <Filter>MyGame\Resource Files</Filter>
     </Image>

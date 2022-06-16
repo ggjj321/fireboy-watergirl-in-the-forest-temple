@@ -363,6 +363,7 @@
     <Image Include="C:\Users\kevin\Desktop\sister_running.bmp" />
     <Image Include="C:\Users\kevin\Desktop\sister_running2.bmp" />
     <Image Include="C:\Users\kevin\Downloads\sister (2).bmp" />
+    <Image Include="RES\about.bmp" />
     <Image Include="res\bitmap10.bmp" />
     <Image Include="res\bitmap22.bmp" />
     <Image Include="res\bitmap23.bmp" />

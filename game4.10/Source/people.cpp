@@ -27,7 +27,7 @@ void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBoun
 		}
 		else {
 			if (jumpinVelocity == 0 && ((downBound == false) || (onPlatform))) { // 在地上跳起
-				jumpinVelocity = 10;
+				jumpinVelocity = 11;
 			}
 			else if (jumpinVelocity > 0 && (downBound == true)) { // 在空中
 				jumpinVelocity -= 1;
@@ -78,6 +78,14 @@ int People::GetWidth()
 	if (isMovingLeft) return peopleAniL.Width();
 
 	return peoplePic.Width();
+}
+int People::GetHeight()
+{
+	if (isMovingRight) return peopleAniR.Height();
+
+	if (isMovingLeft) return peopleAniL.Height();
+
+	return peoplePic.Height();
 }
 bool People::GetIsMovingLeft() {
 	return isMovingLeft;

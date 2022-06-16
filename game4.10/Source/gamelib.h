@@ -302,6 +302,7 @@ public:
 protected:
 	void GotoGameState(int state);							// 跳躍至指定的state
 	void ShowInitProgress(int percent);						// 顯示初始化的進度
+	void PutText(int x, int y, int size, char* text);
 	//
 	// virtual functions, 由繼承者提供implementation
 	//
