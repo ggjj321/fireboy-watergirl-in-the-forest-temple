@@ -11,11 +11,13 @@ namespace game_framework {
 		: CGameState(g)
 	{
 		isEnterrSelectMenu = false;
-		showAbout = false;
+		showAbout = false;		
 	}
 
 	void CGameStateInit::OnInit()
 	{
+		CAudio::Instance()->Load(0, "sounds\\start.mp3");
+		CAudio::Instance()->Load(1, "sounds\\about.mp3");
 		showAbout = false;
 		//
 		// 當圖很多時，OnInit載入所有的圖要花很多時間。為避免玩遊戲的人
@@ -33,9 +35,7 @@ namespace game_framework {
 
 		aboutPic.LoadBitmap(IDB_ABOUT);
 
-		//
-		// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
-		//
+		CAudio::Instance()->Play(0, true);
 	}
 
 	void CGameStateInit::OnBeginState()
@@ -67,15 +67,24 @@ namespace game_framework {
 			pointers.LastLevel();
 		if (nChar == LEVEL_SELECT)
 		{
-			if (pointers.GetSelectedLevel() == 5) showAbout = true;
+			if (pointers.GetSelectedLevel() == 5) {
+				CAudio::Instance()->Play(1, true);
+				CAudio::Instance()->Stop(0);
+				showAbout = true;
+			}
 			else
 			{
 				CGameMap::mapLevel = pointers.GetSelectedLevel();
+				CAudio::Instance()->Stop(0);
 				GotoGameState(GAME_STATE_RUN);
 			}	
 		}
 
-		if (nChar == ABOUT_BACK && showAbout) showAbout = false;
+		if (nChar == ABOUT_BACK && showAbout) {
+			showAbout = false;
+			CAudio::Instance()->Stop(1);
+			CAudio::Instance()->Play(0, true);
+		}
 	}
 
 	void CGameStateInit::OnLButtonDown(UINT nFlags, CPoint point)

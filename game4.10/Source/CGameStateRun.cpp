@@ -65,7 +65,8 @@ namespace game_framework {
 			break;
 		default:
 			break;
-		}		
+		}	
+		CAudio::Instance()->Play(2, true);
 	}
 
 	void CGameStateRun::OnMove()						
@@ -91,6 +92,7 @@ namespace game_framework {
 
 	void CGameStateRun::OnInit()  	
 	{
+		CAudio::Instance()->Load(2, "sounds\\run.mp3");
 		secretNum = 0;
 		map.ReadMapData();
 		switch (CGameMap::mapLevel)
@@ -187,7 +189,7 @@ namespace game_framework {
 
 		for(int i = 0; i < 2; i++) chainPlatforms[i].LoadBitmap();
 
-		Sleep(300); 		
+		Sleep(300); 	
 	}
 
 	void CGameStateRun::OnShow()
