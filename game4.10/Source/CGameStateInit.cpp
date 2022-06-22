@@ -32,6 +32,7 @@ namespace game_framework {
 		pointers.LoadBitmap();
 
 		aboutPic.LoadBitmap(IDB_ABOUT);
+
 		//
 		// 此OnInit動作會接到CGameStaterRun::OnInit()，所以進度還沒到100%
 		//
@@ -40,7 +41,7 @@ namespace game_framework {
 	void CGameStateInit::OnBeginState()
 	{
 		levelMenu.init(0, 0);
-		pointers.init(70, 250, 150, 300, 240, 260, 350, 260, 330, 410);
+		pointers.init(120, 250, 210, 320, 300, 300, 410, 280, 330, 410);
 		showAbout = false;
 	}
 
