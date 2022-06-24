@@ -9,7 +9,7 @@ namespace game_framework {
 People::People() {}
 void People::OnMove(bool leftBound, bool rightBound, bool downBound, bool upBound, bool onPlatform, int platformY)
 {
-	const int XSTEP_SIZE = 6;
+	const int XSTEP_SIZE = 5;
 	const int YSTEP_SIZE = 4;
 
 	if (downBound && (isJumpimg == false) && (onPlatform == false)) {

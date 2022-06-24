@@ -101,6 +101,12 @@ namespace game_framework {
 			PutText(110, 80, 230, "Please use arrow key to select level");
 
 			PutText(330, 380, 280, "about");
+
+			PutText(50, 340, 120, "use arrow keys to control brother");
+			PutText(50, 380, 120, "use A S D W keys to control sister");
+			PutText(50, 420, 120, "use Enter to enter level");
+
+			PutText(50, 460, 120, "Secret technique : enter cong to pass level");
 		}
 		else
 		{

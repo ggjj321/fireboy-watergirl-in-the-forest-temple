@@ -710,11 +710,11 @@ namespace game_framework {
 		timer.OnMove();
 		timer.TimeCalculate();
 
-		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + sister.GetHeight());
-		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + sister.GetHeight());
+		const bool sisterTouchRedWater = map.isRedWater(sister.GetX() + 5, sister.GetY() + (int)(sister.GetHeight() * 1.2) + 3);
+		const bool sisterTouchGreenWater = map.isGreenWater(sister.GetX() + 5, sister.GetY() + (int)(sister.GetHeight() * 1.2) + 3);
 
-		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + brother.GetHeight());
-		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + brother.GetHeight());
+		const bool brotherTouchBlueWater = map.isBlueWater(brother.GetX() + 5, brother.GetY() + (int)(brother.GetHeight() * 1.2) + 3);
+		const bool brotherTouchGreenWater = map.isGreenWater(brother.GetX() + 5, brother.GetY() + (int)(brother.GetHeight() * 1.2) + 3);
 
 		if (sisterTouchRedWater || sisterTouchGreenWater) GotoGameState(GAME_STATE_OVER);
 		if (brotherTouchBlueWater || brotherTouchGreenWater) GotoGameState(GAME_STATE_OVER);
@@ -945,7 +945,7 @@ namespace game_framework {
 
 		const bool sisterLeftBound = map.isEmpty(sister.GetX() - 1, sister.GetY() + 17);
 		const bool sisterRightBound = map.isEmpty(sister.GetX() + 10, sister.GetY() + 17);
-		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + 40);
+		const bool sisterDownBound = map.isEmpty(sister.GetX() + 5, sister.GetY() + sister.GetHeight());
 		const bool sisterUpBound = map.isEmpty(sister.GetX(), sister.GetY());
 		sister.OnMove(sisterLeftBound, sisterRightBound, sisterDownBound, sisterUpBound, false, false);
 
@@ -1002,8 +1002,8 @@ namespace game_framework {
 		int buttonPurplePx = map.GetGx(buttonsFour.GetX());
 		int buttonPurplePy = map.GetGy(buttonsFour.GetY());
 
-		bool isBrotherPurpleDown = ((buttonPurplePx - 1 <= brotherPx && brotherPx <= buttonPurplePx + 1) && buttonPurplePy - 1 == brotherPy);
-		bool isSisterPurpleDown = ((buttonPurplePx - 1 <= sisterPx && sisterPx <= buttonPurplePx + 1) && buttonPurplePy - 1 == sisterPy);
+		bool isBrotherPurpleDown = ((buttonPurplePx - 1 <= brotherPx && brotherPx <= buttonPurplePx + 1) && (-1 < buttonPurplePy - brotherPy) && (buttonPurplePy - brotherPy <= 2));
+		bool isSisterPurpleDown = ((buttonPurplePx - 1 <= sisterPx && sisterPx <= buttonPurplePx + 1) && (-1 < buttonPurplePy - sisterPy) && (buttonPurplePy - sisterPy <= 2));
 		bool isPurpleDown = isBrotherPurpleDown || isSisterPurpleDown;
 
 		buttonsFour.OnMove(isPurpleDown);
